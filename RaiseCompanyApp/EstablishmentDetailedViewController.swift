@@ -9,10 +9,12 @@ import UIKit
 
 class EstablishmentDetailedViewController : UIViewController {
     @IBOutlet weak var nEmployees: UILabel!
-    var establishment: Establishment?
+    var establishment: Establishment!
+    
+    @IBOutlet weak var establishmentImage: UIImageView!
     
     
-    
+    @IBOutlet weak var ratingStars: UIImageView!
     
     @IBOutlet weak var locationName: UILabel!
     //Outlets
@@ -26,24 +28,13 @@ class EstablishmentDetailedViewController : UIViewController {
     //
     
     override func viewWillAppear(_ animated: Bool) {
-
-        nEmployees.text = "\(establishment!.nEmployees)"
-        
-        
+        establishmentImage.image = UIImage(named: "\(establishment.image)")
+        locationName.text = "\(establishment.location)"
+        ratingStars.image = UIImage(named: "\(establishment.rating)rating")
+//        nEmployees.text = "\(establishment.nEmployees)"
     }
     
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-////        return concert?.reviews.count ?? 0
-//    }
-    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-////        let reviewRow: ReviewRow = tableView.dequeueReusableCell(withIdentifier: "reviewRowID", for: indexPath) as! ReviewRow
-////        let review = concert?.reviews[indexPath.row]
-////
-////        reviewRow.ratingProgress.progress = Float(review?.rating ?? 0) / Concert.MAX_RATING
-////        reviewRow.reviewLabel.text = review?.comment
-////
-////        return reviewRow
-//    }
     
 }
+
+

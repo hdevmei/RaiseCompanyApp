@@ -47,7 +47,7 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
         myEstablishmentsList.delegate = self
         myEstablishmentsList.dataSource = self
         
-        
+        addEstablishmentBtn.layer.zPosition = 10
         
         DataManager.filteredEstablishments = DataManager.establishments
         // Do any additional setup after loading the view.
@@ -67,6 +67,7 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
     
     @IBOutlet weak var mySearchBar: UISearchBar!
     
+    @IBOutlet weak var addEstablishmentBtn: UIButton!
     
     /*
     // MARK: - Navigation
@@ -79,7 +80,14 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
     */
     
     
- 
+    @IBAction func addEstablishment(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "AddNewEstablishment") as! UIViewController
+        controller.modalPresentationStyle = .automatic
+        controller.modalTransitionStyle = .coverVertical
+        present(controller, animated: true, completion: nil)
+        print("Hola")
+    }
+    
 
 }
 

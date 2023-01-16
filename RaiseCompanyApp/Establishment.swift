@@ -1,5 +1,5 @@
 class Establishment {
-    public let location: String
+    public var location: String
     public let image : String
     public let rating : Float
     public let benefits : Int
