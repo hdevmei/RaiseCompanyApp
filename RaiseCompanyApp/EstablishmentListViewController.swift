@@ -10,7 +10,7 @@ import UIKit
 class EstablishmentListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataManager.establishments.count
+        return DataManager.filteredEstablishments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -18,7 +18,7 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
         tableView.dequeueReusableCell(withIdentifier: "EstablishmentCell", for: indexPath) as! EstablishmentRow
         
         
-        let establishment = DataManager.establishments[indexPath.row]
+        let establishment = DataManager.filteredEstablishments[indexPath.row]
         
         establishmentCell.iamgeEstablishment.image = UIImage(named: establishment.image)
         establishmentCell.location.text = establishment.location
@@ -33,8 +33,13 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mySearchBar.delegate = self
         myEstablishmentsList.delegate = self
         myEstablishmentsList.dataSource = self
+        
+        
+        
+        DataManager.filteredEstablishments = DataManager.establishments
         // Do any additional setup after loading the view.
     }
     
@@ -42,6 +47,7 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
     
     @IBOutlet weak var myEstablishmentsList: UITableView!
     
+    @IBOutlet weak var mySearchBar: UISearchBar!
     
     
     /*
@@ -53,5 +59,29 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+ 
 
+}
+
+extension EstablishmentListViewController: UISearchBarDelegate{
+    
+    
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        DataManager.filteredEstablishments = []
+        if searchText == "" {
+            DataManager.filteredEstablishments = DataManager.establishments
+        } else {
+            for establishment in DataManager.establishments {
+                if establishment.location.lowercased().contains(searchText.lowercased()){
+                    DataManager.filteredEstablishments.append(establishment)
+                }
+            }
+        }
+        self.myEstablishmentsList.reloadData()
+
+    }
 }

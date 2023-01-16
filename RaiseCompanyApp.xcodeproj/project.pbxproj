@@ -11,6 +11,10 @@
 		AF06C15D2974C5E10063D55A /* Establishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C15C2974C5E10063D55A /* Establishment.swift */; };
 		AF06C15F2974C79A0063D55A /* EstablishmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C15E2974C79A0063D55A /* EstablishmentListViewController.swift */; };
 		AF06C1612974CA340063D55A /* EstablishmentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1602974CA340063D55A /* EstablishmentRow.swift */; };
+		AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1642974D9B20063D55A /* UIView+Extension.swift */; };
+		AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1662974DDE30063D55A /* OnboardingViewController.swift */; };
+		AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */; };
+		AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1682974DDE30063D55A /* OnboardingSlide.swift */; };
 		AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19712974B78300A04DBA /* AppDelegate.swift */; };
 		AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19732974B78300A04DBA /* SceneDelegate.swift */; };
 		AF9B19762974B78300A04DBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19752974B78300A04DBA /* ViewController.swift */; };
@@ -24,6 +28,10 @@
 		AF06C15C2974C5E10063D55A /* Establishment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Establishment.swift; sourceTree = "<group>"; };
 		AF06C15E2974C79A0063D55A /* EstablishmentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentListViewController.swift; sourceTree = "<group>"; };
 		AF06C1602974CA340063D55A /* EstablishmentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentRow.swift; sourceTree = "<group>"; };
+		AF06C1642974D9B20063D55A /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		AF06C1662974DDE30063D55A /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF06C1682974DDE30063D55A /* OnboardingSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		AF9B196E2974B78300A04DBA /* RaiseCompanyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiseCompanyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9B19712974B78300A04DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9B19732974B78300A04DBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +83,10 @@
 				AF9B197A2974B78400A04DBA /* Assets.xcassets */,
 				AF9B197C2974B78400A04DBA /* LaunchScreen.storyboard */,
 				AF9B197F2974B78400A04DBA /* Info.plist */,
+				AF06C1642974D9B20063D55A /* UIView+Extension.swift */,
+				AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */,
+				AF06C1682974DDE30063D55A /* OnboardingSlide.swift */,
+				AF06C1662974DDE30063D55A /* OnboardingViewController.swift */,
 			);
 			path = RaiseCompanyApp;
 			sourceTree = "<group>";
@@ -152,11 +164,15 @@
 			files = (
 				AF06C15D2974C5E10063D55A /* Establishment.swift in Sources */,
 				AF06C1612974CA340063D55A /* EstablishmentRow.swift in Sources */,
+				AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */,
 				AF9B19762974B78300A04DBA /* ViewController.swift in Sources */,
 				AF06C15B2974C5CC0063D55A /* DataManager.swift in Sources */,
 				AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */,
 				AF06C15F2974C79A0063D55A /* EstablishmentListViewController.swift in Sources */,
+				AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */,
+				AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */,
 				AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */,
+				AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
