@@ -25,6 +25,10 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
         
         establishmentCell.benefitsBtn.setTitle("  ▲ \(establishment.benefits) $", for: .normal)
         establishmentCell.lossesBtn.setTitle("  ▼ \(establishment.losses) $", for: .normal)
+        
+        establishmentCell.nEmployees.text = String(establishment.nEmployees) + " Employees"
+        establishmentCell.ratingImage.image = UIImage(named: "\(establishment.rating)rating")
+        
 
         
         return establishmentCell

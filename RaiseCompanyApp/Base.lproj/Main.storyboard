@@ -45,7 +45,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="hUI-oq-8Bn">
             <objects>
-                <tabBarController id="RrJ-mg-ZCi" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarVC" id="RrJ-mg-ZCi" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8BT-77-Gsr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -243,15 +243,11 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                     </button>
-                                    <searchBar contentMode="redraw" text="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-1f-B2e">
+                                    <searchBar contentMode="redraw" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-1f-B2e">
                                         <rect key="frame" x="0.0" y="103" width="414" height="56"/>
                                         <color key="barTintColor" red="0.051516242330000003" green="0.15815278890000001" blue="0.25037035349999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <offsetWrapper key="searchTextPositionAdjustment" horizontal="4" vertical="0.0"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <scopeButtonTitles>
-                                            <string>Title</string>
-                                            <string>Title</string>
-                                        </scopeButtonTitles>
                                         <connections>
                                             <outlet property="delegate" destination="5dM-fR-Eks" id="9mN-eb-h7c"/>
                                         </connections>
