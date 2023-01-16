@@ -14,6 +14,8 @@ class DataManager {
     ]
     
     
+    static var selectedEstablishment: Int?
+    
     
     static var filteredEstablishments: [Establishment]!
 

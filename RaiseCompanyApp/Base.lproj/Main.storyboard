@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mAf-qB-3oT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RrJ-mg-ZCi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -285,18 +285,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fV4-mp-Ah5"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="myEstablishmentsList" destination="GU1-py-Fcm" id="Ihs-Nx-GS3"/>
                         <outlet property="mySearchBar" destination="Sk9-1f-B2e" id="VWR-07-INy"/>
-                        <segue destination="UYC-FK-Eqw" kind="show" id="r6e-pI-oK9"/>
+                        <segue destination="UYC-FK-Eqw" kind="show" identifier="goToEstablishmentDetailed" id="r6e-pI-oK9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGh-gU-KxX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="831.88405797101461" y="186.83035714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Establishment-->
         <scene sceneID="Wui-Em-Qaf">
             <objects>
                 <viewController id="UYC-FK-Eqw" sceneMemberID="viewController">
@@ -304,9 +303,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="4Ga-jn-cXI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.051516242330000003" green="0.15815278890000001" blue="0.25037035349999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yxg-ZT-3vD"/>
+                    <navigationItem key="navigationItem" title="Establishment" id="yxg-ZT-3vD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Dx-6P-lc6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -315,11 +314,11 @@
         <!--Establishments-->
         <scene sceneID="f2W-Wh-nyP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="omB-RT-XeO" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="omB-RT-XeO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Establishments" image="building.2.fill" catalog="system" id="e1p-p2-JCA"/>
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hJz-hZ-Y7O">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

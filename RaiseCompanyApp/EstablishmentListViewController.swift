@@ -35,6 +35,12 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
     }
     
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DataManager.selectedEstablishment = indexPath.row
+            performSegue(withIdentifier: "goToEstablishmentDetailed", sender: DataManager.establishments[indexPath.row])
+        }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mySearchBar.delegate = self
@@ -46,6 +52,8 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
         DataManager.filteredEstablishments = DataManager.establishments
         // Do any additional setup after loading the view.
     }
+    
+    
     
 
     
