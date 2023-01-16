@@ -54,6 +54,12 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let establishmentDetailedVC = segue.destination as! EstablishmentDetailedViewController
+        let establishment = sender as! Establishment
+        establishmentDetailedVC.establishment = establishment
+    }
+    
     
 
     
@@ -97,3 +103,5 @@ extension EstablishmentListViewController: UISearchBarDelegate{
 
     }
 }
+
+

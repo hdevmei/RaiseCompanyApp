@@ -8,41 +8,28 @@
 import UIKit
 
 class EstablishmentDetailedViewController : UIViewController {
+    @IBOutlet weak var nEmployees: UILabel!
     var establishment: Establishment?
     
     
     
     
+    @IBOutlet weak var locationName: UILabel!
     //Outlets
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = UIColor.green
-
-        
-        
     }
     
     
     //
     
     override func viewWillAppear(_ animated: Bool) {
+
+        nEmployees.text = "\(establishment!.nEmployees)"
         
         
-        
-        
-//        imageView.image = UIImage(named: concert!.image)
-//
-//        bandName.text = concert?.band
-//
-//        if let rating = concert?.averageRating {
-//            averageRating.progress = rating / Concert.MAX_RATING
-//        } else {
-//            averageRating.isHidden = true
-//        }
-//
-//        reviewsTableView.dataSource = self
     }
     
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
