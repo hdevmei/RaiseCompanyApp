@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mAf-qB-3oT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RrJ-mg-ZCi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -64,23 +64,45 @@
             </objects>
             <point key="canvasLocation" x="-1097" y="187"/>
         </scene>
-        <!--Add Establishment View Controller-->
+        <!--Add Establishment-->
         <scene sceneID="Ojb-KF-9Ig">
             <objects>
                 <viewController storyboardIdentifier="AddNewEstablishment" id="Lt7-Kf-ddb" customClass="AddEstablishmentViewController" customModule="RaiseCompanyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s2X-ok-x11">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new establishment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byq-c1-9wZ">
+                                <rect key="frame" x="116" y="69" width="182.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggp-78-aqd">
+                                <rect key="frame" x="338" y="62" width="61" height="34.5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aYV-bB-EQ7"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" red="0.095484979449999993" green="0.19386589530000001" blue="0.2778277099" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Byq-c1-9wZ" firstAttribute="centerX" secondItem="aYV-bB-EQ7" secondAttribute="centerX" id="9bm-fl-RP3"/>
+                            <constraint firstItem="Ggp-78-aqd" firstAttribute="centerY" secondItem="Byq-c1-9wZ" secondAttribute="centerY" id="HYQ-ce-lQU"/>
+                            <constraint firstItem="Byq-c1-9wZ" firstAttribute="top" secondItem="aYV-bB-EQ7" secondAttribute="top" constant="25" id="Pcb-Ty-7kh"/>
+                            <constraint firstItem="aYV-bB-EQ7" firstAttribute="trailing" secondItem="Ggp-78-aqd" secondAttribute="trailing" constant="15" id="zbg-xP-8Fi"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rkN-xG-brf"/>
+                    <navigationItem key="navigationItem" title="Add Establishment" id="rkN-xG-brf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wvn-8q-zFw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832" y="-589"/>
+            <point key="canvasLocation" x="832" y="-577"/>
         </scene>
-        <!--Establishment List View Controller-->
+        <!--Establishments-->
         <scene sceneID="8Xm-xh-fUe">
             <objects>
                 <viewController id="5dM-fR-Eks" customClass="EstablishmentListViewController" customModule="RaiseCompanyApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,7 +111,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GU1-py-Fcm">
-                                <rect key="frame" x="0.0" y="179" width="414" height="634"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
                                 <color key="backgroundColor" red="0.38833144310000001" green="0.46172046659999999" blue="0.51321876050000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EstablishmentCell" rowHeight="167" id="37X-eK-lYa" customClass="EstablishmentRow" customModule="RaiseCompanyApp" customModuleProvider="target">
@@ -223,77 +245,39 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4k-ZK-r4r">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Establishments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjT-wM-gcj">
-                                        <rect key="frame" x="10" y="50" width="290" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="qjT-wM-gcj" secondAttribute="height" multiplier="244:41" constant="4.3414634146341768" id="vOd-IU-v1Y"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yu6-NT-119">
-                                        <rect key="frame" x="354" y="51" width="60" height="46"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="yu6-NT-119" secondAttribute="height" multiplier="30:23" id="wx0-Ry-1E9"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
-                                        <connections>
-                                            <action selector="addEstablishment:" destination="5dM-fR-Eks" eventType="touchUpInside" id="08s-wg-mKf"/>
-                                        </connections>
-                                    </button>
-                                    <searchBar contentMode="redraw" placeholder="Search..." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-1f-B2e">
-                                        <rect key="frame" x="0.0" y="103" width="414" height="51"/>
-                                        <color key="barTintColor" red="0.051516242330000003" green="0.15815278890000001" blue="0.25037035349999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <offsetWrapper key="searchTextPositionAdjustment" horizontal="4" vertical="0.0"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="5dM-fR-Eks" id="9mN-eb-h7c"/>
-                                        </connections>
-                                    </searchBar>
-                                </subviews>
-                                <color key="backgroundColor" red="0.051516242330000003" green="0.15815278890000001" blue="0.25037035349999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstItem="qjT-wM-gcj" firstAttribute="width" secondItem="l4k-ZK-r4r" secondAttribute="width" multiplier="0.59058" constant="45.500000000000028" id="9t7-gN-Kje"/>
-                                    <constraint firstItem="Sk9-1f-B2e" firstAttribute="leading" secondItem="l4k-ZK-r4r" secondAttribute="leading" id="DE9-tC-2pm"/>
-                                    <constraint firstAttribute="trailing" secondItem="yu6-NT-119" secondAttribute="trailing" id="QbB-NU-rsc"/>
-                                    <constraint firstItem="yu6-NT-119" firstAttribute="centerY" secondItem="qjT-wM-gcj" secondAttribute="centerY" id="YLS-lU-w70"/>
-                                    <constraint firstItem="qjT-wM-gcj" firstAttribute="top" secondItem="l4k-ZK-r4r" secondAttribute="top" constant="50" id="c7U-Sl-Pfb"/>
-                                    <constraint firstAttribute="trailing" secondItem="Sk9-1f-B2e" secondAttribute="trailing" id="dU1-kt-PEj"/>
-                                    <constraint firstItem="qjT-wM-gcj" firstAttribute="leading" secondItem="l4k-ZK-r4r" secondAttribute="leading" constant="10" id="e43-fy-R4F"/>
-                                    <constraint firstAttribute="width" secondItem="l4k-ZK-r4r" secondAttribute="height" multiplier="207:82" id="hxU-0D-hXS"/>
-                                    <constraint firstItem="yu6-NT-119" firstAttribute="width" secondItem="l4k-ZK-r4r" secondAttribute="width" multiplier="0.144928" id="svj-Pf-vzo"/>
-                                    <constraint firstItem="Sk9-1f-B2e" firstAttribute="top" secondItem="qjT-wM-gcj" secondAttribute="bottom" constant="5" id="xZd-fK-smY"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            <searchBar contentMode="redraw" id="dAs-u2-j1O">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fq2-ez-GdF"/>
                         <color key="backgroundColor" red="0.38833144310000001" green="0.46172046659999999" blue="0.51321876050000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="l4k-ZK-r4r" firstAttribute="trailing" secondItem="fq2-ez-GdF" secondAttribute="trailing" id="018-mx-gIb"/>
-                            <constraint firstItem="GU1-py-Fcm" firstAttribute="trailing" secondItem="fq2-ez-GdF" secondAttribute="trailing" id="1Xo-Oe-b0h"/>
-                            <constraint firstItem="l4k-ZK-r4r" firstAttribute="top" secondItem="HIj-d2-aIo" secondAttribute="top" id="MtB-qc-tIt"/>
-                            <constraint firstItem="l4k-ZK-r4r" firstAttribute="leading" secondItem="fq2-ez-GdF" secondAttribute="leading" id="OYr-0k-bP5"/>
-                            <constraint firstItem="GU1-py-Fcm" firstAttribute="top" secondItem="l4k-ZK-r4r" secondAttribute="bottom" constant="15" id="hhq-F0-mkM"/>
-                            <constraint firstItem="GU1-py-Fcm" firstAttribute="bottom" secondItem="fq2-ez-GdF" secondAttribute="bottom" id="nVi-6w-gCv"/>
-                            <constraint firstItem="GU1-py-Fcm" firstAttribute="leading" secondItem="fq2-ez-GdF" secondAttribute="leading" id="v2t-t7-nb4"/>
+                            <constraint firstItem="GU1-py-Fcm" firstAttribute="bottom" secondItem="fq2-ez-GdF" secondAttribute="bottom" id="Zui-S5-zfj"/>
+                            <constraint firstItem="GU1-py-Fcm" firstAttribute="leading" secondItem="fq2-ez-GdF" secondAttribute="leading" id="hS0-oK-NZ8"/>
+                            <constraint firstItem="GU1-py-Fcm" firstAttribute="top" secondItem="dAs-u2-j1O" secondAttribute="bottom" id="qrc-Ya-1Xj"/>
+                            <constraint firstItem="GU1-py-Fcm" firstAttribute="trailing" secondItem="fq2-ez-GdF" secondAttribute="trailing" id="rI7-89-Fst"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fV4-mp-Ah5"/>
+                    <navigationItem key="navigationItem" title="Establishments" id="fV4-mp-Ah5">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="S0Y-qU-Pic">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="999-8p-C3h">
+                                <rect key="frame" x="302" y="5" width="92" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="addEstablishmentBtn:" destination="5dM-fR-Eks" eventType="touchUpInside" id="Bln-qJ-1GZ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="addEstablishmentBtn" destination="yu6-NT-119" id="hpD-Qq-o2l"/>
                         <outlet property="myEstablishmentsList" destination="GU1-py-Fcm" id="Ihs-Nx-GS3"/>
-                        <outlet property="mySearchBar" destination="Sk9-1f-B2e" id="VWR-07-INy"/>
+                        <outlet property="mySearchBar" destination="dAs-u2-j1O" id="4k2-Uz-yCZ"/>
                         <segue destination="UYC-FK-Eqw" kind="show" identifier="goToEstablishmentDetailed" id="r6e-pI-oK9"/>
-                        <segue destination="Lt7-Kf-ddb" kind="presentation" identifier="goToAddEstablishment" id="68E-C3-s7o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGh-gU-KxX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -544,7 +528,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Establishment" largeTitleDisplayMode="never" id="yxg-ZT-3vD">
-                        <barButtonItem key="backBarButtonItem" title="backxzc" id="ZwB-aa-Xr5"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ZwB-aa-Xr5"/>
                     </navigationItem>
                     <connections>
                         <outlet property="benefitsAndLossesButton" destination="1hn-Rl-ak4" id="Zjt-kE-Egf"/>
@@ -808,6 +792,20 @@
             </objects>
             <point key="canvasLocation" x="3340.579710144928" y="186.83035714285714"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="yWm-5K-ewV">
+            <objects>
+                <viewController id="acW-T4-Etk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mfd-dU-wCT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fs2-db-xd1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1551" y="575"/>
+        </scene>
     </scenes>
     <resources>
         <image name="2.0rating" width="325" height="54"/>
@@ -831,9 +829,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

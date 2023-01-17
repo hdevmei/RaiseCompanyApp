@@ -47,46 +47,39 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
         myEstablishmentsList.delegate = self
         myEstablishmentsList.dataSource = self
         
-        addEstablishmentBtn.layer.zPosition = 10
         
         DataManager.filteredEstablishments = DataManager.establishments
         // Do any additional setup after loading the view.
     }
     
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let establishmentDetailedVC = segue.destination as! EstablishmentDetailedViewController
-        let establishment = sender as! Establishment
-        establishmentDetailedVC.establishment = establishment
+          let establishmentDetailedVC = segue.destination as! EstablishmentDetailedViewController
+          let establishment = sender as! Establishment
+          establishmentDetailedVC.establishment = establishment
+      }
+ 
+    
+    
+    
+    
+    
+    @IBAction func addEstablishmentBtn(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "AddNewEstablishment") as! UIViewController
+        controller.modalPresentationStyle = .automatic
+//        controller.modalTransitionStyle = .crossDissolve
+                present(controller, animated: true, completion: nil)
+       print("Quiero ir a add")
     }
     
-    
-
     
     @IBOutlet weak var myEstablishmentsList: UITableView!
     
     @IBOutlet weak var mySearchBar: UISearchBar!
     
-    @IBOutlet weak var addEstablishmentBtn: UIButton!
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
-    @IBAction func addEstablishment(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "AddNewEstablishment") as! UIViewController
-        controller.modalPresentationStyle = .automatic
-        controller.modalTransitionStyle = .coverVertical
-        present(controller, animated: true, completion: nil)
-        print("Hola")
-    }
+  
     
 
 }
