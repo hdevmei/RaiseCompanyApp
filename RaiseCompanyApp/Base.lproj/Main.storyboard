@@ -411,7 +411,6 @@
                                                                 </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="goGraphicsViewCOntroller:" destination="UYC-FK-Eqw" eventType="touchUpInside" id="3xV-co-Wbe"/>
-                                                                    <segue destination="UQ4-Hk-6vz" kind="show" id="xbL-kX-iFW"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pu-1m-l5r">
@@ -583,6 +582,7 @@
                         <outlet property="ratingStars" destination="iPW-I1-kad" id="CmY-Yq-Zp6"/>
                         <segue destination="UBq-Vx-o4j" kind="push" id="feX-si-plE"/>
                         <segue destination="MVi-zh-fiN" kind="show" id="L8N-Z4-JEO"/>
+                        <segue destination="UQ4-Hk-6vz" kind="show" identifier="GoToGraphicsVC" id="2iT-1b-dZm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Dx-6P-lc6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

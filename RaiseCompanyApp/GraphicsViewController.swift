@@ -17,15 +17,15 @@ class GraphicsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        locationNameGraphicsLabel.text = establishment.location
-        
+        print(establishment)
         
         // Do any additional setup after loading the view.
     }
     
     
    @IBOutlet weak var locationNameGraphicsLabel: UILabel!
+
+    
     
 
 }

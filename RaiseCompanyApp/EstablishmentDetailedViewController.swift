@@ -24,31 +24,30 @@ class EstablishmentDetailedViewController : UIViewController {
     @IBOutlet weak var locationName: UILabel!
     //Outlets
     
-
+    
     @IBAction func SegmentedControlSelected(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {
             ReviewsView.isHidden = false
             IncidentsView.isHidden = true
-              } else if sender.selectedSegmentIndex == 1 {
-                  ReviewsView.isHidden = true
-                  IncidentsView.isHidden = false
-              }
+        } else if sender.selectedSegmentIndex == 1 {
+            ReviewsView.isHidden = true
+            IncidentsView.isHidden = false
+        }
         
         
     }
     
     @IBAction func goGraphicsViewCOntroller(_ sender: Any) {
+
         
-        
-        
-        
+        print("Go to Grapgics View")
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     
@@ -60,18 +59,18 @@ class EstablishmentDetailedViewController : UIViewController {
         ratingStars.image = UIImage(named: "\(establishment.rating)rating")
         benefitsButton.setTitle("  ▲ \(establishment.benefits) $", for: .normal)
         lossesButton.setTitle("  ▼ \(establishment.losses) $", for: .normal)
-
-
+        
+        
         print("\(establishment.benefits)")
-//        nEmployees.text = "\(establishment.nEmployees)"
+        //        nEmployees.text = "\(establishment.nEmployees)"
     }
+    
+  
+    
     
     
     
 }
-
-
-
 
 
 
