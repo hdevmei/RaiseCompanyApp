@@ -24,6 +24,7 @@
 		AF9B19792974B78300A04DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9B19772974B78300A04DBA /* Main.storyboard */; };
 		AF9B197B2974B78400A04DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF9B197A2974B78400A04DBA /* Assets.xcassets */; };
 		AF9B197E2974B78400A04DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9B197C2974B78400A04DBA /* LaunchScreen.storyboard */; };
+		AFF6058829761B1600205792 /* GraphicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF6058729761B1600205792 /* GraphicsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		AF9B197A2974B78400A04DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF9B197D2974B78400A04DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF9B197F2974B78400A04DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFF6058729761B1600205792 /* GraphicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				AF9B19732974B78300A04DBA /* SceneDelegate.swift */,
 				AF9B19752974B78300A04DBA /* ViewController.swift */,
 				AF9B19772974B78300A04DBA /* Main.storyboard */,
+				AFF6058729761B1600205792 /* GraphicsViewController.swift */,
 				AF0D72092975C348000968A3 /* AddEstablishmentViewController.swift */,
 				AF0FB1752975693F008734F8 /* EmployeesViewController.swift */,
 				AF0FB17329754B20008734F8 /* EstablishmentDetailedViewController.swift */,
@@ -185,6 +188,7 @@
 				AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */,
 				AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */,
 				AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */,
+				AFF6058829761B1600205792 /* GraphicsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
