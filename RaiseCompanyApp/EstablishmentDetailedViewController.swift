@@ -12,6 +12,8 @@ class EstablishmentDetailedViewController : UIViewController {
     
     @IBOutlet weak var establishmentImage: UIImageView!
     
+    @IBOutlet weak var ReviewsView: UIView!
+    @IBOutlet weak var IncidentsView: UIView!
     
     @IBOutlet weak var benefitsAndLossesButton: UIView!
     @IBOutlet weak var grayView: UIView!
@@ -23,6 +25,18 @@ class EstablishmentDetailedViewController : UIViewController {
     //Outlets
     
 
+    @IBAction func SegmentedControlSelected(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            ReviewsView.isHidden = false
+            IncidentsView.isHidden = true
+              } else if sender.selectedSegmentIndex == 1 {
+                  ReviewsView.isHidden = true
+                  IncidentsView.isHidden = false
+              }
+        
+        
+    }
     
     @IBAction func goGraphicsViewCOntroller(_ sender: Any) {
         

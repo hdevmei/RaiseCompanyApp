@@ -453,17 +453,58 @@
                                                             <segment title="Reviews"/>
                                                             <segment title="Incidents"/>
                                                         </segments>
+                                                        <connections>
+                                                            <action selector="SegmentedControlSelected:" destination="UYC-FK-Eqw" eventType="valueChanged" id="5rn-dd-WYM"/>
+                                                        </connections>
                                                     </segmentedControl>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tja-41-gvk">
+                                                        <rect key="frame" x="20" y="412" width="374" height="500"/>
+                                                        <color key="backgroundColor" red="0.96822112800000004" green="0.80715435739999997" blue="0.27324980500000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="tja-41-gvk" secondAttribute="height" multiplier="187:226" constant="-39.716814159292028" id="7Or-Ch-7o0"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="GCw-pJ-kNx" kind="embed" id="OAy-Iu-QJE"/>
+                                                        </connections>
+                                                    </containerView>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MG2-dV-EM5">
+                                                        <rect key="frame" x="20" y="412" width="374" height="500"/>
+                                                        <color key="backgroundColor" red="0.96822112800000004" green="0.80715435739999997" blue="0.27324980500000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="MG2-dV-EM5" secondAttribute="height" multiplier="187:226" constant="-39.716814159292028" id="wRf-Gf-fEo"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="OXY-bp-5EA" kind="embed" id="KXf-Jw-TUe"/>
+                                                        </connections>
+                                                    </containerView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.53333336109999996" green="0.58823531870000001" blue="0.62352943419999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstItem="1hn-Rl-ak4" firstAttribute="width" secondItem="Fsg-ww-iGs" secondAttribute="width" multiplier="0.900966" id="6bA-Qh-k1i"/>
+                                                    <constraint firstItem="MG2-dV-EM5" firstAttribute="centerX" secondItem="Fsg-ww-iGs" secondAttribute="centerX" id="BTo-pz-icq"/>
                                                     <constraint firstItem="iPW-I1-kad" firstAttribute="top" secondItem="Fsg-ww-iGs" secondAttribute="top" constant="8" id="OHE-dL-H9d"/>
                                                     <constraint firstItem="1hn-Rl-ak4" firstAttribute="centerX" secondItem="Fsg-ww-iGs" secondAttribute="centerX" id="PiV-QC-FNY"/>
+                                                    <constraint firstItem="MG2-dV-EM5" firstAttribute="top" secondItem="TIm-VK-TiH" secondAttribute="bottom" constant="20" id="W0n-gV-mb2"/>
+                                                    <constraint firstItem="tja-41-gvk" firstAttribute="width" secondItem="Fsg-ww-iGs" secondAttribute="width" multiplier="0.903382" id="W9s-h8-Hok"/>
                                                     <constraint firstItem="iPW-I1-kad" firstAttribute="width" secondItem="Fsg-ww-iGs" secondAttribute="width" multiplier="0.582126" id="eDg-IS-VZ6"/>
                                                     <constraint firstItem="1hn-Rl-ak4" firstAttribute="top" secondItem="iPW-I1-kad" secondAttribute="bottom" constant="15" id="eSL-U5-CNn"/>
                                                     <constraint firstAttribute="trailing" secondItem="iPW-I1-kad" secondAttribute="trailing" constant="20" id="nhY-hP-Rfi"/>
+                                                    <constraint firstItem="tja-41-gvk" firstAttribute="top" secondItem="TIm-VK-TiH" secondAttribute="bottom" constant="20" id="oSC-pG-ggz"/>
+                                                    <constraint firstItem="MG2-dV-EM5" firstAttribute="width" secondItem="Fsg-ww-iGs" secondAttribute="width" multiplier="0.903382" id="ofX-cU-FUJ"/>
                                                     <constraint firstAttribute="bottom" secondItem="TIm-VK-TiH" secondAttribute="bottom" constant="500" id="rpq-o0-i8J"/>
+                                                    <constraint firstItem="tja-41-gvk" firstAttribute="centerX" secondItem="Fsg-ww-iGs" secondAttribute="centerX" id="ubh-DM-giy"/>
                                                     <constraint firstItem="TIm-VK-TiH" firstAttribute="width" secondItem="1hn-Rl-ak4" secondAttribute="width" id="xet-Mi-JKu"/>
                                                     <constraint firstItem="TIm-VK-TiH" firstAttribute="centerX" secondItem="Fsg-ww-iGs" secondAttribute="centerX" id="y5p-8a-MvX"/>
                                                 </constraints>
@@ -531,6 +572,8 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="ZwB-aa-Xr5"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="IncidentsView" destination="tja-41-gvk" id="B6M-lj-bqR"/>
+                        <outlet property="ReviewsView" destination="MG2-dV-EM5" id="gYW-Xr-ke9"/>
                         <outlet property="benefitsAndLossesButton" destination="1hn-Rl-ak4" id="Zjt-kE-Egf"/>
                         <outlet property="benefitsButton" destination="brt-pi-3JQ" id="UGc-Dh-PtJ"/>
                         <outlet property="establishmentImage" destination="YIQ-Ne-SmB" id="mq1-wX-RWB"/>
@@ -793,18 +836,32 @@
             <point key="canvasLocation" x="3340.579710144928" y="186.83035714285714"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="yWm-5K-ewV">
+        <scene sceneID="yU1-q1-mk5">
             <objects>
-                <viewController id="acW-T4-Etk" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mfd-dU-wCT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="GCw-pJ-kNx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1GC-WM-TSY">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fs2-db-xd1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C7e-y0-4pb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="575"/>
+            <point key="canvasLocation" x="1309" y="903"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CUD-Bv-dsE">
+            <objects>
+                <viewController id="OXY-bp-5EA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dVC-fm-Lhh">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTu-vf-VyS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2043" y="904"/>
         </scene>
     </scenes>
     <resources>
@@ -824,11 +881,17 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
