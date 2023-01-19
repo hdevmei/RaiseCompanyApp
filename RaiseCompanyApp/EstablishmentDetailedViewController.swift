@@ -7,11 +7,24 @@
 
 import UIKit
 
-class EstablishmentDetailedViewController : UIViewController {
+class EstablishmentDetailedViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCollectionViewCell
+        
+        cell.EmployeeImage.image = UIImage(named: "oasiz")
+        return cell
+        
+    }
+    
     var establishment: Establishment!
     
+    @IBOutlet weak var employeesCollectionView: UICollectionView!
     @IBOutlet weak var establishmentImage: UIImageView!
-    
     @IBOutlet weak var ReviewsView: UIView!
     @IBOutlet weak var IncidentsView: UIView!
     
@@ -19,6 +32,7 @@ class EstablishmentDetailedViewController : UIViewController {
     @IBOutlet weak var grayView: UIView!
     @IBOutlet weak var ratingStars: UIImageView!
     
+    @IBOutlet weak var nEmployeesLabel: UILabel!
     @IBOutlet weak var benefitsButton: UIButton!
     @IBOutlet weak var lossesButton: UIButton!
     @IBOutlet weak var locationName: UILabel!
@@ -39,7 +53,7 @@ class EstablishmentDetailedViewController : UIViewController {
     }
     
     @IBAction func goGraphicsViewCOntroller(_ sender: Any) {
-
+        
         
         print("Go to Grapgics View")
     }
@@ -47,30 +61,29 @@ class EstablishmentDetailedViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
+        employeesCollectionView.dataSource = self    }
     
     
     //
     
     override func viewWillAppear(_ animated: Bool) {
+        
         establishmentImage.image = UIImage(named: "\(establishment.image)")
         locationName.text = "\(establishment.location)"
         ratingStars.image = UIImage(named: "\(establishment.rating)rating")
         benefitsButton.setTitle("  ▲ \(establishment.benefits) $", for: .normal)
         lossesButton.setTitle("  ▼ \(establishment.losses) $", for: .normal)
-        
+        nEmployeesLabel.text = "\(establishment.nEmployees) Employees"
         
         print("\(establishment.benefits)")
         //        nEmployees.text = "\(establishment.nEmployees)"
     }
     
-  
     
     
+
     
     
 }
-
 
 
