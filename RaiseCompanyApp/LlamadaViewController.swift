@@ -12,10 +12,4 @@ import Foundation
 class LlamadaViewController: ViewController{
     
     
-    
-    
-    
-    
-    
-    
 }

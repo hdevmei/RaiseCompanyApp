@@ -20,7 +20,6 @@
 		AF0FB1762975693F008734F8 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0FB1752975693F008734F8 /* EmployeesViewController.swift */; };
 		AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19712974B78300A04DBA /* AppDelegate.swift */; };
 		AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19732974B78300A04DBA /* SceneDelegate.swift */; };
-		AF9B19762974B78300A04DBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19752974B78300A04DBA /* ViewController.swift */; };
 		AF9B19792974B78300A04DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9B19772974B78300A04DBA /* Main.storyboard */; };
 		AF9B197B2974B78400A04DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF9B197A2974B78400A04DBA /* Assets.xcassets */; };
 		AF9B197E2974B78400A04DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9B197C2974B78400A04DBA /* LaunchScreen.storyboard */; };
@@ -28,7 +27,6 @@
 		AFF6058A2977599E00205792 /* EmployeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF605892977599E00205792 /* EmployeeCollectionViewCell.swift */; };
 		AFF6058C2977639300205792 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF6058B2977639300205792 /* Employee.swift */; };
 		AFF6058E2977682600205792 /* ProvisionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF6058D2977682600205792 /* ProvisionalData.swift */; };
-		AFF6059029786D8700205792 /* LlamadaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF6058F29786D8700205792 /* LlamadaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +44,6 @@
 		AF9B196E2974B78300A04DBA /* RaiseCompanyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiseCompanyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9B19712974B78300A04DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9B19732974B78300A04DBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF9B19752974B78300A04DBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF9B19782974B78300A04DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF9B197A2974B78400A04DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF9B197D2974B78400A04DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +52,6 @@
 		AFF605892977599E00205792 /* EmployeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCollectionViewCell.swift; sourceTree = "<group>"; };
 		AFF6058B2977639300205792 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		AFF6058D2977682600205792 /* ProvisionalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisionalData.swift; sourceTree = "<group>"; };
-		AFF6058F29786D8700205792 /* LlamadaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LlamadaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,31 +84,77 @@
 		AF9B19702974B78300A04DBA /* RaiseCompanyApp */ = {
 			isa = PBXGroup;
 			children = (
-				AF9B19712974B78300A04DBA /* AppDelegate.swift */,
-				AF9B19732974B78300A04DBA /* SceneDelegate.swift */,
-				AF9B19752974B78300A04DBA /* ViewController.swift */,
-				AF9B19772974B78300A04DBA /* Main.storyboard */,
-				AFF6058F29786D8700205792 /* LlamadaViewController.swift */,
-				AFF6058729761B1600205792 /* GraphicsViewController.swift */,
-				AF0D72092975C348000968A3 /* AddEstablishmentViewController.swift */,
-				AF0FB1752975693F008734F8 /* EmployeesViewController.swift */,
-				AF0FB17329754B20008734F8 /* EstablishmentDetailedViewController.swift */,
-				AFF6058D2977682600205792 /* ProvisionalData.swift */,
-				AFF605892977599E00205792 /* EmployeeCollectionViewCell.swift */,
-				AF06C1602974CA340063D55A /* EstablishmentRow.swift */,
-				AF06C15A2974C5CC0063D55A /* DataManager.swift */,
-				AFF6058B2977639300205792 /* Employee.swift */,
-				AF06C15E2974C79A0063D55A /* EstablishmentListViewController.swift */,
-				AF06C15C2974C5E10063D55A /* Establishment.swift */,
-				AF9B197A2974B78400A04DBA /* Assets.xcassets */,
+				AFB6E7A229797CC100B06CB8 /* OnBoarding */,
+				AFB6E7A329797CED00B06CB8 /* View extrensions */,
+				AFB6E7A429797D0500B06CB8 /* Delegate */,
 				AF9B197C2974B78400A04DBA /* LaunchScreen.storyboard */,
+				AF9B19772974B78300A04DBA /* Main.storyboard */,
+				AFB6E7A529797D5C00B06CB8 /* Views */,
+				AFB6E7A729797E0700B06CB8 /* Controllers */,
+				AFB6E7A629797D9600B06CB8 /* Model */,
+				AF9B197A2974B78400A04DBA /* Assets.xcassets */,
 				AF9B197F2974B78400A04DBA /* Info.plist */,
-				AF06C1642974D9B20063D55A /* UIView+Extension.swift */,
+			);
+			path = RaiseCompanyApp;
+			sourceTree = "<group>";
+		};
+		AFB6E7A229797CC100B06CB8 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
 				AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */,
 				AF06C1682974DDE30063D55A /* OnboardingSlide.swift */,
 				AF06C1662974DDE30063D55A /* OnboardingViewController.swift */,
 			);
-			path = RaiseCompanyApp;
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		AFB6E7A329797CED00B06CB8 /* View extrensions */ = {
+			isa = PBXGroup;
+			children = (
+				AF06C1642974D9B20063D55A /* UIView+Extension.swift */,
+			);
+			path = "View extrensions";
+			sourceTree = "<group>";
+		};
+		AFB6E7A429797D0500B06CB8 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				AF9B19712974B78300A04DBA /* AppDelegate.swift */,
+				AF9B19732974B78300A04DBA /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		AFB6E7A529797D5C00B06CB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AFF605892977599E00205792 /* EmployeeCollectionViewCell.swift */,
+				AF06C1602974CA340063D55A /* EstablishmentRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AFB6E7A629797D9600B06CB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFF6058B2977639300205792 /* Employee.swift */,
+				AFF6058D2977682600205792 /* ProvisionalData.swift */,
+				AF06C15C2974C5E10063D55A /* Establishment.swift */,
+				AF06C15A2974C5CC0063D55A /* DataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AFB6E7A729797E0700B06CB8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFF6058729761B1600205792 /* GraphicsViewController.swift */,
+				AF06C15E2974C79A0063D55A /* EstablishmentListViewController.swift */,
+				AF0D72092975C348000968A3 /* AddEstablishmentViewController.swift */,
+				AF0FB1752975693F008734F8 /* EmployeesViewController.swift */,
+				AF0FB17329754B20008734F8 /* EstablishmentDetailedViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,8 +233,6 @@
 				AF0FB17429754B20008734F8 /* EstablishmentDetailedViewController.swift in Sources */,
 				AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */,
 				AFF6058A2977599E00205792 /* EmployeeCollectionViewCell.swift in Sources */,
-				AF9B19762974B78300A04DBA /* ViewController.swift in Sources */,
-				AFF6059029786D8700205792 /* LlamadaViewController.swift in Sources */,
 				AF06C15B2974C5CC0063D55A /* DataManager.swift in Sources */,
 				AF0D720A2975C348000968A3 /* AddEstablishmentViewController.swift in Sources */,
 				AFF6058E2977682600205792 /* ProvisionalData.swift in Sources */,
@@ -349,6 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M6SJULPZBG;
@@ -378,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M6SJULPZBG;
