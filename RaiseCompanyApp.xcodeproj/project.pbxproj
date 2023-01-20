@@ -18,6 +18,7 @@
 		AF0D720A2975C348000968A3 /* AddEstablishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D72092975C348000968A3 /* AddEstablishmentViewController.swift */; };
 		AF0FB17429754B20008734F8 /* EstablishmentDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0FB17329754B20008734F8 /* EstablishmentDetailedViewController.swift */; };
 		AF0FB1762975693F008734F8 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0FB1752975693F008734F8 /* EmployeesViewController.swift */; };
+		AF2F07DE297A098C008B8548 /* SquareEmployeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F07DD297A098C008B8548 /* SquareEmployeeCollectionViewCell.swift */; };
 		AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19712974B78300A04DBA /* AppDelegate.swift */; };
 		AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19732974B78300A04DBA /* SceneDelegate.swift */; };
 		AF9B19792974B78300A04DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9B19772974B78300A04DBA /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		AF0D72092975C348000968A3 /* AddEstablishmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEstablishmentViewController.swift; sourceTree = "<group>"; };
 		AF0FB17329754B20008734F8 /* EstablishmentDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentDetailedViewController.swift; sourceTree = "<group>"; };
 		AF0FB1752975693F008734F8 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
+		AF2F07DD297A098C008B8548 /* SquareEmployeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareEmployeeCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF9B196E2974B78300A04DBA /* RaiseCompanyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiseCompanyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9B19712974B78300A04DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9B19732974B78300A04DBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				AFB6E7A429797D0500B06CB8 /* Delegate */,
 				AF9B197C2974B78400A04DBA /* LaunchScreen.storyboard */,
 				AF9B19772974B78300A04DBA /* Main.storyboard */,
+				AF2F07DD297A098C008B8548 /* SquareEmployeeCollectionViewCell.swift */,
 				AFB6E7A529797D5C00B06CB8 /* Views */,
 				AFB6E7A729797E0700B06CB8 /* Controllers */,
 				AFB6E7A629797D9600B06CB8 /* Model */,
@@ -237,6 +240,7 @@
 				AF0D720A2975C348000968A3 /* AddEstablishmentViewController.swift in Sources */,
 				AFF6058E2977682600205792 /* ProvisionalData.swift in Sources */,
 				AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */,
+				AF2F07DE297A098C008B8548 /* SquareEmployeeCollectionViewCell.swift in Sources */,
 				AF0FB1762975693F008734F8 /* EmployeesViewController.swift in Sources */,
 				AF06C15F2974C79A0063D55A /* EstablishmentListViewController.swift in Sources */,
 				AFF6058C2977639300205792 /* Employee.swift in Sources */,
@@ -320,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -374,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

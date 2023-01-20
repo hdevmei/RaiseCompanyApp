@@ -18,6 +18,8 @@ class GraphicsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        locationNameGraphicsLabel.text = establishment.location
         // Do any additional setup after loading the view.
     }
     

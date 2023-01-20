@@ -86,9 +86,6 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
 
 extension EstablishmentListViewController: UISearchBarDelegate{
     
-    
-    
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         DataManager.filteredEstablishments = []
         if searchText == "" {

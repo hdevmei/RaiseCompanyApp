@@ -54,9 +54,15 @@ class EstablishmentDetailedViewController : UIViewController, UICollectionViewDe
     
     @IBAction func goGraphicsViewCOntroller(_ sender: Any) {
         
+        performSegue(withIdentifier: "GoToGraphicsVC", sender: sender)
         
-        print("Go to Grapgics View")
     }
+    
+    
+    @IBAction func goEmployeesList(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToEmployeesList", sender: sender)
+    }
+    
     
     
     override func viewDidLoad() {
@@ -81,7 +87,17 @@ class EstablishmentDetailedViewController : UIViewController, UICollectionViewDe
     
     
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "GoToGraphicsVC"{
+            if let vc = segue.destination as? GraphicsViewController{
+                vc.establishment = establishment
+            }
+        }else if segue.identifier == "goToEmployeesList" {
+            if let vc = segue.destination as? EmployeesViewController{
+                vc.establishment = establishment
+            }
+        }
+    }
     
     
 }
