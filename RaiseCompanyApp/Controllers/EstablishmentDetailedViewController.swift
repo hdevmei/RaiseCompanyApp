@@ -31,11 +31,19 @@ class EstablishmentDetailedViewController : UIViewController, UICollectionViewDe
     @IBOutlet weak var benefitsAndLossesButton: UIView!
     @IBOutlet weak var grayView: UIView!
     @IBOutlet weak var ratingStars: UIImageView!
+    @IBOutlet weak var benefitsButton: UIButton!
+    
+    @IBOutlet weak var lossesButton: UIButton!
+    
+    @IBOutlet weak var locationName: UILabel!
+    
     
     @IBOutlet weak var nEmployeesLabel: UILabel!
-    @IBOutlet weak var benefitsButton: UIButton!
-    @IBOutlet weak var lossesButton: UIButton!
-    @IBOutlet weak var locationName: UILabel!
+    
+    
+    @IBOutlet weak var graView: UIView!
+    
+    
     //Outlets
     
     
@@ -67,7 +75,8 @@ class EstablishmentDetailedViewController : UIViewController, UICollectionViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        employeesCollectionView.dataSource = self    }
+        employeesCollectionView.dataSource = self
+    }
     
     
     //
@@ -80,7 +89,6 @@ class EstablishmentDetailedViewController : UIViewController, UICollectionViewDe
         benefitsButton.setTitle("  ▲ \(establishment.benefits) $", for: .normal)
         lossesButton.setTitle("  ▼ \(establishment.losses) $", for: .normal)
         nEmployeesLabel.text = "\(establishment.nEmployees) Employees"
-        
         print("\(establishment.benefits)")
         //        nEmployees.text = "\(establishment.nEmployees)"
     }

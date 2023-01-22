@@ -43,13 +43,16 @@ class EstablishmentListViewController: UIViewController, UITableViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         mySearchBar.delegate = self
         myEstablishmentsList.delegate = self
         myEstablishmentsList.dataSource = self
-        
-        
+//        mySearchBar.searchTextField.backgroundColor = .gray
         DataManager.filteredEstablishments = DataManager.establishments
+//        navigationController?.navigationBar.barTintColor = UIColor(red: 0.05, green: 0.16, blue: 0.25, alpha: 1.00)
+//        tabBarController?.tabBar.barTintColor = UIColor(red: 0.05, green: 0.16, blue: 0.25, alpha: 1.00)
         // Do any additional setup after loading the view.
+
     }
     
     
