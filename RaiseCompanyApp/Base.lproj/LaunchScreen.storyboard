@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mOk-PC-QbQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,19 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="IYt-6D-7nh">
-                                <rect key="frame" x="112.5" y="207" width="189" height="107"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashLogo" translatesAutoresizingMaskIntoConstraints="NO" id="IYt-6D-7nh">
+                                <rect key="frame" x="76" y="127" width="262" height="206"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="IYt-6D-7nh" secondAttribute="height" multiplier="302:259" constant="64.235521235521247" id="HfN-Tr-XbM"/>
+                                    <constraint firstAttribute="width" secondItem="IYt-6D-7nh" secondAttribute="height" multiplier="131:103" id="N2y-PG-1Bl"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bif-iT-PgI">
+                                <rect key="frame" x="91.5" y="604" width="231" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bif-iT-PgI" secondAttribute="height" multiplier="77:20" id="AEH-zr-BZM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="41"/>
+                                <color key="textColor" red="0.42683988810000001" green="0.87295550109999998" blue="0.84217351679999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4DR-G8-LzS"/>
-                        <color key="backgroundColor" red="0.38833144310000001" green="0.46172046659999999" blue="0.51321876050000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="IYt-6D-7nh" firstAttribute="centerX" secondItem="4DR-G8-LzS" secondAttribute="centerX" id="7HC-bC-ilR"/>
-                            <constraint firstItem="IYt-6D-7nh" firstAttribute="width" secondItem="OgO-99-LQ1" secondAttribute="width" multiplier="0.729469" constant="-113.00016600000004" id="AgU-He-zb7"/>
-                            <constraint firstItem="IYt-6D-7nh" firstAttribute="top" secondItem="4DR-G8-LzS" secondAttribute="top" constant="159" id="ngf-cN-0Rq"/>
+                            <constraint firstItem="bif-iT-PgI" firstAttribute="top" secondItem="IYt-6D-7nh" secondAttribute="bottom" constant="271" id="2r8-hR-qsa"/>
+                            <constraint firstItem="IYt-6D-7nh" firstAttribute="width" secondItem="OgO-99-LQ1" secondAttribute="width" multiplier="0.63285" id="9c4-hP-Ru0"/>
+                            <constraint firstItem="IYt-6D-7nh" firstAttribute="top" secondItem="4DR-G8-LzS" secondAttribute="top" constant="79" id="cPS-et-EUP"/>
+                            <constraint firstItem="IYt-6D-7nh" firstAttribute="centerX" secondItem="4DR-G8-LzS" secondAttribute="centerX" id="g63-LH-5Ec"/>
+                            <constraint firstItem="bif-iT-PgI" firstAttribute="width" secondItem="OgO-99-LQ1" secondAttribute="width" multiplier="0.557971" id="oxW-vy-cZM"/>
+                            <constraint firstItem="bif-iT-PgI" firstAttribute="centerX" secondItem="4DR-G8-LzS" secondAttribute="centerX" id="vtq-Y6-YCn"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon" width="512" height="248"/>
+        <image name="SplashLogo" width="512" height="658"/>
     </resources>
 </document>
