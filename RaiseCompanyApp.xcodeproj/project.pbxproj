@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF04C0EA2981E5D00007FF2C /* AddEstablishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */; };
+		AF04C0EC2981E6F60007FF2C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF04C0EB2981E6F60007FF2C /* DataManager.swift */; };
 		AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1642974D9B20063D55A /* UIView+Extension.swift */; };
 		AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1662974DDE30063D55A /* OnboardingViewController.swift */; };
 		AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */; };
 		AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1682974DDE30063D55A /* OnboardingSlide.swift */; };
-		AF4403DA298094EA008014E6 /* EstablishmentsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4403D9298094EA008014E6 /* EstablishmentsListVC.swift */; };
+		AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */; };
 		AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19712974B78300A04DBA /* AppDelegate.swift */; };
 		AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19732974B78300A04DBA /* SceneDelegate.swift */; };
 		AF9B19792974B78300A04DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9B19772974B78300A04DBA /* Main.storyboard */; };
@@ -20,11 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEstablishmentViewController.swift; sourceTree = "<group>"; };
+		AF04C0EB2981E6F60007FF2C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		AF06C1642974D9B20063D55A /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		AF06C1662974DDE30063D55A /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF06C1682974DDE30063D55A /* OnboardingSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
-		AF4403D9298094EA008014E6 /* EstablishmentsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentsListVC.swift; sourceTree = "<group>"; };
+		AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentsListViewController.swift; sourceTree = "<group>"; };
 		AF9B196E2974B78300A04DBA /* RaiseCompanyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiseCompanyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9B19712974B78300A04DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9B19732974B78300A04DBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF04C0ED2981E8270007FF2C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AF9B197C2974B78400A04DBA /* LaunchScreen.storyboard */,
+				AF9B19772974B78300A04DBA /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		AF9B19652974B78300A04DBA = {
 			isa = PBXGroup;
 			children = (
@@ -64,16 +77,14 @@
 		AF9B19702974B78300A04DBA /* RaiseCompanyApp */ = {
 			isa = PBXGroup;
 			children = (
+				AFB6E7A429797D0500B06CB8 /* Delegate */,
+				AF04C0ED2981E8270007FF2C /* Storyboards */,
 				AFB6E7A229797CC100B06CB8 /* OnBoarding */,
 				AFB6E7A329797CED00B06CB8 /* View extrensions */,
-				AFB6E7A429797D0500B06CB8 /* Delegate */,
-				AF9B197C2974B78400A04DBA /* LaunchScreen.storyboard */,
-				AF9B19772974B78300A04DBA /* Main.storyboard */,
-				AF4403D9298094EA008014E6 /* EstablishmentsListVC.swift */,
+				AF9B197A2974B78400A04DBA /* Assets.xcassets */,
 				AFB6E7A529797D5C00B06CB8 /* Views */,
 				AFB6E7A729797E0700B06CB8 /* Controllers */,
 				AFB6E7A629797D9600B06CB8 /* Model */,
-				AF9B197A2974B78400A04DBA /* Assets.xcassets */,
 				AF9B197F2974B78400A04DBA /* Info.plist */,
 			);
 			path = RaiseCompanyApp;
@@ -116,6 +127,7 @@
 		AFB6E7A629797D9600B06CB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AF04C0EB2981E6F60007FF2C /* DataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +135,8 @@
 		AFB6E7A729797E0700B06CB8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */,
+				AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -198,12 +212,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF4403DA298094EA008014E6 /* EstablishmentsListVC.swift in Sources */,
+				AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */,
 				AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */,
+				AF04C0EA2981E5D00007FF2C /* AddEstablishmentViewController.swift in Sources */,
 				AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */,
 				AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */,
 				AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */,
 				AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */,
+				AF04C0EC2981E6F60007FF2C /* DataManager.swift in Sources */,
 				AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

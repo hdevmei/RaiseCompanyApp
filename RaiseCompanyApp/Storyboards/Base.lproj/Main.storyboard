@@ -346,7 +346,7 @@
                     <connections>
                         <outlet property="myEstablishmentListTableView" destination="9iu-9Q-Z4F" id="iua-1X-4Yi"/>
                         <outlet property="mySearchBar" destination="NwK-Kk-bNd" id="FJ8-bU-9jj"/>
-                        <segue destination="coo-ao-CRL" kind="show" id="zze-cu-Gaj"/>
+                        <segue destination="coo-ao-CRL" kind="show" identifier="" id="zze-cu-Gaj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyn-OO-oRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -367,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfN-Ot-bzq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5017" y="2218"/>
+            <point key="canvasLocation" x="5128" y="2218"/>
         </scene>
         <!--My Profile-->
         <scene sceneID="fI0-Vv-FAF">
@@ -421,16 +421,48 @@
             </objects>
             <point key="canvasLocation" x="2452" y="2614"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Establishment-->
         <scene sceneID="Fap-ds-aAD">
             <objects>
-                <viewController id="gaT-td-U0K" sceneMemberID="viewController">
+                <viewController title="Add Establishment" id="gaT-td-U0K" customClass="AddEstablishmentViewController" customModule="RaiseCompanyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="90l-B4-0Ug">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add establishment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9J8-3w-zf7">
+                                <rect key="frame" x="132.5" y="30" width="149" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inh-By-t9y">
+                                <rect key="frame" x="333" y="23" width="61" height="35"/>
+                                <color key="tintColor" red="0.42683988810000001" green="0.87295550109999998" blue="0.84217351679999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Izi-KM-Kd7">
+                                <rect key="frame" x="20" y="23" width="76.5" height="35"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelBtn:" destination="gaT-td-U0K" eventType="touchUpInside" id="MSy-QL-oSn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="HrS-4V-1Oj"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.090196087960000004" green="0.094117648900000003" blue="0.109803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="HrS-4V-1Oj" firstAttribute="trailing" secondItem="inh-By-t9y" secondAttribute="trailing" constant="20" id="5uI-Ca-vg6"/>
+                            <constraint firstItem="Izi-KM-Kd7" firstAttribute="leading" secondItem="HrS-4V-1Oj" secondAttribute="leading" constant="20" id="7ES-47-UqL"/>
+                            <constraint firstItem="Izi-KM-Kd7" firstAttribute="centerY" secondItem="9J8-3w-zf7" secondAttribute="centerY" id="8LJ-Ya-MV6"/>
+                            <constraint firstItem="9J8-3w-zf7" firstAttribute="top" secondItem="HrS-4V-1Oj" secondAttribute="top" constant="30" id="hDK-vo-XbK"/>
+                            <constraint firstItem="inh-By-t9y" firstAttribute="centerY" secondItem="9J8-3w-zf7" secondAttribute="centerY" id="kyr-uE-iK5"/>
+                            <constraint firstItem="9J8-3w-zf7" firstAttribute="centerX" secondItem="HrS-4V-1Oj" secondAttribute="centerX" id="nAk-ys-yR8"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hC8-b5-kfX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
