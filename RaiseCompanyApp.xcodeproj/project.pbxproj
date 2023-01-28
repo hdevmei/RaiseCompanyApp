@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		896A1FBCAA15B2A3F74A8706 /* Pods_RaiseCompanyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3288570F4B36C202CF50B9DC /* Pods_RaiseCompanyApp.framework */; };
 		AF04C0EA2981E5D00007FF2C /* AddEstablishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */; };
 		AF04C0EC2981E6F60007FF2C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF04C0EB2981E6F60007FF2C /* DataManager.swift */; };
+		AF04C0EF2982E6A00007FF2C /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF04C0EE2982E6A00007FF2C /* ChatsViewController.swift */; };
 		AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1642974D9B20063D55A /* UIView+Extension.swift */; };
 		AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1662974DDE30063D55A /* OnboardingViewController.swift */; };
 		AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */; };
@@ -22,8 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3288570F4B36C202CF50B9DC /* Pods_RaiseCompanyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaiseCompanyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		641A4E71A63F44005F9A3D0C /* Pods-RaiseCompanyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiseCompanyApp.release.xcconfig"; path = "Target Support Files/Pods-RaiseCompanyApp/Pods-RaiseCompanyApp.release.xcconfig"; sourceTree = "<group>"; };
 		AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEstablishmentViewController.swift; sourceTree = "<group>"; };
 		AF04C0EB2981E6F60007FF2C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		AF04C0EE2982E6A00007FF2C /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		AF06C1642974D9B20063D55A /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		AF06C1662974DDE30063D55A /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -36,6 +41,7 @@
 		AF9B197A2974B78400A04DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF9B197D2974B78400A04DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF9B197F2974B78400A04DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2B69A363D4CC427D844C10B /* Pods-RaiseCompanyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiseCompanyApp.debug.xcconfig"; path = "Target Support Files/Pods-RaiseCompanyApp/Pods-RaiseCompanyApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,12 +49,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				896A1FBCAA15B2A3F74A8706 /* Pods_RaiseCompanyApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D4F16C160527AC33CE73201 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2B69A363D4CC427D844C10B /* Pods-RaiseCompanyApp.debug.xcconfig */,
+				641A4E71A63F44005F9A3D0C /* Pods-RaiseCompanyApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3D90F8964C67E1F31A4405B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3288570F4B36C202CF50B9DC /* Pods_RaiseCompanyApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AF04C0ED2981E8270007FF2C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -61,8 +86,11 @@
 		AF9B19652974B78300A04DBA = {
 			isa = PBXGroup;
 			children = (
+				AF04C0EE2982E6A00007FF2C /* ChatsViewController.swift */,
 				AF9B19702974B78300A04DBA /* RaiseCompanyApp */,
 				AF9B196F2974B78300A04DBA /* Products */,
+				0D4F16C160527AC33CE73201 /* Pods */,
+				3D90F8964C67E1F31A4405B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF9B19822974B78400A04DBA /* Build configuration list for PBXNativeTarget "RaiseCompanyApp" */;
 			buildPhases = (
+				24AFBF0A057E58108E04D5C5 /* [CP] Check Pods Manifest.lock */,
 				AF9B196A2974B78300A04DBA /* Sources */,
 				AF9B196B2974B78300A04DBA /* Frameworks */,
 				AF9B196C2974B78300A04DBA /* Resources */,
+				4F14C26CB849C86D4931F99E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,6 +237,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		24AFBF0A057E58108E04D5C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RaiseCompanyApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F14C26CB849C86D4931F99E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RaiseCompanyApp/Pods-RaiseCompanyApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RaiseCompanyApp/Pods-RaiseCompanyApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RaiseCompanyApp/Pods-RaiseCompanyApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AF9B196A2974B78300A04DBA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -214,6 +286,7 @@
 			files = (
 				AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */,
 				AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */,
+				AF04C0EF2982E6A00007FF2C /* ChatsViewController.swift in Sources */,
 				AF04C0EA2981E5D00007FF2C /* AddEstablishmentViewController.swift in Sources */,
 				AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */,
 				AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */,
@@ -362,6 +435,7 @@
 		};
 		AF9B19832974B78400A04DBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2B69A363D4CC427D844C10B /* Pods-RaiseCompanyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -392,6 +466,7 @@
 		};
 		AF9B19842974B78400A04DBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 641A4E71A63F44005F9A3D0C /* Pods-RaiseCompanyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
