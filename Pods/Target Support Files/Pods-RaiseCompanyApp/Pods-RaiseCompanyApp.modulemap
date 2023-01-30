@@ -1,0 +1,6 @@
+framework module Pods_RaiseCompanyApp {
+  umbrella header "Pods-RaiseCompanyApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

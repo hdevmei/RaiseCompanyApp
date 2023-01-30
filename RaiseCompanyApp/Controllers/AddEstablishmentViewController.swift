@@ -25,13 +25,14 @@ class AddEstablishmentViewController: UIViewController{
     @IBOutlet weak var lossesTextField: UITextField!
     
     @IBOutlet weak var scheduleTextField: UITextField!
-    
+    /*
     let params: Parameters = [
         "benefits": 2000,
         "losses": 1500,
         "schedule": "11:00 - 19:00",
         "location": "FANTASAMA",
     ]
+     */
     
     @IBAction func cancelBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -42,7 +43,7 @@ class AddEstablishmentViewController: UIViewController{
         print("apretado")
         checkTextfields()
         if canSaveEstablishment == true{
-//          do post 
+//          do post
             DataManager.postMethod(url: url, params: params)
             self.dismiss(animated: true, completion: nil)
         } else if canSaveEstablishment == false{
@@ -54,7 +55,8 @@ class AddEstablishmentViewController: UIViewController{
 
     }
     
-    
+    let params = [
+    ]
     
     
     func checkTextfields(){
@@ -64,6 +66,9 @@ class AddEstablishmentViewController: UIViewController{
             canSaveEstablishment = true
         }
     }
+    
+    
+    
     
     /*
     func showToast(){
