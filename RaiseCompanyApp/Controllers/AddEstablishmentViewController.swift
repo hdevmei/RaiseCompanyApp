@@ -44,7 +44,7 @@ class AddEstablishmentViewController: UIViewController{
         checkTextfields()
         if canSaveEstablishment == true{
 //          do post
-            DataManager.postMethod(url: url, params: params)
+//            DataManager.postMethod(url: url, params: params)
             self.dismiss(animated: true, completion: nil)
         } else if canSaveEstablishment == false{
             print("faltan campos")
@@ -55,8 +55,7 @@ class AddEstablishmentViewController: UIViewController{
 
     }
     
-    let params = [
-    ]
+
     
     
     func checkTextfields(){

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		896A1FBCAA15B2A3F74A8706 /* Pods_RaiseCompanyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3288570F4B36C202CF50B9DC /* Pods_RaiseCompanyApp.framework */; };
 		AF04C0EA2981E5D00007FF2C /* AddEstablishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */; };
-		AF04C0EC2981E6F60007FF2C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF04C0EB2981E6F60007FF2C /* DataManager.swift */; };
 		AF04C0EF2982E6A00007FF2C /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF04C0EE2982E6A00007FF2C /* ChatsViewController.swift */; };
 		AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1642974D9B20063D55A /* UIView+Extension.swift */; };
 		AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1662974DDE30063D55A /* OnboardingViewController.swift */; };
@@ -21,13 +20,15 @@
 		AF9B19792974B78300A04DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9B19772974B78300A04DBA /* Main.storyboard */; };
 		AF9B197B2974B78400A04DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF9B197A2974B78400A04DBA /* Assets.xcassets */; };
 		AF9B197E2974B78400A04DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9B197C2974B78400A04DBA /* LaunchScreen.storyboard */; };
+		AFBC0E50298AC9BA0002DDFC /* EstablishmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */; };
+		AFCF1369298A607100934EA4 /* Establishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF1368298A607100934EA4 /* Establishment.swift */; };
+		AFCF136B298A746200934EA4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF136A298A746200934EA4 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3288570F4B36C202CF50B9DC /* Pods_RaiseCompanyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaiseCompanyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		641A4E71A63F44005F9A3D0C /* Pods-RaiseCompanyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiseCompanyApp.release.xcconfig"; path = "Target Support Files/Pods-RaiseCompanyApp/Pods-RaiseCompanyApp.release.xcconfig"; sourceTree = "<group>"; };
 		AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEstablishmentViewController.swift; sourceTree = "<group>"; };
-		AF04C0EB2981E6F60007FF2C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		AF04C0EE2982E6A00007FF2C /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		AF06C1642974D9B20063D55A /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		AF06C1662974DDE30063D55A /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +42,9 @@
 		AF9B197A2974B78400A04DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF9B197D2974B78400A04DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF9B197F2974B78400A04DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentDetailViewController.swift; sourceTree = "<group>"; };
+		AFCF1368298A607100934EA4 /* Establishment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Establishment.swift; sourceTree = "<group>"; };
+		AFCF136A298A746200934EA4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B2B69A363D4CC427D844C10B /* Pods-RaiseCompanyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiseCompanyApp.debug.xcconfig"; path = "Target Support Files/Pods-RaiseCompanyApp/Pods-RaiseCompanyApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +66,6 @@
 				B2B69A363D4CC427D844C10B /* Pods-RaiseCompanyApp.debug.xcconfig */,
 				641A4E71A63F44005F9A3D0C /* Pods-RaiseCompanyApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -155,7 +158,8 @@
 		AFB6E7A629797D9600B06CB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AF04C0EB2981E6F60007FF2C /* DataManager.swift */,
+				AFCF136C298A8B0500934EA4 /* Domain */,
+				AFCF136A298A746200934EA4 /* DataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,8 +169,17 @@
 			children = (
 				AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */,
 				AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */,
+				AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AFCF136C298A8B0500934EA4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AFCF1368298A607100934EA4 /* Establishment.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCF1369298A607100934EA4 /* Establishment.swift in Sources */,
 				AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */,
 				AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */,
 				AF04C0EF2982E6A00007FF2C /* ChatsViewController.swift in Sources */,
@@ -291,9 +305,10 @@
 				AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */,
 				AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */,
 				AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */,
+				AFCF136B298A746200934EA4 /* DataManager.swift in Sources */,
 				AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */,
-				AF04C0EC2981E6F60007FF2C /* DataManager.swift in Sources */,
 				AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */,
+				AFBC0E50298AC9BA0002DDFC /* EstablishmentDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

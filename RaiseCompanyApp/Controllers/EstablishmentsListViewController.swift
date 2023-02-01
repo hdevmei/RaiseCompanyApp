@@ -19,6 +19,14 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
           return cell
       }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("hola")
+
+        performSegue(withIdentifier: "EstablishmentDetailedViewController", sender: nil)
+
+    }
+    
     @IBOutlet weak var mySearchBar: UISearchBar!
     
     @IBOutlet weak var myEstablishmentListTableView: UITableView!
@@ -31,6 +39,9 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
            myEstablishmentListTableView.dataSource = self
            myEstablishmentListTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
        }
+    
+    
+    
     
     
 }
