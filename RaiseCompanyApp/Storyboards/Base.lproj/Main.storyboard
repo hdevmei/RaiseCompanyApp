@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="i1u-dY-1ID">
-                                <rect key="frame" x="139.5" y="730" width="135" height="26"/>
+                                <rect key="frame" x="140" y="730" width="134" height="26"/>
                                 <color key="pageIndicatorTintColor" red="0.051516242330000003" green="0.15815278890000001" blue="0.25037035349999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
@@ -476,21 +476,50 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="vjv-Aa-Dq0" secondAttribute="height" multiplier="83:31" id="556-m7-q8O"/>
                                                         </constraints>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JqB-ox-Whr">
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JqB-ox-Whr">
                                                             <size key="itemSize" width="106" height="126"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gcm-Jj-96B">
-                                                                <rect key="frame" x="0.0" y="0.0" width="106" height="126"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Lt4-DU-czB">
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" reuseIdentifier="roundedEmployeeCell" translatesAutoresizingMaskIntoConstraints="NO" id="gcm-Jj-96B" customClass="EmployeeCollectionViewCell" customModule="RaiseCompanyApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="-1" width="106" height="126"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vg8-k7-v16">
                                                                     <rect key="frame" x="0.0" y="0.0" width="106" height="126"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oasiz" translatesAutoresizingMaskIntoConstraints="NO" id="lLJ-eL-ueF">
+                                                                            <rect key="frame" x="10.5" y="8" width="85" height="85"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="lLJ-eL-ueF" secondAttribute="height" multiplier="1:1" id="UBy-xz-CHd"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmA-dJ-plk">
+                                                                            <rect key="frame" x="21.5" y="101" width="63" height="13.5"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="BmA-dJ-plk" secondAttribute="height" multiplier="14:3" id="KfK-7p-VP5"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                            <color key="textColor" red="0.91407996420000004" green="0.91756623979999996" blue="0.92153173690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="BmA-dJ-plk" firstAttribute="centerX" secondItem="vg8-k7-v16" secondAttribute="centerX" id="0HN-nR-noK"/>
+                                                                        <constraint firstItem="lLJ-eL-ueF" firstAttribute="top" secondItem="vg8-k7-v16" secondAttribute="top" constant="8" id="7lc-xT-ken"/>
+                                                                        <constraint firstItem="lLJ-eL-ueF" firstAttribute="width" secondItem="vg8-k7-v16" secondAttribute="width" multiplier="0.801887" id="8uw-dK-h9E"/>
+                                                                        <constraint firstItem="BmA-dJ-plk" firstAttribute="top" secondItem="lLJ-eL-ueF" secondAttribute="bottom" constant="8" symbolic="YES" id="E8d-Nk-gBW"/>
+                                                                        <constraint firstAttribute="width" secondItem="lLJ-eL-ueF" secondAttribute="height" multiplier="106:85" id="Ewo-GW-cUi"/>
+                                                                        <constraint firstItem="lLJ-eL-ueF" firstAttribute="centerX" secondItem="vg8-k7-v16" secondAttribute="centerX" id="Xea-hD-6Ya"/>
+                                                                    </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <size key="customSize" width="106" height="126"/>
+                                                                <connections>
+                                                                    <outlet property="employeeImage" destination="lLJ-eL-ueF" id="qMu-C3-JXU"/>
+                                                                    <outlet property="nameEmployee" destination="BmA-dJ-plk" id="Dlo-mm-Oxt"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                     </collectionView>
@@ -567,7 +596,6 @@
                                             <constraint firstAttribute="trailing" secondItem="qFb-2u-FEh" secondAttribute="trailing" constant="19" id="nYT-ZG-deN"/>
                                             <constraint firstItem="qFb-2u-FEh" firstAttribute="top" secondItem="FFd-MY-Ksg" secondAttribute="bottom" constant="8" symbolic="YES" id="oNu-Gy-NtT"/>
                                             <constraint firstItem="FFd-MY-Ksg" firstAttribute="width" secondItem="64L-bV-ykB" secondAttribute="width" multiplier="0.478261" constant="-13" id="tpX-md-GX1"/>
-                                            <constraint firstItem="5ep-ck-uq6" firstAttribute="width" secondItem="64L-bV-ykB" secondAttribute="height" multiplier="19:280" id="xCT-fm-pUz"/>
                                             <constraint firstAttribute="bottom" secondItem="Ous-DH-3BM" secondAttribute="bottom" id="yT3-S3-KlF"/>
                                         </constraints>
                                     </view>
@@ -593,6 +621,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Establishment" largeTitleDisplayMode="never" id="wVQ-rg-r0P"/>
                     <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="employeesCollectionView" destination="vjv-Aa-Dq0" id="sxw-JT-GNZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfN-Ot-bzq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,7 +734,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="benefits last month..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eRj-zp-NEm">
@@ -718,7 +748,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="losses last month..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eW5-pc-rWa">
@@ -733,7 +762,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEa-YF-kIN">
@@ -746,7 +774,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="schedule..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vOD-N1-kK0">
@@ -761,7 +789,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
