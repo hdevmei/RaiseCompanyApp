@@ -9,7 +9,7 @@ import UIKit
 
 class EmployeeCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var employeeImage: UIImageView!
+  @IBOutlet weak var employeeImage: UIImageView!
     
     @IBOutlet weak var nameEmployee: UILabel!
 }

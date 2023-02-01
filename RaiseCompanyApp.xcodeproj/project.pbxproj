@@ -153,6 +153,7 @@
 		AFB6E7A529797D5C00B06CB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AF3323EA298AF4AC00C7065F /* EmployeeCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,7 +173,6 @@
 				AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */,
 				AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */,
 				AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */,
-				AF3323EA298AF4AC00C7065F /* EmployeeCollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
