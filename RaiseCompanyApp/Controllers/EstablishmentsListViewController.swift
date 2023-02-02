@@ -8,8 +8,7 @@
 import UIKit
 import Alamofire
 import Foundation
-
-
+import Kingfisher
 class EstablishmentListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
 
@@ -46,8 +45,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         cell.location.text = establishment?.location
         cell.benefits.titleLabel?.text = "▲  \(establishment!.benefits)"
         cell.losses.titleLabel?.text = "▲  \(establishment!.losses)"
-        
-        
+        cell.imgEstablishment.kf.setImage(with: URL(string: "\(establishment!.photo)"))
         return cell
     }
     
