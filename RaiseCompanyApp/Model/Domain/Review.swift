@@ -11,6 +11,7 @@ import UIKit
 
 class Review : Codable {
     let id_review: Int
+    let tittle: String
     let raintg: Float
     let date: String
     let description: String

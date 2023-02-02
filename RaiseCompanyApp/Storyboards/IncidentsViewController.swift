@@ -1,5 +1,5 @@
 //
-//  ReviewsListViewController.swift
+//  IncidentsViewController.swift
 //  RaiseCompanyApp
 //
 //  Created by mei_yocontrolo on 02/02/2023.
@@ -7,27 +7,24 @@
 
 import UIKit
 
-class ReviewsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var reviewsTable: UITableView!
-    
+class IncidentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var incidentsTable: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 15
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "incidentCell", for: indexPath)
         return cell
+        
     }
-    
-
-
-    @IBOutlet weak var reviewsTableView: UITableView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        reviewsTable.delegate = self
-        reviewsTable.dataSource = self
+        incidentsTable.dataSource = self
+        incidentsTable.delegate = self
         // Do any additional setup after loading the view.
     }
     

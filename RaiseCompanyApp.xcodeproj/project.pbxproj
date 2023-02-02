@@ -16,6 +16,8 @@
 		AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1682974DDE30063D55A /* OnboardingSlide.swift */; };
 		AF3323EB298AF4AC00C7065F /* EmployeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3323EA298AF4AC00C7065F /* EmployeeCollectionViewCell.swift */; };
 		AF405484298BBFF800D0320F /* ReviewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405483298BBFF800D0320F /* ReviewsListViewController.swift */; };
+		AF405486298BCB9A00D0320F /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405485298BCB9A00D0320F /* Incident.swift */; };
+		AF405488298BD85800D0320F /* IncidentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405487298BD85800D0320F /* IncidentsViewController.swift */; };
 		AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */; };
 		AF91B18F298BB8DB00C87A21 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91B18E298BB8DB00C87A21 /* Review.swift */; };
 		AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19712974B78300A04DBA /* AppDelegate.swift */; };
@@ -39,6 +41,8 @@
 		AF06C1682974DDE30063D55A /* OnboardingSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		AF3323EA298AF4AC00C7065F /* EmployeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF405483298BBFF800D0320F /* ReviewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListViewController.swift; sourceTree = "<group>"; };
+		AF405485298BCB9A00D0320F /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
+		AF405487298BD85800D0320F /* IncidentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentsViewController.swift; sourceTree = "<group>"; };
 		AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentsListViewController.swift; sourceTree = "<group>"; };
 		AF91B18E298BB8DB00C87A21 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		AF9B196E2974B78300A04DBA /* RaiseCompanyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiseCompanyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +92,7 @@
 			children = (
 				AF9B197C2974B78400A04DBA /* LaunchScreen.storyboard */,
 				AF9B19772974B78300A04DBA /* Main.storyboard */,
+				AF405487298BD85800D0320F /* IncidentsViewController.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 		AFCF136C298A8B0500934EA4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				AF405485298BCB9A00D0320F /* Incident.swift */,
 				AFCF1368298A607100934EA4 /* Establishment.swift */,
 				AF91B18E298BB8DB00C87A21 /* Review.swift */,
 			);
@@ -307,12 +313,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCF1369298A607100934EA4 /* Establishment.swift in Sources */,
+				AF405488298BD85800D0320F /* IncidentsViewController.swift in Sources */,
 				AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */,
 				AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */,
 				AF405484298BBFF800D0320F /* ReviewsListViewController.swift in Sources */,
 				AF04C0EF2982E6A00007FF2C /* ChatsViewController.swift in Sources */,
 				AF04C0EA2981E5D00007FF2C /* AddEstablishmentViewController.swift in Sources */,
 				AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */,
+				AF405486298BCB9A00D0320F /* Incident.swift in Sources */,
 				AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */,
 				AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */,
 				AFCF136B298A746200934EA4 /* DataManager.swift in Sources */,
