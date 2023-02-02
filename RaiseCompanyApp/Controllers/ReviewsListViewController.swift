@@ -11,7 +11,7 @@ class ReviewsListViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var reviewsTable: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 40
+        return 13
         
     }
     
