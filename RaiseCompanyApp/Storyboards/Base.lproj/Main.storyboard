@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mAf-qB-3oT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9e5-5b-Rjl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -116,7 +116,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="85X-cE-X9d"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.14663219450000001" green="0.19555819029999999" blue="0.2232383788" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ba0-rM-bWi" firstAttribute="top" secondItem="i1u-dY-1ID" secondAttribute="bottom" constant="16" id="3fB-kq-mmX"/>
                             <constraint firstItem="KNd-hc-PWm" firstAttribute="top" secondItem="85X-cE-X9d" secondAttribute="top" id="4jU-yv-Qlp"/>
@@ -258,7 +258,7 @@
                                                             <buttonConfiguration key="configuration" style="plain" title="▲ 2,133 $" cornerStyle="large">
                                                                 <backgroundConfiguration key="background" image="losses"/>
                                                                 <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </buttonConfiguration>
                                                         </button>
                                                     </subviews>
@@ -349,7 +349,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="myEstablishmentListTableView" destination="9iu-9Q-Z4F" id="iua-1X-4Yi"/>
+                        <outlet property="myEstablishmentListTableView" destination="9iu-9Q-Z4F" id="1KU-c5-Xaq"/>
                         <outlet property="mySearchBar" destination="NwK-Kk-bNd" id="FJ8-bU-9jj"/>
                         <segue destination="coo-ao-CRL" kind="push" identifier="EstablishmentDetailedViewController" id="Ma8-FY-4qH"/>
                     </connections>
