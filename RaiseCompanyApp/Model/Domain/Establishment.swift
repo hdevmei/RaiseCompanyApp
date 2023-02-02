@@ -8,10 +8,5 @@
 import Foundation
 
 
-struct Establishment: Codable {
-    let user: String
-    let pass: Int
-}
-
 
 
