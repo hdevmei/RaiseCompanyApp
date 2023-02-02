@@ -15,7 +15,9 @@
 		AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */; };
 		AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1682974DDE30063D55A /* OnboardingSlide.swift */; };
 		AF3323EB298AF4AC00C7065F /* EmployeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3323EA298AF4AC00C7065F /* EmployeeCollectionViewCell.swift */; };
+		AF405484298BBFF800D0320F /* ReviewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405483298BBFF800D0320F /* ReviewsListViewController.swift */; };
 		AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */; };
+		AF91B18F298BB8DB00C87A21 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91B18E298BB8DB00C87A21 /* Review.swift */; };
 		AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19712974B78300A04DBA /* AppDelegate.swift */; };
 		AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19732974B78300A04DBA /* SceneDelegate.swift */; };
 		AF9B19792974B78300A04DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9B19772974B78300A04DBA /* Main.storyboard */; };
@@ -36,7 +38,9 @@
 		AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF06C1682974DDE30063D55A /* OnboardingSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		AF3323EA298AF4AC00C7065F /* EmployeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF405483298BBFF800D0320F /* ReviewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListViewController.swift; sourceTree = "<group>"; };
 		AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentsListViewController.swift; sourceTree = "<group>"; };
+		AF91B18E298BB8DB00C87A21 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		AF9B196E2974B78300A04DBA /* RaiseCompanyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiseCompanyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9B19712974B78300A04DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9B19732974B78300A04DBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */,
 				AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */,
 				AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */,
+				AF405483298BBFF800D0320F /* ReviewsListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				AFCF1368298A607100934EA4 /* Establishment.swift */,
+				AF91B18E298BB8DB00C87A21 /* Review.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -303,12 +309,14 @@
 				AFCF1369298A607100934EA4 /* Establishment.swift in Sources */,
 				AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */,
 				AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */,
+				AF405484298BBFF800D0320F /* ReviewsListViewController.swift in Sources */,
 				AF04C0EF2982E6A00007FF2C /* ChatsViewController.swift in Sources */,
 				AF04C0EA2981E5D00007FF2C /* AddEstablishmentViewController.swift in Sources */,
 				AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */,
 				AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */,
 				AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */,
 				AFCF136B298A746200934EA4 /* DataManager.swift in Sources */,
+				AF91B18F298BB8DB00C87A21 /* Review.swift in Sources */,
 				AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */,
 				AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */,
 				AF3323EB298AF4AC00C7065F /* EmployeeCollectionViewCell.swift in Sources */,
