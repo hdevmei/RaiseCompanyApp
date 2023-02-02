@@ -179,7 +179,7 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="167" id="bGq-LC-yYf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="167" id="bGq-LC-yYf" customClass="EstablishmentTableViewCell" customModule="RaiseCompanyApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="106" width="414" height="167"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bGq-LC-yYf" id="WvU-5R-6Ve">
@@ -318,6 +318,14 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="benefits" destination="VFo-QD-ofO" id="iEt-b8-JiB"/>
+                                            <outlet property="imgEstablishment" destination="jQk-7t-5do" id="zcS-o1-L4A"/>
+                                            <outlet property="location" destination="K0L-N8-3Bf" id="BF9-kQ-o2i"/>
+                                            <outlet property="losses" destination="bnz-be-9ke" id="HGI-yV-Rc1"/>
+                                            <outlet property="numberEmployees" destination="5wB-M5-yXU" id="H93-fW-a2H"/>
+                                            <outlet property="rating" destination="zP4-SY-ygB" id="eAC-6t-jOA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -687,7 +695,9 @@
                         <viewLayoutGuide key="safeArea" id="JHg-AW-h3h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reviews" id="sPh-bC-qKp"/>
+                    <navigationItem key="navigationItem" title="Reviews" id="sPh-bC-qKp">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="g6e-yN-JPa"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0AO-mm-eVy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -898,10 +908,10 @@
             </objects>
             <point key="canvasLocation" x="4166.666666666667" y="1474.5535714285713"/>
         </scene>
-        <!--Reviews List View Controller-->
+        <!--Review-->
         <scene sceneID="ZgF-lf-Fev">
             <objects>
-                <viewController id="gcx-2a-YdU" customClass="ReviewsListViewController" customModule="RaiseCompanyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Review" id="gcx-2a-YdU" customClass="ReviewsListViewController" customModule="RaiseCompanyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C10-fs-SOf">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="831"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -991,10 +1001,10 @@
             </objects>
             <point key="canvasLocation" x="3373.913043478261" y="3003.6830357142858"/>
         </scene>
-        <!--Incidents-->
+        <!--Incident-->
         <scene sceneID="y5o-K0-cmJ">
             <objects>
-                <viewController title="Incidents" id="4Aq-qz-RTy" customClass="IncidentsViewController" customModule="RaiseCompanyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Incident" id="4Aq-qz-RTy" customClass="IncidentsViewController" customModule="RaiseCompanyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zXm-BL-349">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="831"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1011,8 +1021,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tittle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9a-8L-96w">
-                                                    <rect key="frame" x="0.0" y="18" width="39" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="18" width="41.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1082,7 +1092,9 @@
                         <viewLayoutGuide key="safeArea" id="owN-8F-MLW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Incidents" id="QPz-KX-tc3"/>
+                    <navigationItem key="navigationItem" title="Incidents" id="QPz-KX-tc3">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="iJO-dd-dt5"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vez-vp-u5H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,6 +18,7 @@
 		AF405484298BBFF800D0320F /* ReviewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405483298BBFF800D0320F /* ReviewsListViewController.swift */; };
 		AF405486298BCB9A00D0320F /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405485298BCB9A00D0320F /* Incident.swift */; };
 		AF405488298BD85800D0320F /* IncidentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405487298BD85800D0320F /* IncidentsViewController.swift */; };
+		AF40548A298BE2C100D0320F /* EstablishmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405489298BE2C100D0320F /* EstablishmentTableViewCell.swift */; };
 		AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */; };
 		AF91B18F298BB8DB00C87A21 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91B18E298BB8DB00C87A21 /* Review.swift */; };
 		AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19712974B78300A04DBA /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 		AF405483298BBFF800D0320F /* ReviewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListViewController.swift; sourceTree = "<group>"; };
 		AF405485298BCB9A00D0320F /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
 		AF405487298BD85800D0320F /* IncidentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentsViewController.swift; sourceTree = "<group>"; };
+		AF405489298BE2C100D0320F /* EstablishmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentTableViewCell.swift; sourceTree = "<group>"; };
 		AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentsListViewController.swift; sourceTree = "<group>"; };
 		AF91B18E298BB8DB00C87A21 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		AF9B196E2974B78300A04DBA /* RaiseCompanyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiseCompanyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3323EA298AF4AC00C7065F /* EmployeeCollectionViewCell.swift */,
+				AF405489298BE2C100D0320F /* EstablishmentTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */,
 				AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */,
 				AFCF136B298A746200934EA4 /* DataManager.swift in Sources */,
+				AF40548A298BE2C100D0320F /* EstablishmentTableViewCell.swift in Sources */,
 				AF91B18F298BB8DB00C87A21 /* Review.swift in Sources */,
 				AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */,
 				AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */,

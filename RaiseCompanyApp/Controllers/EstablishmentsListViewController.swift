@@ -12,25 +12,11 @@ import Foundation
 
 class EstablishmentListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    
     var establishments: [Establishment]?
   
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-      }
-      
-      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-          let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-          return cell
-      }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("hola")
-
-        performSegue(withIdentifier: "EstablishmentDetailedViewController", sender: nil)
-
-    }
+  
     
     @IBOutlet weak var mySearchBar: UISearchBar!
     
@@ -49,7 +35,22 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
            print(establishments?.count)
        }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+      }
+      
+      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+          let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+          return cell
+      }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("hola")
+
+        performSegue(withIdentifier: "EstablishmentDetailedViewController", sender: nil)
+
+    }
   
     
     func getEstablishments() {
