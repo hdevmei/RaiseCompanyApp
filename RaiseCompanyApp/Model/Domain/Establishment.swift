@@ -9,4 +9,11 @@ import Foundation
 
 
 
-
+struct Establishment: Codable {
+    let benefits: Int?
+    let id_establishment: Int?
+    let location: String?
+    let losses: Int?
+    let photo: String?
+    let schedule: String?
+}

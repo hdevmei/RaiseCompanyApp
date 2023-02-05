@@ -16,6 +16,23 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     @IBOutlet weak var employeesCollectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var incidentsContainerView: UIView!
+ 
+    
+    
+    @IBAction func goToGraphicsView(_ sender: UIButton) {
+        
+    }
+    
+    
+    @IBAction func goToEmployeesListBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: "GoEmployeesListViewController", sender: nil)
+    }
+    
+    
+    
+    
+
+    
     
     @IBAction func segmentedControlSelected(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
@@ -48,6 +65,15 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "roundedEmployeeCell", for: indexPath) as! EmployeeCollectionViewCell
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        go to detail employee view
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToEmployeeDetailVCfromEstablishment", sender: nil)
     }
     
     

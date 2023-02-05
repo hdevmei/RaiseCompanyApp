@@ -19,8 +19,14 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     @IBOutlet weak var myEstablishmentListTableView: UITableView!
     
     
+    @IBAction func btnPrueba(_ sender: Any) {
+        print(establishments?.count)
+    }
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
-
+        print()
     }
     
     override func viewDidLoad() {
@@ -51,7 +57,25 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "EstablishmentDetailedViewController", sender: nil)
+        performSegue(withIdentifier: "GoEstablishmentDetailedViewController", sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            establishments?.remove(at: indexPath.row)
+            print(indexPath.row)
+            
+            let idEstablishmentToDelete = establishments?[indexPath.row-1].id_establishment
+            let locationEstablishment = establishments?[indexPath.row-1].location
+
+            print(idEstablishmentToDelete ?? 700)
+            print(locationEstablishment)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+            
+        }
     }
     
     
@@ -62,6 +86,8 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
                 self.myEstablishmentListTableView.reloadData()
         }
     }
+    
+  
     
     
     

@@ -14,6 +14,9 @@
 		AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1662974DDE30063D55A /* OnboardingViewController.swift */; };
 		AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */; };
 		AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1682974DDE30063D55A /* OnboardingSlide.swift */; };
+		AF121794298EAD3E007E4318 /* EmployeesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF121793298EAD3E007E4318 /* EmployeesListViewController.swift */; };
+		AF121796298FDCF6007E4318 /* SquareEmloyeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF121795298FDCF6007E4318 /* SquareEmloyeeCollectionViewCell.swift */; };
+		AF1217982990061D007E4318 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1217972990061D007E4318 /* AddEmployeeViewController.swift */; };
 		AF3323EB298AF4AC00C7065F /* EmployeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3323EA298AF4AC00C7065F /* EmployeeCollectionViewCell.swift */; };
 		AF405484298BBFF800D0320F /* ReviewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405483298BBFF800D0320F /* ReviewsListViewController.swift */; };
 		AF405486298BCB9A00D0320F /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405485298BCB9A00D0320F /* Incident.swift */; };
@@ -40,6 +43,9 @@
 		AF06C1662974DDE30063D55A /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF06C1682974DDE30063D55A /* OnboardingSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		AF121793298EAD3E007E4318 /* EmployeesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListViewController.swift; sourceTree = "<group>"; };
+		AF121795298FDCF6007E4318 /* SquareEmloyeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareEmloyeeCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF1217972990061D007E4318 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
 		AF3323EA298AF4AC00C7065F /* EmployeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF405483298BBFF800D0320F /* ReviewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListViewController.swift; sourceTree = "<group>"; };
 		AF405485298BCB9A00D0320F /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
@@ -94,7 +100,6 @@
 			children = (
 				AF9B197C2974B78400A04DBA /* LaunchScreen.storyboard */,
 				AF9B19772974B78300A04DBA /* Main.storyboard */,
-				AF405487298BD85800D0320F /* IncidentsViewController.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3323EA298AF4AC00C7065F /* EmployeeCollectionViewCell.swift */,
+				AF121795298FDCF6007E4318 /* SquareEmloyeeCollectionViewCell.swift */,
 				AF405489298BE2C100D0320F /* EstablishmentTableViewCell.swift */,
 			);
 			path = Views;
@@ -182,6 +188,9 @@
 		AFB6E7A729797E0700B06CB8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF405487298BD85800D0320F /* IncidentsViewController.swift */,
+				AF1217972990061D007E4318 /* AddEmployeeViewController.swift */,
+				AF121793298EAD3E007E4318 /* EmployeesListViewController.swift */,
 				AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */,
 				AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */,
 				AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */,
@@ -319,6 +328,7 @@
 				AF405488298BD85800D0320F /* IncidentsViewController.swift in Sources */,
 				AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */,
 				AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */,
+				AF121796298FDCF6007E4318 /* SquareEmloyeeCollectionViewCell.swift in Sources */,
 				AF405484298BBFF800D0320F /* ReviewsListViewController.swift in Sources */,
 				AF04C0EF2982E6A00007FF2C /* ChatsViewController.swift in Sources */,
 				AF04C0EA2981E5D00007FF2C /* AddEstablishmentViewController.swift in Sources */,
@@ -327,7 +337,9 @@
 				AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */,
 				AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */,
 				AFCF136B298A746200934EA4 /* DataManager.swift in Sources */,
+				AF121794298EAD3E007E4318 /* EmployeesListViewController.swift in Sources */,
 				AF40548A298BE2C100D0320F /* EstablishmentTableViewCell.swift in Sources */,
+				AF1217982990061D007E4318 /* AddEmployeeViewController.swift in Sources */,
 				AF91B18F298BB8DB00C87A21 /* Review.swift in Sources */,
 				AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */,
 				AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */,
