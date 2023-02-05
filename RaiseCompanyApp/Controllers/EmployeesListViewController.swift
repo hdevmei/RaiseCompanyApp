@@ -8,7 +8,10 @@
 import UIKit
 
 class EmployeesListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
+    
+    @IBOutlet weak var location: UILabel!
     @IBOutlet weak var EmployeesCollectionView: UICollectionView!
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         9
     }
@@ -36,6 +39,9 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
         super.viewDidLoad()
         EmployeesCollectionView.delegate = self
         EmployeesCollectionView.dataSource = self
+        
+        
+
         
         // Do any additional setup after loading the view.
     }
