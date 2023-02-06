@@ -500,6 +500,7 @@
 				DEVELOPMENT_TEAM = M6SJULPZBG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RaiseCompanyApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Raise Company";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -531,6 +532,7 @@
 				DEVELOPMENT_TEAM = M6SJULPZBG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RaiseCompanyApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Raise Company";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
