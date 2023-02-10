@@ -17,3 +17,16 @@ struct Establishment: Codable {
     let photo: String?
     let schedule: String?
 }
+
+
+
+struct EstablishmentSQLView: Codable{
+    let benefits: Int?
+    let location: String
+    let losses: Int?
+    let photo: String?
+    let id_establishment: Int?
+    let schedule: String?
+    let num_employees: Int
+    let avg_rating: Float?
+}

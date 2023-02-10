@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		896A1FBCAA15B2A3F74A8706 /* Pods_RaiseCompanyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3288570F4B36C202CF50B9DC /* Pods_RaiseCompanyApp.framework */; };
 		AF04C0EA2981E5D00007FF2C /* AddEstablishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */; };
-		AF04C0EF2982E6A00007FF2C /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF04C0EE2982E6A00007FF2C /* ChatsViewController.swift */; };
 		AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1642974D9B20063D55A /* UIView+Extension.swift */; };
 		AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1662974DDE30063D55A /* OnboardingViewController.swift */; };
 		AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */; };
@@ -39,7 +38,6 @@
 		3288570F4B36C202CF50B9DC /* Pods_RaiseCompanyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaiseCompanyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		641A4E71A63F44005F9A3D0C /* Pods-RaiseCompanyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiseCompanyApp.release.xcconfig"; path = "Target Support Files/Pods-RaiseCompanyApp/Pods-RaiseCompanyApp.release.xcconfig"; sourceTree = "<group>"; };
 		AF04C0E92981E5D00007FF2C /* AddEstablishmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEstablishmentViewController.swift; sourceTree = "<group>"; };
-		AF04C0EE2982E6A00007FF2C /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		AF06C1642974D9B20063D55A /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		AF06C1662974DDE30063D55A /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AF06C1672974DDE30063D55A /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 		AF9B19652974B78300A04DBA = {
 			isa = PBXGroup;
 			children = (
-				AF04C0EE2982E6A00007FF2C /* ChatsViewController.swift */,
 				AF9B19702974B78300A04DBA /* RaiseCompanyApp */,
 				AF9B196F2974B78300A04DBA /* Products */,
 				0D4F16C160527AC33CE73201 /* Pods */,
@@ -334,7 +331,6 @@
 				AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */,
 				AF121796298FDCF6007E4318 /* SquareEmloyeeCollectionViewCell.swift in Sources */,
 				AF405484298BBFF800D0320F /* ReviewsListViewController.swift in Sources */,
-				AF04C0EF2982E6A00007FF2C /* ChatsViewController.swift in Sources */,
 				AF04C0EA2981E5D00007FF2C /* AddEstablishmentViewController.swift in Sources */,
 				AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */,
 				AF405486298BCB9A00D0320F /* Incident.swift in Sources */,

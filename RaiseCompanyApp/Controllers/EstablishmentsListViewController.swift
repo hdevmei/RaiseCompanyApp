@@ -9,10 +9,11 @@ import UIKit
 import Alamofire
 import Foundation
 import Kingfisher
+
 class EstablishmentListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
 
-    public var establishments: [Establishment]?
+    public var establishments: [EstablishmentSQLView]?
     
     
     @IBOutlet weak var mySearchBar: UISearchBar!
@@ -24,9 +25,8 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     }
     
     
-    
     override func viewWillAppear(_ animated: Bool) {
-        print()
+
     }
     
     override func viewDidLoad() {
@@ -38,6 +38,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         
         //           getUsers()
         getEstablishments()
+        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
     }
   
     
@@ -52,27 +53,41 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         cell.benefits.titleLabel?.text = "▲  \(establishment!.benefits)"
         cell.losses.titleLabel?.text = "▲  \(establishment!.losses)"
         cell.imgEstablishment.kf.setImage(with: URL(string: "\(establishment!.photo)"))
+  cell.numberEmployees.text = "\(establishment!.num_employees) Employees"
+        if cell.rating == nil {
+            cell.rating.image = UIImage(named: "oasiz")
+        } else {
+            cell.rating.image = UIImage(named: "\(establishment!.avg_rating!)rating")
+        }
+        
+        
+        
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "GoEstablishmentDetailedViewController", sender: nil)
+        let id_establishment_selected = establishments?[indexPath.row].id_establishment
+        
+        print("id establishent selected    \(id_establishment_selected!)")
+        print(" establishments count \(establishments?.count)")
+        print(" indez  path \(indexPath.row + 1)")
+        print(indexPath.row.self)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            establishments?.remove(at: indexPath.row)
+            establishments?.remove(at: indexPath.row )
             print(indexPath.row)
-            
-            let idEstablishmentToDelete = establishments?[indexPath.row-1].id_establishment
-            let locationEstablishment = establishments?[indexPath.row-1].location
+            let idEstablishmentToDelete = establishments?[indexPath.row].id_establishment
+            let locationEstablishment = establishments?[indexPath.row].location
 
-            print(idEstablishmentToDelete ?? 700)
-            print(locationEstablishment)
+
             
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
             tableView.endUpdates()
             
         }
@@ -80,26 +95,21 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     
     func getEstablishments(){
-            AF.request("http://127.0.0.1:5000/company/establishments").responseDecodable(of: [Establishment].self) { response in
+            AF.request("http://127.0.0.1:5000/safari/establishments/view").responseDecodable(of: [EstablishmentSQLView].self) { response in
                 self.establishments = try? response.result.get()
+                print(response.description)
                 print(self.establishments?.count)
                 self.myEstablishmentListTableView.reloadData()
+                print("establishments count es \(self.establishments?.count)")
         }
     }
     
-  
-    
-    
-    
-    struct Establishment: Codable {
-        let benefits: Int
-        let id_establishment: Int
-        let location: String
-        let losses: Int
-        let photo: String
-        let schedule: String
-    }
+
     
     
     
 }
+
+
+//indexpath.row stars in 0
+//establishments array = 1
