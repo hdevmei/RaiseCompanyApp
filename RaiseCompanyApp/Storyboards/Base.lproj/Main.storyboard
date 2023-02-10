@@ -336,52 +336,20 @@
                                                                 <constraint firstAttribute="width" secondItem="zP4-SY-ygB" secondAttribute="height" multiplier="97:24" id="zDD-Tz-CfX"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFo-QD-ofO">
-                                                            <rect key="frame" x="148" y="103" width="99" height="26"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="VFo-QD-ofO" secondAttribute="height" multiplier="93:26" constant="6" id="s6c-JU-cb3"/>
-                                                            </constraints>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="▲ 3,092 $" cornerStyle="large">
-                                                                <backgroundConfiguration key="background" image="benefits"/>
-                                                                <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </buttonConfiguration>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnz-be-9ke">
-                                                            <rect key="frame" x="261" y="102.5" width="100" height="27"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="bnz-be-9ke" secondAttribute="height" multiplier="31:9" constant="7" id="E6d-6x-EIR"/>
-                                                            </constraints>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="▲ 2,133 $" cornerStyle="large">
-                                                                <backgroundConfiguration key="background" image="losses"/>
-                                                                <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </buttonConfiguration>
-                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.090768627820000003" green="0.093704335390000004" blue="0.10970278830000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstItem="zP4-SY-ygB" firstAttribute="leading" secondItem="5wB-M5-yXU" secondAttribute="trailing" constant="11" id="46R-pA-U4S"/>
                                                         <constraint firstItem="Dkd-ep-O34" firstAttribute="top" secondItem="0i4-3i-zot" secondAttribute="top" constant="20" symbolic="YES" id="91B-XH-hNy"/>
-                                                        <constraint firstItem="VFo-QD-ofO" firstAttribute="top" secondItem="5wB-M5-yXU" secondAttribute="bottom" constant="19" id="Dib-pZ-p6a"/>
                                                         <constraint firstItem="zP4-SY-ygB" firstAttribute="width" secondItem="0i4-3i-zot" secondAttribute="width" multiplier="0.246819" id="HNm-y0-FQV"/>
                                                         <constraint firstItem="jQk-7t-5do" firstAttribute="width" secondItem="0i4-3i-zot" secondAttribute="width" multiplier="0.305344" id="ICB-Gy-6zC"/>
-                                                        <constraint firstItem="bnz-be-9ke" firstAttribute="width" secondItem="0i4-3i-zot" secondAttribute="width" multiplier="0.236641" constant="7" id="MVk-Lr-H71"/>
                                                         <constraint firstAttribute="width" secondItem="0i4-3i-zot" secondAttribute="height" multiplier="372:145" id="RzY-EC-DUU"/>
-                                                        <constraint firstItem="bnz-be-9ke" firstAttribute="centerY" secondItem="VFo-QD-ofO" secondAttribute="centerY" id="WKI-Xz-BqI"/>
                                                         <constraint firstAttribute="trailing" secondItem="K0L-N8-3Bf" secondAttribute="trailing" constant="15" id="YDb-IC-Cd9"/>
-                                                        <constraint firstItem="bnz-be-9ke" firstAttribute="leading" secondItem="VFo-QD-ofO" secondAttribute="trailing" constant="14" id="YKJ-cL-Ygc"/>
                                                         <constraint firstItem="zP4-SY-ygB" firstAttribute="centerY" secondItem="5wB-M5-yXU" secondAttribute="centerY" id="ehy-zF-DC5"/>
                                                         <constraint firstItem="jQk-7t-5do" firstAttribute="leading" secondItem="0i4-3i-zot" secondAttribute="leading" constant="8" id="el1-0A-U8f"/>
                                                         <constraint firstItem="5wB-M5-yXU" firstAttribute="top" secondItem="K0L-N8-3Bf" secondAttribute="bottom" constant="8.5" id="f4K-3P-boV"/>
                                                         <constraint firstItem="5wB-M5-yXU" firstAttribute="width" secondItem="0i4-3i-zot" secondAttribute="width" multiplier="0.239186" id="g25-95-ln9"/>
                                                         <constraint firstItem="Dkd-ep-O34" firstAttribute="leading" secondItem="jQk-7t-5do" secondAttribute="trailing" constant="20" id="ha6-Bf-ciV"/>
-                                                        <constraint firstItem="VFo-QD-ofO" firstAttribute="leading" secondItem="jQk-7t-5do" secondAttribute="trailing" constant="20" id="mbv-dD-92b"/>
-                                                        <constraint firstItem="VFo-QD-ofO" firstAttribute="width" secondItem="0i4-3i-zot" secondAttribute="width" multiplier="0.236641" constant="6" id="oH4-K1-ywB"/>
                                                         <constraint firstItem="Dkd-ep-O34" firstAttribute="width" secondItem="0i4-3i-zot" secondAttribute="width" multiplier="0.0483461" id="pus-6j-gXQ"/>
                                                         <constraint firstItem="5wB-M5-yXU" firstAttribute="leading" secondItem="jQk-7t-5do" secondAttribute="trailing" constant="20" id="rg7-Nu-lvc"/>
                                                         <constraint firstItem="K0L-N8-3Bf" firstAttribute="width" secondItem="0i4-3i-zot" secondAttribute="width" multiplier="0.450382" constant="20" id="s4Z-2N-PWe"/>
@@ -420,10 +388,8 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="benefits" destination="VFo-QD-ofO" id="iEt-b8-JiB"/>
                                             <outlet property="imgEstablishment" destination="jQk-7t-5do" id="zcS-o1-L4A"/>
                                             <outlet property="location" destination="K0L-N8-3Bf" id="BF9-kQ-o2i"/>
-                                            <outlet property="losses" destination="bnz-be-9ke" id="HGI-yV-Rc1"/>
                                             <outlet property="numberEmployees" destination="5wB-M5-yXU" id="H93-fW-a2H"/>
                                             <outlet property="rating" destination="zP4-SY-ygB" id="eAC-6t-jOA"/>
                                         </connections>
