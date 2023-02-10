@@ -17,8 +17,6 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var incidentsContainerView: UIView!
  
-    
-    
     @IBAction func goToGraphicsView(_ sender: UIButton) {
         
     }
