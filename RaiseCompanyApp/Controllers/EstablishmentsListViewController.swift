@@ -57,7 +57,6 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         if cell.rating == nil {
             cell.rating.image = UIImage(named: "oasiz")
         } else {
-            cell.rating.image = UIImage(named: "\(establishment!.avg_rating!)rating")
         }
         
         
