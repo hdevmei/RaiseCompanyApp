@@ -12,22 +12,26 @@ import Kingfisher
 
 class EstablishmentListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-
     public var establishments: [EstablishmentSQLView]?
+    var filteredEstablishments: [EstablishmentSQLView] = []
+    
+    @IBAction func btnPrueba(_ sender: Any) {
+        postEstablishment()
+        getEstablishments()
+        print("boton prueba apretadi")
+        myEstablishmentListTableView.reloadData()
+    }
+    
     
     
     @IBOutlet weak var mySearchBar: UISearchBar!
     @IBOutlet weak var myEstablishmentListTableView: UITableView!
     
-    
-    @IBAction func btnPrueba(_ sender: Any) {
-        print(establishments?.count)
+        
+    @IBAction func goToAddEstablishmentBtn(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "madero", sender: nil)
     }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +43,16 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         //           getUsers()
         getEstablishments()
         UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
-  
+    
+    @objc func loadList(notification: NSNotification){
+        //load data here
+        getEstablishments()
+    myEstablishmentListTableView.reloadData()
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return establishments?.count ?? 0
@@ -50,17 +62,11 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EstablishmentTableViewCell
         let establishment = establishments?[indexPath.row]
         cell.location.text = establishment?.location
-        cell.benefits.titleLabel?.text = "▲  \(establishment!.benefits)"
-        cell.losses.titleLabel?.text = "▲  \(establishment!.losses)"
-        cell.imgEstablishment.kf.setImage(with: URL(string: "\(establishment!.photo)"))
-  cell.numberEmployees.text = "\(establishment!.num_employees) Employees"
-        if cell.rating == nil {
-            cell.rating.image = UIImage(named: "oasiz")
-        } else {
-        }
-        
-        
-        
+        cell.benefitsLabel.text = "   ▲ \(establishment!.benefits!) €"
+        cell.lossesLabel.text = "   ▲ \(establishment!.losses!) €"
+        //        cell.imgEstablishment.kf.setImage(with: URL(string: "\(establishment!.photo)"))
+        cell.numberEmployees.text = "\(establishment!.num_employees) Employees"
+        //        cell.rating.image = UIImage(named: "oasiz")
         return cell
     }
     
@@ -68,46 +74,83 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "GoEstablishmentDetailedViewController", sender: nil)
         let id_establishment_selected = establishments?[indexPath.row].id_establishment
-        
         print("id establishent selected    \(id_establishment_selected!)")
-        print(" establishments count \(establishments?.count)")
-        print(" indez  path \(indexPath.row + 1)")
-        print(indexPath.row.self)
     }
     
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            tableView.beginUpdates()
-            establishments?.remove(at: indexPath.row )
-            print(indexPath.row)
-            let idEstablishmentToDelete = establishments?[indexPath.row].id_establishment
-            let locationEstablishment = establishments?[indexPath.row].location
-
-
+        guard editingStyle == .delete else {
+            return
+        }
+        
+        deleteEstablishment(at: indexPath.row)
+    }
+    
+    
+    
+    //    URL METHODS
+    
+    func deleteEstablishment(at index: Int) {
+        guard let establishmentId = establishments![index].id_establishment else {
+            return
+        }
+        
+        let url = "http://127.0.0.1:5000/safari/establishments/\(establishmentId)"
+        AF.request(url, method: .delete).response { [weak self] response in
+            guard let self = self else {
+                return
+            }
             
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            tableView.endUpdates()
-            
+            switch response.result {
+            case .success:
+                self.establishments!.remove(at: index)
+                self.myEstablishmentListTableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            case .failure(let error):
+                print("Failed to delete employee: \(error)")
+            }
         }
     }
     
     
     func getEstablishments(){
-            AF.request("http://127.0.0.1:5000/safari/establishments/view").responseDecodable(of: [EstablishmentSQLView].self) { response in
-                self.establishments = try? response.result.get()
-                print(response.description)
-                print(self.establishments?.count)
-                self.myEstablishmentListTableView.reloadData()
-                print("establishments count es \(self.establishments?.count)")
+        AF.request("http://127.0.0.1:5000/safari/establishments/view").responseDecodable(of: [EstablishmentSQLView].self) { response in
+            self.establishments = try? response.result.get()
+            print(response.description)
+            print(self.establishments?.count)
+            self.myEstablishmentListTableView.reloadData()
+            print("establishments count es \(self.establishments?.count)")
         }
     }
     
+    
+    
+    var establishmentToAdd : Establishment = Establishment(benefits: 234234, id_establishment: 2342, location: "a bue o", losses: 2342, photo: nil, schedule: "estfe ees el horario")
 
     
     
     
+    func postEstablishment(){
+        
+         let url = "http://127.0.0.1:5000/safari/establishments"
+         
+         AF.request(url, method: .post, parameters: establishmentToAdd, encoder: JSONParameterEncoder.default)
+             .validate(statusCode: 200..<300)
+             .response { response in
+                 switch response.result {
+                 case .success:
+                     print("POST request successful")
+                 case .failure(let error):
+                     print(error)
+                 }
+             }
+        myEstablishmentListTableView.reloadData()
+     }
+    
+    
+    
 }
+
+
 
 
 //indexpath.row stars in 0

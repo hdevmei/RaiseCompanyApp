@@ -16,12 +16,12 @@ extension UIView {
             self.layer.cornerRadius = newValue
         }
     }
-     
     
     
     
-   
-
+    
+    
+    
     @IBInspectable
     var borderWidth: CGFloat {
         get {
@@ -31,7 +31,7 @@ extension UIView {
             layer.borderWidth = newValue
         }
     }
-
+    
     @IBInspectable
     var borderColor: UIColor? {
         get {
@@ -42,28 +42,28 @@ extension UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
-
+    
     @IBInspectable
     var shadowRadius: CGFloat {
         get {
             return layer.shadowRadius
         }
         set {
-
+            
             layer.shadowRadius = shadowRadius
         }
     }
     @IBInspectable
     var shadowOffset : CGSize{
-
+        
         get{
             return layer.shadowOffset
         }set{
-
+            
             layer.shadowOffset = newValue
         }
     }
-
+    
     @IBInspectable
     var shadowColor : UIColor{
         get{
@@ -75,14 +75,14 @@ extension UIView {
     }
     @IBInspectable
     var shadowOpacity : Float {
-
+        
         get{
             return layer.shadowOpacity
         }
         set {
-
+            
             layer.shadowOpacity = newValue
-
+            
         }
     }
     
@@ -100,11 +100,24 @@ extension UIView {
     }
     
     func roundCorners(corners: UIRectCorner, radius: CGFloat) {
-            let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-            let mask = CAShapeLayer()
-            mask.path = path.cgPath
-            layer.mask = mask
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
+    
+    
+    
+    @IBInspectable var cornerRadiusLabel: CGFloat {
+        get {
+            return layer.cornerRadius
         }
-
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    
+    
 }
 

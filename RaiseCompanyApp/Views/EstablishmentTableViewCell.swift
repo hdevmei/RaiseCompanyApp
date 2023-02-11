@@ -17,10 +17,6 @@ class EstablishmentTableViewCell: UITableViewCell {
     @IBOutlet weak var numberEmployees: UILabel!
     
     @IBOutlet weak var rating: UIImageView!
-    
-    @IBOutlet weak var losses: UIButton!
-    
-    
-    @IBOutlet weak var benefits: UIButton!
-    
+    @IBOutlet weak var benefitsLabel: UILabel!
+    @IBOutlet weak var lossesLabel: UILabel!
 }
