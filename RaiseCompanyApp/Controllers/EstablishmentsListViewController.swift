@@ -15,21 +15,15 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     public var establishments: [EstablishmentSQLView]?
     var filteredEstablishments: [EstablishmentSQLView] = []
     
-    @IBAction func btnPrueba(_ sender: Any) {
-        postEstablishment()
-        getEstablishments()
-        print("boton prueba apretadi")
-        myEstablishmentListTableView.reloadData()
-    }
     
     
     
     @IBOutlet weak var mySearchBar: UISearchBar!
     @IBOutlet weak var myEstablishmentListTableView: UITableView!
     
-        
+    
     @IBAction func goToAddEstablishmentBtn(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "madero", sender: nil)
+        performSegue(withIdentifier: "goToAddEstablishment", sender: nil)
     }
     
     
@@ -44,13 +38,6 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         getEstablishments()
         UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
-        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
-    }
-    
-    @objc func loadList(notification: NSNotification){
-        //load data here
-        getEstablishments()
-    myEstablishmentListTableView.reloadData()
     }
     
     
@@ -88,9 +75,12 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     
     
+    
+    
     //    URL METHODS
     
     func deleteEstablishment(at index: Int) {
+        print("getting estsblishments")
         guard let establishmentId = establishments![index].id_establishment else {
             return
         }
@@ -109,42 +99,57 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
                 print("Failed to delete employee: \(error)")
             }
         }
+        
     }
+    
+    
     
     
     func getEstablishments(){
         AF.request("http://127.0.0.1:5000/safari/establishments/view").responseDecodable(of: [EstablishmentSQLView].self) { response in
             self.establishments = try? response.result.get()
-            print(response.description)
-            print(self.establishments?.count)
+            //            print(response.description)
             self.myEstablishmentListTableView.reloadData()
             print("establishments count es \(self.establishments?.count)")
         }
     }
     
     
-    
-    var establishmentToAdd : Establishment = Establishment(benefits: 234234, id_establishment: 2342, location: "a bue o", losses: 2342, photo: nil, schedule: "estfe ees el horario")
-
+   
     
     
-    
-    func postEstablishment(){
+     func postEstablishment(establishmentToAdd : EstablishmentSQLView?){
         
-         let url = "http://127.0.0.1:5000/safari/establishments"
-         
-         AF.request(url, method: .post, parameters: establishmentToAdd, encoder: JSONParameterEncoder.default)
-             .validate(statusCode: 200..<300)
-             .response { response in
-                 switch response.result {
-                 case .success:
-                     print("POST request successful")
-                 case .failure(let error):
-                     print(error)
-                 }
-             }
-        myEstablishmentListTableView.reloadData()
-     }
+        let url = "http://127.0.0.1:5000/safari/establishments"
+        
+        AF.request(url, method: .post, parameters: establishmentToAdd, encoder: JSONParameterEncoder.default)
+            .validate(statusCode: 200..<300)
+            .response { response in
+                switch response.result {
+                case .success:
+                    print("POST request successful")
+                    self.getEstablishments()
+                    self.establishments!.append(establishmentToAdd!)
+                    self.myEstablishmentListTableView.reloadData()
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        
+    }
+    
+    
+    @IBAction func btnPrueba(_ sender: Any) {
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "goToAddEstablishment" {
+               let destinoVC = segue.destination as! AddEstablishmentViewController
+               destinoVC.postEstablishmentFunction = postEstablishment
+           }
+       }
     
     
     

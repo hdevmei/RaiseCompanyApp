@@ -13,6 +13,7 @@ import Alamofire
 class AddEstablishmentViewController : UIViewController {
     
     var canSave: Bool = false
+    var postEstablishmentFunction: ((EstablishmentSQLView?) -> Void)?
     
     @IBOutlet weak var locationTextField: UITextField!
     
@@ -21,15 +22,31 @@ class AddEstablishmentViewController : UIViewController {
     @IBOutlet weak var lossesTextField: UITextField!
     
     
-    var establishmentToAdd : Establishment = Establishment(benefits: 234234, id_establishment: 2342, location: "a bue o", losses: 2342, photo: nil, schedule: "estfe ees el horario")
+    @IBOutlet weak var scheduleTextfield: UITextField!
     
     @IBAction func saveBtn(_ sender: Any) {
-      
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        
+        
+        addEstablishment()
+        self.dismiss(animated: true)
+
+    }
+    
+    
+    func addEstablishment() {
+        // Crear una instancia de EstablishmentSQLView
+        var establishmentToAdd = EstablishmentSQLView(benefits: 0, location: "", losses: 0, photo: nil, id_establishment: nil, schedule: "", num_employees: 0, avg_rating: nil)
+        // Asignar valores a las propiedades de establishmentToAdd
+ 
+        
+        establishmentToAdd.location = locationTextField.text ?? ""
+        establishmentToAdd.schedule = scheduleTextfield.text ?? ""
+//
+        // Llamar a la función postEstablishment para agregar el establecimiento al servidor
+        postEstablishmentFunction!(establishmentToAdd)
         
     }
     
-    var listEstablishment: EstablishmentListViewController = EstablishmentListViewController()
     
     
     @IBAction func cancelBtn(_ sender: UIButton) {
@@ -37,20 +54,15 @@ class AddEstablishmentViewController : UIViewController {
     }
     
     
-    func postEstablishment(){
-        
-         let url = "http://127.0.0.1:5000/safari/establishments"
-         
-         AF.request(url, method: .post, parameters: establishmentToAdd, encoder: JSONParameterEncoder.default)
-             .validate(statusCode: 200..<300)
-             .response { response in
-                 switch response.result {
-                 case .success:
-                     print("POST request successful")
-                 case .failure(let error):
-                     print(error)
-                 }
-             }
-        
-     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

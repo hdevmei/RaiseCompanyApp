@@ -31,14 +31,14 @@ struct Establishment: Codable {
 
 
 struct EstablishmentSQLView: Codable{
-    let benefits: Int?
-    let location: String
-    let losses: Int?
-    let photo: String?
-    let id_establishment: Int?
-    let schedule: String?
-    let num_employees: Int
-    let avg_rating: Float?
+    var benefits: Int?
+    var location: String
+    var losses: Int?
+    var photo: String?
+    var id_establishment: Int?
+    var schedule: String?
+    var num_employees: Int
+    var avg_rating: Float?
     
     
     
