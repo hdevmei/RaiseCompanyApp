@@ -34,6 +34,10 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         myEstablishmentListTableView.dataSource = self
         myEstablishmentListTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
+        
+        mySearchBar.delegate = self
+        
+        
         //           getUsers()
         getEstablishments()
         UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
@@ -41,18 +45,22 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     }
     
     
+    
+  
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return establishments?.count ?? 0
+        return filteredEstablishments.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EstablishmentTableViewCell
-        let establishment = establishments?[indexPath.row]
-        cell.location.text = establishment?.location
-        cell.benefitsLabel.text = "   ▲ \(establishment!.benefits!) €"
-        cell.lossesLabel.text = "   ▲ \(establishment!.losses!) €"
+        let establishment = filteredEstablishments[indexPath.row]
+        cell.location.text = establishment.location
+        cell.benefitsLabel.text = "   ▲ \(establishment.benefits!) €"
+        cell.lossesLabel.text = "   ▲ \(establishment.losses!) €"
         //        cell.imgEstablishment.kf.setImage(with: URL(string: "\(establishment!.photo)"))
-        cell.numberEmployees.text = "\(establishment!.num_employees) Employees"
+        cell.numberEmployees.text = "\(establishment.num_employees) Employees"
         //        cell.rating.image = UIImage(named: "oasiz")
         return cell
     }
@@ -81,7 +89,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     func deleteEstablishment(at index: Int) {
         print("getting estsblishments")
-        guard let establishmentId = establishments![index].id_establishment else {
+        guard let establishmentId = filteredEstablishments[index].id_establishment else {
             return
         }
         
@@ -93,7 +101,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
             
             switch response.result {
             case .success:
-                self.establishments!.remove(at: index)
+                self.filteredEstablishments.remove(at: index)
                 self.myEstablishmentListTableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
             case .failure(let error):
                 print("Failed to delete employee: \(error)")
@@ -109,6 +117,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         AF.request("http://127.0.0.1:5000/safari/establishments/view").responseDecodable(of: [EstablishmentSQLView].self) { response in
             self.establishments = try? response.result.get()
             //            print(response.description)
+            self.filteredEstablishments = self.establishments!
             self.myEstablishmentListTableView.reloadData()
             print("establishments count es \(self.establishments?.count)")
         }
@@ -119,9 +128,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     
      func postEstablishment(establishmentToAdd : EstablishmentSQLView?){
-        
         let url = "http://127.0.0.1:5000/safari/establishments"
-        
         AF.request(url, method: .post, parameters: establishmentToAdd, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
             .response { response in
@@ -155,6 +162,24 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
 }
 
+
+extension EstablishmentListViewController: UISearchBarDelegate{
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredEstablishments = []
+        
+        
+        if searchText == ""{
+            filteredEstablishments = establishments!
+        } else {
+            for establishment in establishments!{
+                if establishment.location.lowercased().contains(searchText.lowercased()){
+                    filteredEstablishments.append(establishment)
+                }
+            }
+        }
+        self.myEstablishmentListTableView.reloadData()
+    }
+}
 
 
 
