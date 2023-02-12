@@ -15,7 +15,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     public var establishments: [EstablishmentSQLView]?
     var filteredEstablishments: [EstablishmentSQLView] = []
     
-    
+    var id_establishmentSelected: Int?
     
     
     @IBOutlet weak var mySearchBar: UISearchBar!
@@ -67,9 +67,13 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "GoEstablishmentDetailedViewController", sender: nil)
-        let id_establishment_selected = establishments?[indexPath.row].id_establishment
-        print("id establishent selected    \(id_establishment_selected!)")
+        print("lala")
+        id_establishmentSelected = filteredEstablishments[indexPath.row].id_establishment!
+        let location_establishment_selected = filteredEstablishments[indexPath.row].location
+        performSegue(withIdentifier: "GoEstablishmentDetailedViewController", sender: id_establishmentSelected)
+
+        print("id establishent selected \(id_establishmentSelected!)")
+        print(location_establishment_selected)
     }
     
     
@@ -114,10 +118,11 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     
     func getEstablishments(){
-        AF.request("http://127.0.0.1:5000/safari/establishments/view").responseDecodable(of: [EstablishmentSQLView].self) { response in
+        AF.request("http://127.0.0.1:5000/safari/establishments").responseDecodable(of: [EstablishmentSQLView].self) { response in
             self.establishments = try? response.result.get()
             //            print(response.description)
-            self.filteredEstablishments = self.establishments!
+            print(response.description)
+        self.filteredEstablishments = self.establishments!
             self.myEstablishmentListTableView.reloadData()
             print("establishments count es \(self.establishments?.count)")
         }
@@ -147,27 +152,31 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     
     @IBAction func btnPrueba(_ sender: Any) {
-        
+        print(id_establishmentSelected)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if segue.identifier == "goToAddEstablishment" {
-               let destinoVC = segue.destination as! AddEstablishmentViewController
-               destinoVC.postEstablishmentFunction = postEstablishment
+//               pass the function to post establishment
+               let addEstablishmnetVC = segue.destination as! AddEstablishmentViewController
+               addEstablishmnetVC.postEstablishmentFunction = postEstablishment
+           } else if segue.identifier == "GoEstablishmentDetailedViewController"{
+               let establishmentDetailVC = segue.destination as! EstablishmentDetailedViewController
+               establishmentDetailVC.id_getted = id_establishmentSelected
+               
+               
            }
        }
     
-    
-    
 }
+
+
 
 
 extension EstablishmentListViewController: UISearchBarDelegate{
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredEstablishments = []
-        
-        
         if searchText == ""{
             filteredEstablishments = establishments!
         } else {
