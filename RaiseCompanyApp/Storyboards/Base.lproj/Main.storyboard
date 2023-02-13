@@ -842,7 +842,7 @@
                         <outlet property="scheduleLabel" destination="wBR-dC-lMg" id="hvZ-Z8-11H"/>
                         <outlet property="segmentedControl" destination="IKk-AJ-Rda" id="wPU-57-mIP"/>
                         <segue destination="5LB-5J-pxB" kind="push" identifier="GoEmployeesListViewController" id="sHG-yz-hrA"/>
-                        <segue destination="UGi-BS-T6h" kind="push" identifier="goToEmployeeDetailVCfromEstablishment" id="50w-lK-jIG"/>
+                        <segue destination="UGi-BS-T6h" kind="push" identifier="GoToEmployeeList" id="50w-lK-jIG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfN-Ot-bzq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -947,6 +947,12 @@
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="imgEmployee" destination="9z5-C9-HgU" id="dLN-bW-VWw"/>
+                                            <outlet property="nameEmployee" destination="t5k-FQ-hkY" id="0se-hm-JM5"/>
+                                            <outlet property="salaryEmployee" destination="TdC-wd-NDz" id="HMG-q2-FTI"/>
+                                            <outlet property="workPositionEmployee" destination="UG0-hW-1qZ" id="PRV-dO-kYE"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -964,11 +970,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="Employees" largeTitleDisplayMode="never" id="qQA-dz-Jsh">
                         <barButtonItem key="backBarButtonItem" title="Back" id="qhz-zD-bVM"/>
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="M1c-qt-2d4">
-                            <connections>
-                                <segue destination="9bR-e8-zif" kind="modal" id="V88-zG-tNx"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="plus" catalog="system" id="M1c-qt-2d4">
+                                <connections>
+                                    <action selector="AddEmployeeBtn:" destination="5LB-5J-pxB" id="BW2-aL-xdh"/>
+                                    <segue destination="9bR-e8-zif" kind="modal" identifier="GoToAddEmployeeFromEstablishment" id="V88-zG-tNx"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="qPm-Pq-2Fe">
+                                <connections>
+                                    <action selector="pruebaBtn:" destination="5LB-5J-pxB" id="IIu-to-t7d"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="EmployeesCollectionView" destination="UC8-bp-N1z" id="kg1-ry-vMR"/>
@@ -1450,6 +1464,9 @@
                                 <color key="tintColor" red="0.42683988810000001" green="0.87295550109999998" blue="0.84217351679999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="addEmployee:" destination="9bR-e8-zif" eventType="touchUpInside" id="MM5-56-dYX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lk-fm-ZCY">
                                 <rect key="frame" x="20" y="20" width="82.5" height="35"/>

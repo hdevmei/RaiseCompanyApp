@@ -29,6 +29,7 @@
 		AF9B197B2974B78400A04DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF9B197A2974B78400A04DBA /* Assets.xcassets */; };
 		AF9B197E2974B78400A04DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9B197C2974B78400A04DBA /* LaunchScreen.storyboard */; };
 		AFBC0E50298AC9BA0002DDFC /* EstablishmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */; };
+		AFC74F51299ACA8600AE7805 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC74F50299ACA8600AE7805 /* Employee.swift */; };
 		AFCF1369298A607100934EA4 /* Establishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF1368298A607100934EA4 /* Establishment.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		AF9B197D2974B78400A04DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF9B197F2974B78400A04DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentDetailViewController.swift; sourceTree = "<group>"; };
+		AFC74F50299ACA8600AE7805 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Employee.swift; path = Domain/Employee.swift; sourceTree = "<group>"; };
 		AFCF1368298A607100934EA4 /* Establishment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Establishment.swift; path = Domain/Establishment.swift; sourceTree = "<group>"; };
 		B2B69A363D4CC427D844C10B /* Pods-RaiseCompanyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiseCompanyApp.debug.xcconfig"; path = "Target Support Files/Pods-RaiseCompanyApp/Pods-RaiseCompanyApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 			children = (
 				AFCF1368298A607100934EA4 /* Establishment.swift */,
 				AF91B18E298BB8DB00C87A21 /* Review.swift */,
+				AFC74F50299ACA8600AE7805 /* Employee.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */,
 				AF121794298EAD3E007E4318 /* EmployeesListViewController.swift in Sources */,
 				AF40548A298BE2C100D0320F /* EstablishmentTableViewCell.swift in Sources */,
+				AFC74F51299ACA8600AE7805 /* Employee.swift in Sources */,
 				AF1217982990061D007E4318 /* AddEmployeeViewController.swift in Sources */,
 				AF91B18F298BB8DB00C87A21 /* Review.swift in Sources */,
 				AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */,

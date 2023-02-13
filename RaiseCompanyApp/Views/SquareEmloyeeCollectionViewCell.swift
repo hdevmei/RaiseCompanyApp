@@ -10,7 +10,13 @@ import UIKit
 class SquareEmloyeeCollectionViewCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var nameEmployee: UILabel!
     
+    @IBOutlet weak var imgEmployee: UIImageView!
+    
+    @IBOutlet weak var workPositionEmployee: UILabel!
+    
+    @IBOutlet weak var salaryEmployee: UILabel!
     
     
 }

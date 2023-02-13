@@ -12,9 +12,6 @@ import Alamofire
 class EstablishmentDetailedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     
-    
-    
-    
     @IBOutlet weak var locationLabel: UILabel!
     
     @IBOutlet weak var benefitsLabel: UILabel!
@@ -167,5 +164,19 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         employeesCollectionView.dataSource = self
     }
     
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "GoEmployeesListViewController" {
+//               pass the function to post establishment
+               let EmployeeListVC = segue.destination as! EmployeesListViewController
+               EmployeeListVC.id_establishment_selected = id_getted
+               EmployeeListVC.establishment = establishment
+           } else if segue.identifier == "GoEstablishmentDetailedViewController"{
+               let establishmentDetailVC = segue.destination as! EstablishmentDetailedViewController
+//               establishmentDetailVC.id_getted = id_establishmentSelected
+               
+           }
+       }
     
 }
