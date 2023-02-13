@@ -35,15 +35,12 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     var id_getted: Int?
     
     
-    
     var establishment : EstablishmentSQLView?
-    
+    public var employees : [Employee]?
     
     
     @IBAction func goToGraphicsView(_ sender: UIButton) {
-        print("moodance")
-        
-        
+        print(employees?.count)
     }
     
     
@@ -64,6 +61,13 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     }
     
     
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
+    
     //    override
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,22 +77,21 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         ReviewsContainerVIew.isHidden = true
         incidentsContainerView.isHidden = false
         // Do any additional setup after loading the view.
-        //        getEstablishment(id: id_establishment_selected)
-        
-        
         
         getEstablishment()
-        
+        getEmployees()
     }
     
     
     //    Collection view functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return employees?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "roundedEmployeeCell", for: indexPath) as! EmployeeCollectionViewCell
+        let employee = employees![indexPath.row]
+        cell.nameEmployee.text = "\(employee.name!) \(employee.lastnames!)"
         return cell
     }
     
@@ -110,7 +113,14 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         self.locationLabel.text = self.establishment!.location
         self.benefitsLabel.text = "   \(self.establishment!.benefits!) $"
         self.lossesLabel.text = "   \(self.establishment!.losses!) $"
-//        self.avgRating.image = UIImage(named: "\(self.establishment!.avg_rating!)rating")
+        
+        if self.establishment!.avg_rating != nil{
+            self.avgRating.image = UIImage(named: "\(self.establishment!.avg_rating!)rating")
+            
+        } else {
+            print("Este establecimiento no tiene estrellas")
+        }
+        
         self.scheduleLabel.text = self.establishment!.schedule
         self.num_employeesLabel.text = "\(self.establishment!.num_employees) Employees"
     }
@@ -140,6 +150,22 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     }
     
     
+    
+    func getEmployees() {
+        let url = "http://127.0.0.1:5000/safari/establishments/\(id_getted!)/employees"
+               
+               AF.request(url).responseDecodable(of: [Employee].self) { response in
+                   switch response.result {
+                   case .success(let data):
+                           self.employees = data
+                           self.employeesCollectionView.reloadData()
+                       
+                   case .failure(let error):
+                       print("Error al obtener los employees: \(error)")
+                   }
+               }
+        employeesCollectionView.dataSource = self
+    }
     
     
 }

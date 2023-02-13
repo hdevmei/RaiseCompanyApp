@@ -50,7 +50,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredEstablishments.count ?? 0
+        return filteredEstablishments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

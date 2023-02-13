@@ -30,7 +30,6 @@
 		AF9B197E2974B78400A04DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9B197C2974B78400A04DBA /* LaunchScreen.storyboard */; };
 		AFBC0E50298AC9BA0002DDFC /* EstablishmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */; };
 		AFCF1369298A607100934EA4 /* Establishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF1368298A607100934EA4 /* Establishment.swift */; };
-		AFCF136B298A746200934EA4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF136A298A746200934EA4 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,8 +58,7 @@
 		AF9B197D2974B78400A04DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF9B197F2974B78400A04DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentDetailViewController.swift; sourceTree = "<group>"; };
-		AFCF1368298A607100934EA4 /* Establishment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Establishment.swift; sourceTree = "<group>"; };
-		AFCF136A298A746200934EA4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		AFCF1368298A607100934EA4 /* Establishment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Establishment.swift; path = Domain/Establishment.swift; sourceTree = "<group>"; };
 		B2B69A363D4CC427D844C10B /* Pods-RaiseCompanyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiseCompanyApp.debug.xcconfig"; path = "Target Support Files/Pods-RaiseCompanyApp/Pods-RaiseCompanyApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,8 +174,8 @@
 		AFB6E7A629797D9600B06CB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AFCF136C298A8B0500934EA4 /* Domain */,
-				AFCF136A298A746200934EA4 /* DataManager.swift */,
+				AFCF1368298A607100934EA4 /* Establishment.swift */,
+				AF91B18E298BB8DB00C87A21 /* Review.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,15 +193,6 @@
 				AF405483298BBFF800D0320F /* ReviewsListViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		AFCF136C298A8B0500934EA4 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				AFCF1368298A607100934EA4 /* Establishment.swift */,
-				AF91B18E298BB8DB00C87A21 /* Review.swift */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,7 +321,6 @@
 				AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */,
 				AF06C16A2974DDE30063D55A /* OnboardingCollectionViewCell.swift in Sources */,
 				AF06C1692974DDE30063D55A /* OnboardingViewController.swift in Sources */,
-				AFCF136B298A746200934EA4 /* DataManager.swift in Sources */,
 				AF121794298EAD3E007E4318 /* EmployeesListViewController.swift in Sources */,
 				AF40548A298BE2C100D0320F /* EstablishmentTableViewCell.swift in Sources */,
 				AF1217982990061D007E4318 /* AddEmployeeViewController.swift in Sources */,
