@@ -35,8 +35,20 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
         // Do any additional setup after loading the view.
                 
         location.text = establishment!.location
+        
+//         Set notification recevier
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadEmployeesCollectionView), name: Notification.Name("employeeAddedToEstablishment"), object: nil)
     }
     
+//    UPDATE COLLECTION VIEW AFTER EMPLOYEE ADDED
+    @objc func reloadEmployeesCollectionView(){
+        print("ha llegado la notificacion")
+        getEmployeesOfEstablishment()
+        self.EmployeesCollectionView.reloadData()
+    }
+    
+  
     
     @IBAction func AddEmployeeBtn(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "GoToAddEmployeeFromEstablishment", sender: nil)
@@ -55,7 +67,6 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
         cellEmployee.salaryEmployee.text = "\(employee.salary)"
         cellEmployee.workPositionEmployee.text = "\(employee.work_position!)"
         
-        
           return cellEmployee
     }
     
@@ -69,6 +80,12 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
         25
     }
     
+    
+    
+    
+    
+    
+//     URL METHODS
     
     func getEmployeesOfEstablishment(){
         AF.request("http://127.0.0.1:5000/safari/establishments/\(id_establishment_selected!)/employees").responseDecodable(of: [Employee].self) { response in

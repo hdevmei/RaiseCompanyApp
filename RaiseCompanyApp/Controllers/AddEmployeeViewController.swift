@@ -23,16 +23,11 @@ class AddEmployeeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-    
-
-    
  
     
     func addEmployeeForEstablishment(){
-        
         var employeeToAdd = Employee(name: "ain disimular", age: nil, mail: "ctaguna", salary: 1200, schedule: "sdkjfklsndf", work_position: "sjdfnsdf", id_establishment: id_establishment_getted!, lastnames: "esto son los apellidos", photo: nil, id_employee: nil)
             
         
@@ -61,7 +56,7 @@ class AddEmployeeViewController: UIViewController {
                     print(response)
                 }
             }
-
+        NotificationCenter.default.post(name: Notification.Name("employeeAddedToEstablishment"), object: nil)
     }
     
     

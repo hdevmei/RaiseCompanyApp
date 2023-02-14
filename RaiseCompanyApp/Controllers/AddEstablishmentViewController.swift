@@ -21,7 +21,6 @@ class AddEstablishmentViewController : UIViewController {
     
     @IBOutlet weak var lossesTextField: UITextField!
     
-    
     @IBOutlet weak var scheduleTextfield: UITextField!
     
     @IBAction func saveBtn(_ sender: Any) {
@@ -51,7 +50,7 @@ class AddEstablishmentViewController : UIViewController {
         
         // Si se pueden guardar los datos, llamar a la función postEstablishment para agregar el establecimiento al servidor
         if canSave {
-            postEstablishmentFunction?(establishmentToAdd)
+            ApiManager.shared.postEstablishment(establishmentToAdd: establishmentToAdd)
             self.dismiss(animated: true)
         } else {
             let alert = UIAlertController(title: "Error", message: "Faltan campos o están incorrectos", preferredStyle: .alert)
@@ -65,16 +64,5 @@ class AddEstablishmentViewController : UIViewController {
         self.dismiss(animated: true)
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }

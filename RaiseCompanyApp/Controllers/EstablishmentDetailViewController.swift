@@ -57,17 +57,14 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         }
     }
     
-    
-    
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-    }
+  
     
     
     //    override
     override func viewDidLoad() {
         super.viewDidLoad()
+        getEstablishment()
+        getEmployees()
         employeesCollectionView.dataSource = self
         employeesCollectionView.delegate = self
         //        set segmented control
@@ -75,10 +72,15 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         incidentsContainerView.isHidden = false
         // Do any additional setup after loading the view.
         
-        getEstablishment()
-        getEmployees()
+        
+        print("Al principio hay \(employees?.count)")
+       
     }
     
+    
+  
+    
+
     
     //    Collection view functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -119,7 +121,8 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     }
     
     
-    //    url methods
+    //    URL METHODS
+    
     func getEstablishment() {
         AF.request("http://127.0.0.1:5000/safari/establishments/\(id_getted!)")
             .responseDecodable(of: [EstablishmentSQLView].self) { response in
@@ -139,11 +142,9 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
             }
     }
     
-    
-    
+
     func getEmployees() {
         let url = "http://127.0.0.1:5000/safari/establishments/\(id_getted!)/employees"
-               
                AF.request(url).responseDecodable(of: [Employee].self) { response in
                    switch response.result {
                    case .success(let data):
@@ -154,6 +155,7 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
                        print("Error al obtener los employees: \(error)")
                    }
                }
+        employeesCollectionView.reloadData()
         employeesCollectionView.dataSource = self
     }
     

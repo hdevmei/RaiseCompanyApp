@@ -26,27 +26,44 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         performSegue(withIdentifier: "goToAddEstablishment", sender: nil)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         myEstablishmentListTableView.delegate = self
         myEstablishmentListTableView.dataSource = self
         myEstablishmentListTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        
-        
         mySearchBar.delegate = self
         
         
-        //           getUsers()
-        getEstablishments()
+        ApiManager.shared.getEstablishments { establishments, error in
+            if let establishments = establishments {
+                self.establishments = establishments
+                self.filteredEstablishments = establishments
+                self.myEstablishmentListTableView.reloadData()
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
         UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("establishmentAdded"), object: nil)
         
     }
     
-    
-    
-  
+    //    Update table view after added an establishment
+    @objc func reloadDataEstablishment(){
+        ApiManager.shared.getEstablishments { establishments, error in
+            if let establishments = establishments {
+                self.establishments = establishments
+                self.filteredEstablishments = establishments
+                self.myEstablishmentListTableView.reloadData()
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        self.myEstablishmentListTableView.reloadData()
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,88 +84,50 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("lala")
         id_establishmentSelected = filteredEstablishments[indexPath.row].id_establishment!
         let location_establishment_selected = filteredEstablishments[indexPath.row].location
         performSegue(withIdentifier: "GoEstablishmentDetailedViewController", sender: id_establishmentSelected)
-
+        
         print("id establishent selected \(id_establishmentSelected!)")
         print(location_establishment_selected)
     }
     
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard editingStyle == .delete else {
-            return
-        }
-        
-        deleteEstablishment(at: indexPath.row)
-    }
+           guard editingStyle == .delete else {
+               return
+           }
+           
+           deleteEstablishment(at: indexPath.row)
+       }
     
+       
+       
+       //    URL METHODS
+       
+       func deleteEstablishment(at index: Int) {
+           print("getting estsblishments")
+           guard let establishmentId = filteredEstablishments[index].id_establishment else {
+               return
+           }
+           
+           let url = "http://127.0.0.1:5000/safari/establishments/\(establishmentId)"
+           AF.request(url, method: .delete).response { [weak self] response in
+               guard let self = self else {
+                   return
+               }
+               
+               switch response.result {
+               case .success:
+                   self.filteredEstablishments.remove(at: index)
+                   self.myEstablishmentListTableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+               case .failure(let error):
+                   print("Failed to delete employee: \(error)")
+               }
+           }
+           
+       }
+  
     
-    
-    
-    
-    //    URL METHODS
-    
-    func deleteEstablishment(at index: Int) {
-        print("getting estsblishments")
-        guard let establishmentId = filteredEstablishments[index].id_establishment else {
-            return
-        }
-        
-        let url = "http://127.0.0.1:5000/safari/establishments/\(establishmentId)"
-        AF.request(url, method: .delete).response { [weak self] response in
-            guard let self = self else {
-                return
-            }
-            
-            switch response.result {
-            case .success:
-                self.filteredEstablishments.remove(at: index)
-                self.myEstablishmentListTableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
-            case .failure(let error):
-                print("Failed to delete employee: \(error)")
-            }
-        }
-        
-    }
-    
-    
-    
-    
-    func getEstablishments(){
-        AF.request("http://127.0.0.1:5000/safari/establishments").responseDecodable(of: [EstablishmentSQLView].self) { response in
-            self.establishments = try? response.result.get()
-            //            print(response.description)
-            print(response.description)
-        self.filteredEstablishments = self.establishments!
-            self.myEstablishmentListTableView.reloadData()
-            print("establishments count es \(self.establishments?.count)")
-        }
-    }
-    
-    
-   
-    
-    
-     func postEstablishment(establishmentToAdd : EstablishmentSQLView?){
-        let url = "http://127.0.0.1:5000/safari/establishments"
-        AF.request(url, method: .post, parameters: establishmentToAdd, encoder: JSONParameterEncoder.default)
-            .validate(statusCode: 200..<300)
-            .response { response in
-                switch response.result {
-                case .success:
-                    print("POST request successful")
-                    self.getEstablishments()
-                    self.establishments!.append(establishmentToAdd!)
-                    self.myEstablishmentListTableView.reloadData()
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        
-    }
     
     
     @IBAction func btnPrueba(_ sender: Any) {
@@ -157,18 +136,14 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "goToAddEstablishment" {
-//               pass the function to post establishment
-               let addEstablishmnetVC = segue.destination as! AddEstablishmentViewController
-               addEstablishmnetVC.postEstablishmentFunction = postEstablishment
-           } else if segue.identifier == "GoEstablishmentDetailedViewController"{
-               let establishmentDetailVC = segue.destination as! EstablishmentDetailedViewController
-               establishmentDetailVC.id_getted = id_establishmentSelected
-               
-               
-           }
-       }
-    
+        if segue.identifier == "goToAddEstablishment" {
+            //               pass the function to post establishment
+            let addEstablishmnetVC = segue.destination as! AddEstablishmentViewController
+        } else if segue.identifier == "GoEstablishmentDetailedViewController"{
+            let establishmentDetailVC = segue.destination as! EstablishmentDetailedViewController
+            establishmentDetailVC.id_getted = id_establishmentSelected
+        }
+    }
 }
 
 
@@ -189,8 +164,3 @@ extension EstablishmentListViewController: UISearchBarDelegate{
         self.myEstablishmentListTableView.reloadData()
     }
 }
-
-
-
-//indexpath.row stars in 0
-//establishments array = 1
