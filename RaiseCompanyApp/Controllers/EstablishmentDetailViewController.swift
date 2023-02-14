@@ -104,7 +104,7 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     
     
     
-    //    setup
+    //    set the views
     
     func setInfoEstablishment(){
         self.locationLabel.text = self.establishment!.location
@@ -113,17 +113,10 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         
         if self.establishment!.avg_rating != nil{
             self.avgRating.image = UIImage(named: "\(self.establishment!.avg_rating!)rating")
-            
-        } else {
-            print("Este establecimiento no tiene estrellas")
         }
-        
         self.scheduleLabel.text = self.establishment!.schedule
         self.num_employeesLabel.text = "\(self.establishment!.num_employees) Employees"
     }
-    
-    
-    
     
     
     //    url methods

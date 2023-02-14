@@ -82,15 +82,11 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     
     
     
-   
-   
-
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if segue.identifier == "GoToAddEmployeeFromEstablishment" {
 //               pass the function to post establishment
                let addEmployeeVC = segue.destination as! AddEmployeeViewController
-               addEmployeeVC.id_getted = id_establishment_selected
+               addEmployeeVC.id_establishment_getted = id_establishment_selected
            }
        }
 

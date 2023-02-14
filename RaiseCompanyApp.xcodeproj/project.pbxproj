@@ -31,6 +31,7 @@
 		AFBC0E50298AC9BA0002DDFC /* EstablishmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */; };
 		AFC74F51299ACA8600AE7805 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC74F50299ACA8600AE7805 /* Employee.swift */; };
 		AFCF1369298A607100934EA4 /* Establishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF1368298A607100934EA4 /* Establishment.swift */; };
+		AFFCD1EA299C203000017629 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFCD1E9299C203000017629 /* Requests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentDetailViewController.swift; sourceTree = "<group>"; };
 		AFC74F50299ACA8600AE7805 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Employee.swift; path = Domain/Employee.swift; sourceTree = "<group>"; };
 		AFCF1368298A607100934EA4 /* Establishment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Establishment.swift; path = Domain/Establishment.swift; sourceTree = "<group>"; };
+		AFFCD1E9299C203000017629 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		B2B69A363D4CC427D844C10B /* Pods-RaiseCompanyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiseCompanyApp.debug.xcconfig"; path = "Target Support Files/Pods-RaiseCompanyApp/Pods-RaiseCompanyApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +181,7 @@
 				AFCF1368298A607100934EA4 /* Establishment.swift */,
 				AF91B18E298BB8DB00C87A21 /* Review.swift */,
 				AFC74F50299ACA8600AE7805 /* Employee.swift */,
+				AFFCD1E9299C203000017629 /* Requests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */,
 				AF3323EB298AF4AC00C7065F /* EmployeeCollectionViewCell.swift in Sources */,
 				AFBC0E50298AC9BA0002DDFC /* EstablishmentDetailViewController.swift in Sources */,
+				AFFCD1EA299C203000017629 /* Requests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,9 +30,10 @@ class AddEstablishmentViewController : UIViewController {
     
     
     func addEstablishment() {
-        var establishmentToAdd = EstablishmentSQLView(benefits: 0, location: "", losses: 0, photo: nil, id_establishment: nil, schedule: "", num_employees: 0, avg_rating: nil)
+        var establishmentToAdd = EstablishmentSQLView(benefits: 0, location: "", losses: 0, photo: nil, id_establishment: nil, schedule: nil, num_employees: 0, avg_rating: nil)
         
-        establishmentToAdd.schedule = scheduleTextfield.text!
+//          establishmentToAdd.schedule = scheduleTextfield.text!
+            establishmentToAdd.location = locationTextField.text!
         
         // Comprobar si los campos de texto de beneficios y pérdidas son números enteros
         if let benefitsText = benefitsTextField.text, let benefits = Int(benefitsText),

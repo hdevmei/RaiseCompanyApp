@@ -30,7 +30,7 @@ struct Establishment: Codable {
 
 
 
-struct EstablishmentSQLView: Codable{
+struct EstablishmentSQLView:Encodable, Decodable {
     var benefits: Int?
     var location: String
     var losses: Int?
@@ -40,7 +40,13 @@ struct EstablishmentSQLView: Codable{
     var num_employees: Int
     var avg_rating: Float?
     
-    
+    var rating: Float! {
+        if let avgRating = avg_rating {
+            return avgRating
+        } else {
+            return -1
+        }
+    }
     
     init(benefits: Int?, location: String, losses: Int?, photo: String?, id_establishment: Int?, schedule: String?, num_employees: Int, avg_rating: Float?) {
         self.benefits = benefits
@@ -52,7 +58,5 @@ struct EstablishmentSQLView: Codable{
         self.num_employees = num_employees
         self.avg_rating = avg_rating
     }
-    
-    
 }
 

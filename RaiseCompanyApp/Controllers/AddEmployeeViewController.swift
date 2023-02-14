@@ -10,7 +10,7 @@ import Alamofire
 
 class AddEmployeeViewController: UIViewController {
 
-    var id_getted: Int?
+    var id_establishment_getted: Int?
     
     @IBAction func addEmployee(_ sender: Any) {
         print("Intentando aañadir un employee")
@@ -27,16 +27,15 @@ class AddEmployeeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-  
+
     
-    
-    
-    
-    
+ 
     
     func addEmployeeForEstablishment(){
-        var employeeToAdd = Employee(employee_user_name: "Prueba", password: "1234", name: "Juan Carlos" , age: 20, mail: "juanki@gmail.com", salary: 1300, schedule: "Este es el horario de juanqui", work_position: "Profe de lengua", id_establishment: id_getted!, rol: "employee", lastnames: "gomez", photo: nil)
+        
+        var employeeToAdd = Employee(name: "ain disimular", age: nil, mail: "ctaguna", salary: 1200, schedule: "sdkjfklsndf", work_position: "sjdfnsdf", id_establishment: id_establishment_getted!, lastnames: "esto son los apellidos", photo: nil, id_employee: nil)
             
+        
             let jsonEncoder = JSONEncoder()
             jsonEncoder.outputFormatting = .prettyPrinted
 
@@ -50,7 +49,7 @@ class AddEmployeeViewController: UIViewController {
             }
         
         
-        let url = "http://127.0.0.1:5000/safari/establishments/\(id_getted!)/employees"
+        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment_getted!)/employees"
         AF.request(url, method: .post, parameters: employeeToAdd, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
             .response { response in
@@ -59,20 +58,12 @@ class AddEmployeeViewController: UIViewController {
                     print("POST request successful")
                 case .failure(let error):
                     print(error)
+                    print(response)
                 }
             }
 
     }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

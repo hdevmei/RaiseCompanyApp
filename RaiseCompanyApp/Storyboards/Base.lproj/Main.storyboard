@@ -1044,23 +1044,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRW-c1-oap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3086" y="3843"/>
-        </scene>
-        <!--Chats-->
-        <scene sceneID="HUV-GX-ufN">
-            <objects>
-                <viewController id="Xkx-dC-gOY" customClass="ChatsViewController" customModule="RaiseCompanyApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="moF-4h-uEy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="RMM-Nn-OgC"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Chats" image="message.fill" catalog="system" id="oEQ-Qr-dZc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="veg-Ge-FVf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1987" y="4614"/>
+            <point key="canvasLocation" x="2451" y="3462"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7Cd-91-ptU">
@@ -1075,7 +1059,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="qDM-fw-2jp" kind="relationship" relationship="viewControllers" id="Nab-kZ-ioa"/>
-                        <segue destination="Xkx-dC-gOY" kind="relationship" relationship="viewControllers" id="4n1-Mp-3Fn"/>
                         <segue destination="TIn-Vz-xmK" kind="relationship" relationship="viewControllers" id="HcX-MK-GWM"/>
                     </connections>
                 </tabBarController>
@@ -1166,19 +1149,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEa-YF-kIN">
-                                <rect key="frame" x="54.5" y="709" width="305" height="38"/>
-                                <color key="backgroundColor" red="0.12561839820000001" green="0.1252827644" blue="0.13328653569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="qEa-YF-kIN" secondAttribute="height" multiplier="305:38" id="z14-lS-7rn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="   Schedule..." minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="vOD-N1-kK0">
                                 <rect key="frame" x="32" y="539" width="350" height="100"/>
                                 <color key="backgroundColor" red="0.12561839820000001" green="0.1252827644" blue="0.13328653569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1213,7 +1183,6 @@
                             <constraint firstItem="Xzz-Ug-xtj" firstAttribute="centerX" secondItem="HrS-4V-1Oj" secondAttribute="centerX" id="F3R-qC-mr9"/>
                             <constraint firstItem="vOD-N1-kK0" firstAttribute="width" secondItem="90l-B4-0Ug" secondAttribute="width" multiplier="0.724638" constant="49.999867999999992" id="GoC-9D-mSQ"/>
                             <constraint firstItem="Izi-KM-Kd7" firstAttribute="leading" secondItem="HrS-4V-1Oj" secondAttribute="leading" constant="20" id="K6c-wY-lE8"/>
-                            <constraint firstItem="qEa-YF-kIN" firstAttribute="centerX" secondItem="HrS-4V-1Oj" secondAttribute="centerX" id="Qom-Hv-xs1"/>
                             <constraint firstItem="Xzz-Ug-xtj" firstAttribute="width" secondItem="90l-B4-0Ug" secondAttribute="width" multiplier="0.724638" constant="49.999867999999992" id="SVt-4m-zdb"/>
                             <constraint firstItem="HrS-4V-1Oj" firstAttribute="trailing" secondItem="inh-By-t9y" secondAttribute="trailing" constant="20" id="XRJ-BW-W79"/>
                             <constraint firstItem="9J8-3w-zf7" firstAttribute="centerX" secondItem="HrS-4V-1Oj" secondAttribute="centerX" id="YJV-b3-Qqv"/>
@@ -1223,7 +1192,6 @@
                             <constraint firstItem="vOD-N1-kK0" firstAttribute="top" secondItem="eW5-pc-rWa" secondAttribute="bottom" constant="20" id="jGZ-38-ccw"/>
                             <constraint firstItem="eRj-zp-NEm" firstAttribute="centerX" secondItem="HrS-4V-1Oj" secondAttribute="centerX" id="jnd-eC-kze"/>
                             <constraint firstItem="upN-UI-syY" firstAttribute="width" secondItem="Xzz-Ug-xtj" secondAttribute="width" multiplier="0.357143" id="oYM-bo-b8m"/>
-                            <constraint firstItem="qEa-YF-kIN" firstAttribute="width" secondItem="90l-B4-0Ug" secondAttribute="width" multiplier="0.736715" id="pDM-fb-7z2"/>
                             <constraint firstItem="eW5-pc-rWa" firstAttribute="centerX" secondItem="HrS-4V-1Oj" secondAttribute="centerX" id="rd7-1l-q66"/>
                             <constraint firstItem="eW5-pc-rWa" firstAttribute="width" secondItem="90l-B4-0Ug" secondAttribute="width" multiplier="0.724638" constant="49.999867999999992" id="rmk-KG-QNm"/>
                             <constraint firstItem="upN-UI-syY" firstAttribute="centerX" secondItem="HrS-4V-1Oj" secondAttribute="centerX" id="uQ6-dX-G11"/>
@@ -1231,7 +1199,6 @@
                             <constraint firstItem="eW5-pc-rWa" firstAttribute="top" secondItem="eRj-zp-NEm" secondAttribute="bottom" constant="20" id="wQr-qL-n7K"/>
                             <constraint firstItem="eRj-zp-NEm" firstAttribute="width" secondItem="90l-B4-0Ug" secondAttribute="width" multiplier="0.724638" constant="49.999867999999992" id="wrb-44-fvM"/>
                             <constraint firstItem="eRj-zp-NEm" firstAttribute="top" secondItem="Xzz-Ug-xtj" secondAttribute="bottom" constant="22" id="ylF-hN-mcm"/>
-                            <constraint firstItem="qEa-YF-kIN" firstAttribute="top" secondItem="vOD-N1-kK0" secondAttribute="bottom" constant="70" id="zGS-dY-dm2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="G6r-k2-pH1"/>
@@ -1480,6 +1447,13 @@
                                     <action selector="cancelBtn:" destination="9bR-e8-zif" eventType="touchUpInside" id="IBF-0C-93v"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KwT-bw-iT3">
+                                <rect key="frame" x="32" y="149" width="350" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.12561839820000001" green="0.1252827644" blue="0.13328653569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XXP-O8-Aja"/>
                         <color key="backgroundColor" red="0.15686275059999999" green="0.19607841970000001" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1499,7 +1473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="508-wG-vIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6019" y="1475"/>
+            <point key="canvasLocation" x="6018.840579710145" y="1500.6696428571429"/>
         </scene>
         <!--Add Establishment-->
         <scene sceneID="Btw-Yi-Dtu">
@@ -1663,7 +1637,6 @@
         <image name="camera" width="615" height="615"/>
         <image name="chevron.forward" catalog="system" width="97" height="128"/>
         <image name="location" width="70" height="105"/>
-        <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="oasiz" width="500" height="500"/>
         <image name="paseoExtremadura" width="1024" height="768"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
