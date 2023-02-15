@@ -11,10 +11,35 @@ import Alamofire
 class AddEmployeeViewController: UIViewController {
 
     var id_establishment_getted: Int?
+    var canSave: Bool = true
+    
+    
+    @IBOutlet weak var nameEmployeeTF: UITextField!
+    
+    @IBOutlet weak var lastNamesTF: UITextField!
+    
+    @IBOutlet weak var ageTF: UITextField!
+    
+    @IBOutlet weak var mailTF: UITextField!
+    
+    @IBOutlet weak var workPositionTF: UITextField!
+    
+    @IBOutlet weak var salaryTF: UITextField!
+    
+    @IBOutlet weak var scheduleTF: UITextField!
+    
+    
     
     @IBAction func addEmployee(_ sender: Any) {
-        print("Intentando aañadir un employee")
-        addEmployeeForEstablishment()
+        if canSave == true {
+            addEmployeeForEstablishment()
+            self.dismiss(animated: true)
+        }else{
+            let alert = UIAlertController(title: "Error", message: "Faltan campos o están incorrectos", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+      
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
@@ -28,8 +53,9 @@ class AddEmployeeViewController: UIViewController {
  
     
     func addEmployeeForEstablishment(){
-        var employeeToAdd = Employee(name: "ain disimular", age: nil, mail: "ctaguna", salary: 1200, schedule: "sdkjfklsndf", work_position: "sjdfnsdf", id_establishment: id_establishment_getted!, lastnames: "esto son los apellidos", photo: nil, id_employee: nil)
+        var employeeToAdd = Employee(name: nameEmployeeTF.text, age: 7, mail: nil, salary: nil, schedule: nil, work_position: nil, id_establishment: id_establishment_getted!, lastnames:  nil, photo: nil, id_employee: nil)
             
+        
         
             let jsonEncoder = JSONEncoder()
             jsonEncoder.outputFormatting = .prettyPrinted

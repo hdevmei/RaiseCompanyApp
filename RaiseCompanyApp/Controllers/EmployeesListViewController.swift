@@ -64,7 +64,7 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
         let employee = employees![indexPath.row]
         
         cellEmployee.nameEmployee.text = "\(employee.name!)"
-        cellEmployee.salaryEmployee.text = "\(employee.salary)"
+        cellEmployee.salaryEmployee.text = "\(employee.salary!)"
         cellEmployee.workPositionEmployee.text = "\(employee.work_position!)"
         
           return cellEmployee
