@@ -67,18 +67,24 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         getEmployees()
         employeesCollectionView.dataSource = self
         employeesCollectionView.delegate = self
+        
         //        set segmented control
         ReviewsContainerVIew.isHidden = true
         incidentsContainerView.isHidden = false
         // Do any additional setup after loading the view.
         
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishmentDetail), name: Notification.Name("employeeAddedToEstablishment"), object: nil)
+               
         
-        print("Al principio hay \(employees?.count)")
-       
     }
     
     
-  
+    @objc func reloadDataEstablishmentDetail(){
+        print("Actuliazndo empleados redondos")
+        getEmployees()
+        self.employeesCollectionView.reloadData()
+        getEstablishment()
+    }
     
 
     

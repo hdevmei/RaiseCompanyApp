@@ -43,7 +43,6 @@ class AddEmployeeViewController: UIViewController {
                 print(error)
             }
         
-        
         let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment_getted!)/employees"
         AF.request(url, method: .post, parameters: employeeToAdd, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
@@ -51,12 +50,12 @@ class AddEmployeeViewController: UIViewController {
                 switch response.result {
                 case .success:
                     print("POST request successful")
+                    NotificationCenter.default.post(name: Notification.Name("employeeAddedToEstablishment"), object: nil)
                 case .failure(let error):
                     print(error)
                     print(response)
                 }
             }
-        NotificationCenter.default.post(name: Notification.Name("employeeAddedToEstablishment"), object: nil)
     }
     
     

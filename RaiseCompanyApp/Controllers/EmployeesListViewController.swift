@@ -38,12 +38,12 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
         
 //         Set notification recevier
         
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadEmployeesCollectionView), name: Notification.Name("employeeAddedToEstablishment"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadSquareEmployeesCollectionView), name: Notification.Name("employeeAddedToEstablishment"), object: nil)
     }
     
 //    UPDATE COLLECTION VIEW AFTER EMPLOYEE ADDED
-    @objc func reloadEmployeesCollectionView(){
-        print("ha llegado la notificacion")
+    @objc func reloadSquareEmployeesCollectionView(){
+        print("reload data Square employee")
         getEmployeesOfEstablishment()
         self.EmployeesCollectionView.reloadData()
     }
