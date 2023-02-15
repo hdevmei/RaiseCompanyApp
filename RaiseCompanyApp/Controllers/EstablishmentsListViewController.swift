@@ -46,8 +46,9 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         
         UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
-        
+//        Update establishments from changes of other view controllers
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("establishmentAdded"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("employeeAddedToEstablishment"), object: nil)
         
     }
     

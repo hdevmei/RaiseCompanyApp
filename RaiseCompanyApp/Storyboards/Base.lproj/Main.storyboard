@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9e5-5b-Rjl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mAf-qB-3oT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -842,7 +842,7 @@
                         <outlet property="scheduleLabel" destination="wBR-dC-lMg" id="hvZ-Z8-11H"/>
                         <outlet property="segmentedControl" destination="IKk-AJ-Rda" id="wPU-57-mIP"/>
                         <segue destination="5LB-5J-pxB" kind="push" identifier="GoEmployeesListViewController" id="sHG-yz-hrA"/>
-                        <segue destination="UGi-BS-T6h" kind="push" identifier="GoToEmployeeList" id="50w-lK-jIG"/>
+                        <segue destination="UGi-BS-T6h" kind="push" identifier="GoToEmployeeDetailFromRounded" id="50w-lK-jIG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfN-Ot-bzq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -992,7 +992,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cti-Zi-VSq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6018.840579710145" y="2215.8482142857142"/>
+            <point key="canvasLocation" x="6045" y="2217"/>
         </scene>
         <!--Employee-->
         <scene sceneID="QJP-3O-Swz">
@@ -1453,13 +1453,12 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KwT-bw-iT3" secondAttribute="height" multiplier="7:1" id="LW1-Ee-u64"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Lastnames..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EGr-jv-lNg">
@@ -1468,13 +1467,12 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EGr-jv-lNg" secondAttribute="height" multiplier="7:1" id="iJw-lV-ISK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="commonShadow" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Mail..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0QS-fI-FL1">
@@ -1483,7 +1481,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0QS-fI-FL1" secondAttribute="height" multiplier="7:1" id="M9N-tz-hdy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1507,7 +1505,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AAW-6X-mp5" secondAttribute="height" multiplier="7:1" id="mJO-nW-9km"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1521,7 +1519,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mnW-2Y-pVQ" secondAttribute="height" multiplier="7:1" id="eD9-mJ-fRa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1535,7 +1533,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rsh-jZ-PFc" secondAttribute="height" multiplier="3:1" constant="15" id="9jD-4b-WqB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1549,7 +1547,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1hL-cu-q7r" secondAttribute="height" multiplier="33:10" id="S7Y-Mg-lPz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1609,7 +1607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="508-wG-vIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6018.840579710145" y="1500.6696428571429"/>
+            <point key="canvasLocation" x="6046" y="1492"/>
         </scene>
         <!--Add Establishment-->
         <scene sceneID="Btw-Yi-Dtu">

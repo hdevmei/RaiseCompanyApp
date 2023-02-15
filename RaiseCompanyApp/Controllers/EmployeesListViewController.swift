@@ -63,10 +63,17 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
         let cellEmployee = collectionView.dequeueReusableCell(withReuseIdentifier: "squareEmployeeCell", for: indexPath) as! SquareEmloyeeCollectionViewCell
         let employee = employees![indexPath.row]
         
-        cellEmployee.nameEmployee.text = "\(employee.name!)"
-        cellEmployee.salaryEmployee.text = "\(employee.salary!)"
-        cellEmployee.workPositionEmployee.text = "\(employee.work_position!)"
         
+//        Assign values
+        var name = ""
+        var lastname = ""
+        
+        name = employee.name != nil ? employee.name! : "No name"
+        lastname = employee.lastnames != nil ? employee.lastnames! : "No lastnames"
+        let nameAndLastNames = name + " " + lastname
+        cellEmployee.nameEmployee.text = nameAndLastNames
+        cellEmployee.salaryEmployee.text = employee.salary != nil ? "\(employee.salary!)" : "Sin salario"
+        cellEmployee.workPositionEmployee.text = employee.work_position != nil ? "\(employee.work_position!)" : "Sin Puesto"
           return cellEmployee
     }
     

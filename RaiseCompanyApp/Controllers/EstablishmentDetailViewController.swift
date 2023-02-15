@@ -96,7 +96,11 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "roundedEmployeeCell", for: indexPath) as! EmployeeCollectionViewCell
         let employee = employees![indexPath.row]
-        cell.nameEmployee.text = "\(employee.name!) \(employee.lastnames!)"
+        cell.nameEmployee.text = (employee.name != nil && employee.lastnames != nil) ? "\(employee.name!) \(employee.lastnames!)" : ""
+
+//        cellEmployee.nameEmployee.text = employee.name != nil ? "\(employee.name!)" : "Sin nombre"
+
+        
         return cell
     }
     
@@ -106,7 +110,7 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToEmployeeDetailVCfromEstablishment", sender: nil)
+        performSegue(withIdentifier: "GoToEmployeeDetailFromRounded", sender: nil)
     }
     
     
@@ -115,10 +119,10 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     //    set the views
     
     func setInfoEstablishment(){
-        self.locationLabel.text = self.establishment!.location
-        self.benefitsLabel.text = "   \(self.establishment!.benefits!) $"
-        self.lossesLabel.text = "   \(self.establishment!.losses!) $"
-        
+        self.locationLabel.text = self.establishment?.location ?? ""
+        self.benefitsLabel.text = "   \(self.establishment?.benefits != nil ? "\(self.establishment!.benefits!)" : "") $"
+        self.lossesLabel.text = "   \(self.establishment?.losses != nil ? "\(self.establishment!.losses!)" : "") $"
+        self.scheduleLabel.text = self.establishment?.schedule ?? ""
         if self.establishment!.avg_rating != nil{
             self.avgRating.image = UIImage(named: "\(self.establishment!.avg_rating!)rating")
         }

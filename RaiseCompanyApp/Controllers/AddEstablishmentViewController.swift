@@ -29,7 +29,7 @@ class AddEstablishmentViewController : UIViewController {
     
     
     func addEstablishment() {
-        var establishmentToAdd = EstablishmentSQLView(benefits: 0, location: "", losses: 0, photo: nil, id_establishment: nil, schedule: nil, num_employees: 0, avg_rating: nil)
+        var establishmentToAdd = EstablishmentSQLView(benefits: 0, location: "", losses: 0, photo: nil, id_establishment: nil, schedule: scheduleTextfield.text, num_employees: 0, avg_rating: nil)
         
 //          establishmentToAdd.schedule = scheduleTextfield.text!
             establishmentToAdd.location = locationTextField.text!

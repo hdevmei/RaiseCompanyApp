@@ -53,21 +53,33 @@ class AddEmployeeViewController: UIViewController {
  
     
     func addEmployeeForEstablishment(){
-        var employeeToAdd = Employee(name: nameEmployeeTF.text, age: 7, mail: nil, salary: nil, schedule: nil, work_position: nil, id_establishment: id_establishment_getted!, lastnames:  nil, photo: nil, id_employee: nil)
-            
-        
-        
-            let jsonEncoder = JSONEncoder()
-            jsonEncoder.outputFormatting = .prettyPrinted
+        guard let name = nameEmployeeTF.text, !name.isEmpty,
+               let lastNames = lastNamesTF.text, !lastNames.isEmpty,
+               let workPosition = workPositionTF.text, !workPosition.isEmpty
+         else {
+             let alert = UIAlertController(title: "Error", message: "The fields of name, surname and job position are required", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+             present(alert, animated: true, completion: nil)
+             return
+         }
+         
+         // Comprobamos que los campos de edad y salario puedan ser convertidos a Int
+         if let age = Int(ageTF.text ?? ""), let salary = Int(salaryTF.text ?? "") {
+             // Creamos un objeto Employee con los datos ingresados por el usuario
+             let employeeToAdd = Employee(name: name, age: age, mail: mailTF.text, salary: salary, schedule: scheduleTF.text, work_position: workPosition, id_establishment: id_establishment_getted!, lastnames: lastNames, photo: nil, id_employee: nil)
 
-            do {
-                let jsonData = try jsonEncoder.encode(employeeToAdd)
-                if let jsonString = String(data: jsonData, encoding: .utf8) {
-                    print(jsonString)
-                }
-            } catch {
-                print(error)
-            }
+             // Convertimos el objeto Employee a JSON y lo imprimimos por consola
+             let jsonEncoder = JSONEncoder()
+             jsonEncoder.outputFormatting = .prettyPrinted
+             do {
+                 let jsonData = try jsonEncoder.encode(employeeToAdd)
+                 if let jsonString = String(data: jsonData, encoding: .utf8) {
+                     print(jsonString)
+                 }
+             } catch {
+                 print(error)
+             }
+             
         
         let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment_getted!)/employees"
         AF.request(url, method: .post, parameters: employeeToAdd, encoder: JSONParameterEncoder.default)
@@ -82,6 +94,16 @@ class AddEmployeeViewController: UIViewController {
                     print(response)
                 }
             }
+            
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Age and salary must be numbers", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+
+        
+        
+      
     }
     
     
