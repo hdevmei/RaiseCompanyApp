@@ -18,7 +18,9 @@ class ApiManager {
         AF.request(url).responseDecodable(of: [EstablishmentSQLView].self) { response in
             switch response.result {
             case .success(let establishments):
+                print(establishments)
                 completion(establishments, nil)
+                
             case .failure(let error):
                 completion(nil, error)
             }
@@ -32,7 +34,7 @@ class ApiManager {
             .response { response in
                 switch response.result {
                 case .success:
-                    print("POST request ala tu")
+                    print("POST request establishment added")
                     NotificationCenter.default.post(name: Notification.Name("establishmentAdded"), object: nil)
                 case .failure(let error):
                     print(error)

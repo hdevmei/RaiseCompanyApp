@@ -12,6 +12,7 @@ import Kingfisher
 
 class EstablishmentListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet weak var imgPrueba: UIImageView!
     public var establishments: [EstablishmentSQLView]?
     var filteredEstablishments: [EstablishmentSQLView] = []
     
@@ -46,7 +47,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         
         UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
-//        Update establishments from changes of other view controllers
+        //        Update establishments from changes of other view controllers
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("establishmentAdded"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("employeeAddedToEstablishment"), object: nil)
         
@@ -77,9 +78,17 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         cell.location.text = establishment.location
         cell.benefitsLabel.text = "   ▲ \(establishment.benefits!) €"
         cell.lossesLabel.text = "   ▲ \(establishment.losses!) €"
-        //        cell.imgEstablishment.kf.setImage(with: URL(string: "\(establishment!.photo)"))
+        
         cell.numberEmployees.text = "\(establishment.num_employees) Employees"
-        //        cell.rating.image = UIImage(named: "oasiz")
+        
+//        let imageData = Data(base64Encoded: establishment.photo!)
+//        
+//        let image = UIImage(data: imageData!)
+//        cell.imgEstablishment.contentMode = .scaleAspectFit
+//        cell.imgEstablishment.image = image
+        
+        
+        
         return cell
     }
     
@@ -94,45 +103,46 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-           guard editingStyle == .delete else {
-               return
-           }
-           
-           deleteEstablishment(at: indexPath.row)
-       }
+        guard editingStyle == .delete else {
+            return
+        }
+        
+        deleteEstablishment(at: indexPath.row)
+    }
     
-       
-       
-       //    URL METHODS
-       
-       func deleteEstablishment(at index: Int) {
-           print("getting estsblishments")
-           guard let establishmentId = filteredEstablishments[index].id_establishment else {
-               return
-           }
-           
-           let url = "http://127.0.0.1:5000/safari/establishments/\(establishmentId)"
-           AF.request(url, method: .delete).response { [weak self] response in
-               guard let self = self else {
-                   return
-               }
-               
-               switch response.result {
-               case .success:
-                   self.filteredEstablishments.remove(at: index)
-                   self.myEstablishmentListTableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
-               case .failure(let error):
-                   print("Failed to delete employee: \(error)")
-               }
-           }
-           
-       }
-  
+    
+    
+    //    URL METHODS
+    
+    func deleteEstablishment(at index: Int) {
+        print("getting estsblishments")
+        guard let establishmentId = filteredEstablishments[index].id_establishment else {
+            return
+        }
+        
+        let url = "http://127.0.0.1:5000/safari/establishments/\(establishmentId)"
+        AF.request(url, method: .delete).response { [weak self] response in
+            guard let self = self else {
+                return
+            }
+            
+            switch response.result {
+            case .success:
+                self.filteredEstablishments.remove(at: index)
+                self.myEstablishmentListTableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            case .failure(let error):
+                print("Failed to delete employee: \(error)")
+            }
+        }
+        
+    }
+    
     
     
     
     @IBAction func btnPrueba(_ sender: Any) {
-        print(id_establishmentSelected)
+
+
     }
     
     

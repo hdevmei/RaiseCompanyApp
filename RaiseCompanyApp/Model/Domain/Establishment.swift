@@ -30,7 +30,7 @@ struct Establishment: Codable {
 
 
 
-struct EstablishmentSQLView:Encodable, Decodable {
+struct EstablishmentSQLView: Encodable, Decodable {
     var benefits: Int?
     var location: String
     var losses: Int?
