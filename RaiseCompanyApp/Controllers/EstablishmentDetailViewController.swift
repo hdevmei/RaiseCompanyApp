@@ -18,7 +18,6 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     
     @IBOutlet weak var lossesLabel: UILabel!
     
-    //    outlets
     @IBOutlet weak var ReviewsContainerVIew: UIView!
     @IBOutlet weak var employeesCollectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -74,9 +73,12 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         // Do any additional setup after loading the view.
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishmentDetail), name: Notification.Name("employeeAddedToEstablishment"), object: nil)
-               
         
-    }
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishmentDetail), name: Notification.Name("establishmentEdited"), object: nil)
+        }
+        
+    
+    
     
     
     @objc func reloadDataEstablishmentDetail(){
@@ -98,9 +100,9 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         let employee = employees![indexPath.row]
         cell.nameEmployee.text = (employee.name != nil && employee.lastnames != nil) ? "\(employee.name!) \(employee.lastnames!)" : ""
 
-//        cellEmployee.nameEmployee.text = employee.name != nil ? "\(employee.name!)" : "Sin nombre"
-
         
+        
+//        cellEmployee.nameEmployee.text = employee.name != nil ? "\(employee.name!)" : "Sin nombre"
         return cell
     }
     
@@ -112,7 +114,6 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "GoToEmployeeDetailFromRounded", sender: nil)
     }
-    
     
     
     
@@ -140,7 +141,6 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
                 case .success(let establishments):
                     if let firstEstablishment = establishments.first {
                         self.establishment = firstEstablishment
-                        print("establecimiento obtenido desde AF")
                         print(self.establishment)
                         DispatchQueue.main.async {
                             self.setInfoEstablishment()
@@ -180,7 +180,9 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
            } else if segue.identifier == "GoEstablishmentDetailedViewController"{
                let establishmentDetailVC = segue.destination as! EstablishmentDetailedViewController
 //               establishmentDetailVC.id_getted = id_establishmentSelected
-               
+           } else if segue.identifier == "goToEditEstablishment"{
+               let editEstablishmentVC = segue.destination as! EditEstablishmentViewController
+               editEstablishmentVC.id_establishment_getted = id_getted
            }
        }
     

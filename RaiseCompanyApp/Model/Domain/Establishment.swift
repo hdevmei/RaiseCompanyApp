@@ -10,12 +10,12 @@ import Foundation
 
 
 struct Establishment: Codable {
-    let benefits: Int?
-    let id_establishment: Int?
-    let location: String?
-    let losses: Int?
-    let photo: String?
-    let schedule: String?
+    var benefits: Int?
+    var id_establishment: Int?
+    var location: String?
+    var losses: Int?
+    var photo: String?
+    var schedule: String?
     
     
     init(benefits: Int?, id_establishment: Int?, location: String?, losses: Int?, photo: String?, schedule: String?) {

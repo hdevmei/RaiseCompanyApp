@@ -22,6 +22,7 @@
 		AF405488298BD85800D0320F /* IncidentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405487298BD85800D0320F /* IncidentsViewController.swift */; };
 		AF40548A298BE2C100D0320F /* EstablishmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405489298BE2C100D0320F /* EstablishmentTableViewCell.swift */; };
 		AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */; };
+		AF891A9D29A17B2F00F87EE5 /* EditEstablishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF891A9C29A17B2F00F87EE5 /* EditEstablishmentViewController.swift */; };
 		AF91B18F298BB8DB00C87A21 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF91B18E298BB8DB00C87A21 /* Review.swift */; };
 		AF9B19722974B78300A04DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19712974B78300A04DBA /* AppDelegate.swift */; };
 		AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B19732974B78300A04DBA /* SceneDelegate.swift */; };
@@ -51,6 +52,7 @@
 		AF405487298BD85800D0320F /* IncidentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentsViewController.swift; sourceTree = "<group>"; };
 		AF405489298BE2C100D0320F /* EstablishmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentTableViewCell.swift; sourceTree = "<group>"; };
 		AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentsListViewController.swift; sourceTree = "<group>"; };
+		AF891A9C29A17B2F00F87EE5 /* EditEstablishmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEstablishmentViewController.swift; sourceTree = "<group>"; };
 		AF91B18E298BB8DB00C87A21 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		AF9B196E2974B78300A04DBA /* RaiseCompanyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiseCompanyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9B19712974B78300A04DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */,
 				AFBC0E4F298AC9BA0002DDFC /* EstablishmentDetailViewController.swift */,
 				AF405483298BBFF800D0320F /* ReviewsListViewController.swift */,
+				AF891A9C29A17B2F00F87EE5 /* EditEstablishmentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				AF40548A298BE2C100D0320F /* EstablishmentTableViewCell.swift in Sources */,
 				AFC74F51299ACA8600AE7805 /* Employee.swift in Sources */,
 				AF1217982990061D007E4318 /* AddEmployeeViewController.swift in Sources */,
+				AF891A9D29A17B2F00F87EE5 /* EditEstablishmentViewController.swift in Sources */,
 				AF91B18F298BB8DB00C87A21 /* Review.swift in Sources */,
 				AF9B19742974B78300A04DBA /* SceneDelegate.swift in Sources */,
 				AF06C16B2974DDE30063D55A /* OnboardingSlide.swift in Sources */,

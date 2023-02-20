@@ -76,18 +76,21 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EstablishmentTableViewCell
         let establishment = filteredEstablishments[indexPath.row]
         cell.location.text = establishment.location
-        cell.benefitsLabel.text = "   ▲ \(establishment.benefits!) €"
-        cell.lossesLabel.text = "   ▲ \(establishment.losses!) €"
+        cell.benefitsLabel.text = "   ▲ \(establishment.benefits!) $"
+        cell.lossesLabel.text = "   ▲ \(establishment.losses!) $"
         
         cell.numberEmployees.text = "\(establishment.num_employees) Employees"
         
-//        let imageData = Data(base64Encoded: establishment.photo!)
-//        
-//        let image = UIImage(data: imageData!)
-//        cell.imgEstablishment.contentMode = .scaleAspectFit
-//        cell.imgEstablishment.image = image
         
         
+//        TRY TO SHOW IMAGE
+//        let strBase64 = establishment.photo!
+//        do{
+//            let dataDecoded : Data = Data(base64Encoded: strBase64, options:  .ignoreUnknownCharacters)!
+//            let decodedImage: UIImage = UIImage(data: dataDecoded as Data)!
+//        }catch{
+//            cell.imgEstablishment.backgroundColor = .red
+//        }
         
         return cell
     }
@@ -106,7 +109,6 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         guard editingStyle == .delete else {
             return
         }
-        
         deleteEstablishment(at: indexPath.row)
     }
     
@@ -136,15 +138,6 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         }
         
     }
-    
-    
-    
-    
-    @IBAction func btnPrueba(_ sender: Any) {
-
-
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToAddEstablishment" {

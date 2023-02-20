@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import SwiftUI
 
 
 class AddEstablishmentViewController : UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -16,7 +17,8 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
     var postEstablishmentFunction: ((EstablishmentSQLView?) -> Void)?
     
     var selectedImage: UIImage?
-    
+    @IBOutlet weak var imgButton: UIButton!
+
     @IBOutlet weak var locationTextField: UITextField!
     
     @IBOutlet weak var benefitsTextField: UITextField!
@@ -26,11 +28,10 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
     @IBOutlet weak var scheduleTextfield: UITextField!
     
     @IBAction func saveBtn(_ sender: Any) {
- addEstablishment()
+        addEstablishment()
     }
     
     var image64 = ""
-    
     @IBAction func ImageButton(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
@@ -41,25 +42,29 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
     }
     
     
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             // Almacenar la imagen seleccionada en una variable.
             self.selectedImage = selectedImage
-            
             let imageData = selectedImage.jpegData(compressionQuality: 1.0)
-             let base64String = imageData?.base64EncodedString(options: [])
+            let base64String = imageData?.base64EncodedString(options: [])
             
-            
+//            imgButton.setImage(selectedImage.withRenderingMode(.alwaysOriginal) , for: .normal)
+//
+//            imgButton.sizeToFit()
+//            imgButton.contentMode = .scaleAspectFill
             image64 = base64String!
+
+            // Establecer la imagen escalada en el botón
+            imgButton.setBackgroundImage(selectedImage, for: .normal)        }
             
-        }
-        
         guard selectedImage!.jpegData(compressionQuality: 1.0) != nil else {
             return
         }
         
         dismiss(animated: true, completion: nil)
+        
+        imgButton.setBackgroundImage(selectedImage, for: .normal)
     }
     
     

@@ -17,12 +17,10 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     var establishment : EstablishmentSQLView?
     var employees: [Employee]?
 
-    @IBAction func pruebaBtn(_ sender: Any) {
-        print("Desde lista de empleados, este es el id:")
-        print(establishment!.location)
-        print("Hay una cantidad de: \(employees?.count ?? 0)")
-
-    }
+    
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -34,7 +32,7 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
         
         // Do any additional setup after loading the view.
                 
-        location.text = establishment!.location
+//        location.text = establishment!.location
         
 //         Set notification recevier
         
@@ -54,6 +52,11 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
         performSegue(withIdentifier: "GoToAddEmployeeFromEstablishment", sender: nil)
 
     }
+    
+    @IBAction func btnDeleteEmployees(_ sender: Any) {
+        
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.employees?.count ?? 0
