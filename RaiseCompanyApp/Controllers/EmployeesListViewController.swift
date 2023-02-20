@@ -26,7 +26,7 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         getEmployeesOfEstablishment()
-
+        location.text = establishment?.location
         EmployeesCollectionView.delegate = self
         EmployeesCollectionView.dataSource = self
         

@@ -29,7 +29,7 @@ class EditEstablishmentViewController: UIViewController{
     
     
     @IBAction func imgBtn(_ sender: UIButton) {
-        
+        print(self.establishmentNewValues)
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
@@ -64,7 +64,7 @@ class EditEstablishmentViewController: UIViewController{
                         self.establishmentGetted = firstEstablishment
                         print(self.establishmentGetted)
                         DispatchQueue.main.async {
-                            self.locationTextField.placeholder = "  Location: \(self.establishmentGetted?.location ?? "")"
+                            self.locationTextField.placeholder = "  Location: \(self.establishmentGetted!.location!)"
                             self.benefitsTextField.placeholder = "  Benefits: \(self.establishmentGetted!.benefits!)"
                             self.lossesTextField.placeholder = "  Losses: \(self.establishmentGetted!.losses!)"
                             self.scheduleTextField.placeholder = "  Schedule: \(self.establishmentGetted!.schedule! )"
@@ -76,9 +76,10 @@ class EditEstablishmentViewController: UIViewController{
             }
     }
     
-    var establishmentNewValues = Establishment(benefits: 1, id_establishment: nil, location: "mladita localizacion", losses: 2, photo: nil, schedule: "maldito horario")
+    var establishmentNewValues = Establishment(benefits: 1, id_establishment: nil, location:  nil, losses: nil, photo: nil, schedule: nil)
     
     func editEstablishment(){
+       
         
         self.establishmentNewValues.location = locationTextField.text!
         self.establishmentNewValues.benefits = Int(benefitsTextField.text!)

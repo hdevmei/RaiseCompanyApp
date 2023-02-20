@@ -38,7 +38,9 @@ class OnboardingViewController: UIViewController {
     
     var slides: [OnboardingSlide] = [OnboardingSlide(tittle: "Manage your company in a simple way", image: UIImage(named: "step1")!), OnboardingSlide(tittle: "Consult information about the establishments", image: UIImage(named: "step2")!), OnboardingSlide(tittle: "Make your employees feel more comfortable", image: UIImage(named: "step3")!), OnboardingSlide(tittle: "Consult the graphics to make decisions", image: UIImage(named: "step4")!)]
     
+
     
+
     
     
     

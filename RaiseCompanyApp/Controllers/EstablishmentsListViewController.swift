@@ -77,25 +77,21 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         let establishment = filteredEstablishments[indexPath.row]
         cell.location.text = establishment.location
         cell.benefitsLabel.text = "   ▲ \(establishment.benefits!) $"
-        cell.lossesLabel.text = "   ▲ \(establishment.losses!) $"
-        
+        cell.lossesLabel.text = "   ▼ \(establishment.losses!) $"
         cell.numberEmployees.text = "\(establishment.num_employees) Employees"
         
-        
-        
-//        TRY TO SHOW IMAGE
-//        let strBase64 = establishment.photo!
-//        do{
-//            let dataDecoded : Data = Data(base64Encoded: strBase64, options:  .ignoreUnknownCharacters)!
-//            let decodedImage: UIImage = UIImage(data: dataDecoded as Data)!
-//        }catch{
-//            cell.imgEstablishment.backgroundColor = .red
-//        }
+        if let strBase64 = establishment.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let image = UIImage(data: imageData) {
+            cell.imgEstablishment.image = image
+        } else {
+            // Set a default image with a brown background
+            cell.imgEstablishment.backgroundColor = UIColor.brown
+            cell.imgEstablishment.image = nil
+        }
         
         return cell
     }
-    
-    
+
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         id_establishmentSelected = filteredEstablishments[indexPath.row].id_establishment!
         let location_establishment_selected = filteredEstablishments[indexPath.row].location

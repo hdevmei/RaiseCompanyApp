@@ -853,7 +853,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Premios Nobel, 3, 28850 Torrejón de Ardoz, Madrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qu-Fg-Z0P">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qu-Fg-Z0P">
                                 <rect key="frame" x="20" y="108" width="374" height="53"/>
                                 <color key="backgroundColor" red="0.15686275059999999" green="0.19607841970000001" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -1002,7 +1002,7 @@
                                     <segue destination="9bR-e8-zif" kind="modal" identifier="GoToAddEmployeeFromEstablishment" id="V88-zG-tNx"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="bin" id="qPm-Pq-2Fe">
+                            <barButtonItem image="xmark.bin.fill" catalog="system" id="qPm-Pq-2Fe">
                                 <connections>
                                     <action selector="btnDeleteEmployees:" destination="5LB-5J-pxB" id="NaX-QM-TwN"/>
                                 </connections>
@@ -1090,6 +1090,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XeZ-Kq-Ib2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2452" y="2614"/>
+        </scene>
+        <!--PruebaVC-->
+        <scene sceneID="Ejf-HJ-O7b">
+            <objects>
+                <viewController id="hDB-kZ-rBc" customClass="pruebaVC" customModule="RaiseCompanyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="du3-cq-zfg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56C-oK-dOe">
+                                <rect key="frame" x="55" y="412" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="getPhotoBtn:" destination="hDB-kZ-rBc" eventType="touchUpInside" id="OqR-j3-BSr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QG8-AQ-VOm">
+                                <rect key="frame" x="260" y="412" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="showPhotoBtn:" destination="hDB-kZ-rBc" eventType="touchUpInside" id="Ggt-ye-5uA"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLS-aH-yUp">
+                                <rect key="frame" x="87" y="79" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dv0-9U-icH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="Imagen" destination="YLS-aH-yUp" id="7HU-o4-sBo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9UG-D3-cYf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3258" y="1299"/>
         </scene>
         <!--Add Establishment-->
         <scene sceneID="Fap-ds-aAD">
@@ -1799,7 +1841,6 @@
         <image name="EstablishmentBtn" width="53.666667938232422" height="48"/>
         <image name="LocationIcon" width="430" height="615"/>
         <image name="Login Logo" width="616" height="322"/>
-        <image name="bin" width="56" height="72"/>
         <image name="blue" width="145" height="300"/>
         <image name="building.2.fill" catalog="system" width="128" height="106"/>
         <image name="camera" width="615" height="615"/>
@@ -1811,6 +1852,7 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="star" width="105" height="100"/>
+        <image name="xmark.bin.fill" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
