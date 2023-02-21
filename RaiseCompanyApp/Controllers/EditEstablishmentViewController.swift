@@ -9,23 +9,21 @@ import Foundation
 import UIKit
 import Alamofire
 
-
-
-
 class EditEstablishmentViewController: UIViewController{
-    
     
     var id_establishment_getted : Int?
     var establishmentGetted: Establishment?
+    var establishmentHecho: EstablishmentSQLView?
     
-    @IBOutlet weak var locationTextField: UITextField!
+    var establishmentNewValues: Establishment = Establishment(benefits: nil, id_establishment: nil, location: nil, losses: nil, photo: nil, schedule: nil)
     
-    @IBOutlet weak var benefitsTextField: UITextField!
+    @IBOutlet weak var locationTF: UITextField!
     
-    @IBOutlet weak var lossesTextField: UITextField!
+    @IBOutlet weak var benefitsTF: UITextField!
     
-    @IBOutlet weak var scheduleTextField: UITextField!
+    @IBOutlet weak var lossesTF: UITextField!
     
+    @IBOutlet weak var scheduleTF: UITextField!
     
     
     @IBAction func imgBtn(_ sender: UIButton) {
@@ -33,13 +31,9 @@ class EditEstablishmentViewController: UIViewController{
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
-        //        editEstablishment()
-        print("Quiero editar establecimiento")
-        print(establishmentHecho)
         editEstablishment()
         self.dismiss(animated: true)
     }
-    
     
     @IBAction func cancelButton(_ sender: UIButton) {
         self.dismiss(animated: true)
@@ -50,11 +44,7 @@ class EditEstablishmentViewController: UIViewController{
         getEstablishment()
     }
     
-    
-    var establishmentHecho: EstablishmentSQLView?
-    
-    
-
+//Get current establishment data to put in placeholder
     func getEstablishment() {
         AF.request("http://127.0.0.1:5000/safari/establishments/\(id_establishment_getted!)")
             .responseDecodable(of: [Establishment].self) { response in
@@ -62,13 +52,14 @@ class EditEstablishmentViewController: UIViewController{
                 case .success(let establishments):
                     if let firstEstablishment = establishments.first {
                         self.establishmentGetted = firstEstablishment
-                        print(self.establishmentGetted)
+//         Put the current data to the placeholders...
                         DispatchQueue.main.async {
-                            self.locationTextField.placeholder = "  Location: \(self.establishmentGetted!.location!)"
-                            self.benefitsTextField.placeholder = "  Benefits: \(self.establishmentGetted!.benefits!)"
-                            self.lossesTextField.placeholder = "  Losses: \(self.establishmentGetted!.losses!)"
-                            self.scheduleTextField.placeholder = "  Schedule: \(self.establishmentGetted!.schedule! )"
+                            self.locationTF.placeholder = "  Location: \(self.establishmentGetted!.location!)"
+                            self.benefitsTF.placeholder = "  Benefits: \(self.establishmentGetted!.benefits!)"
+                            self.lossesTF.placeholder = "  Losses: \(self.establishmentGetted!.losses!)"
+                            self.scheduleTF.placeholder = "  Schedule: \(self.establishmentGetted!.schedule! )"
                         }
+                        self.establishmentNewValues = Establishment(benefits: self.establishmentGetted?.benefits, id_establishment: self.establishmentGetted?.id_establishment, location: self.establishmentGetted?.location, losses: self.establishmentGetted?.losses, photo: self.establishmentGetted?.photo, schedule: self.establishmentGetted?.schedule)
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -76,18 +67,25 @@ class EditEstablishmentViewController: UIViewController{
             }
     }
     
-    var establishmentNewValues = Establishment(benefits: 1, id_establishment: nil, location:  nil, losses: nil, photo: nil, schedule: nil)
     
     func editEstablishment(){
-       
         
-        self.establishmentNewValues.location = locationTextField.text!
-        self.establishmentNewValues.benefits = Int(benefitsTextField.text!)
-        self.establishmentNewValues.losses = Int(lossesTextField.text!)
-        self.establishmentNewValues.schedule = scheduleTextField.text!
+//        Change values if user has put new value
+        if let locationText = locationTF.text, !locationText.isEmpty {
+            self.establishmentNewValues.location = locationText
+        }
+        if let benefitsText = benefitsTF.text, let benefits = Int(benefitsText) {
+            self.establishmentNewValues.benefits = benefits
+        }
+        if let lossesText = lossesTF.text, let losses = Int(lossesText) {
+            self.establishmentNewValues.losses = losses
+        }
+        if let scheduleText = scheduleTF.text, !scheduleText.isEmpty {
+            self.establishmentNewValues.schedule = scheduleText
+        }
+
         
-        
-        
+//        Put method
         let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment_getted!)"
         AF.request(url, method: .put, parameters: establishmentNewValues, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
@@ -95,7 +93,6 @@ class EditEstablishmentViewController: UIViewController{
                 switch response.result {
                 case .success:
                     print("PUT request successful")
-                    NotificationCenter.default.post(name: Notification.Name("employeeAddedToEstablishment"), object: nil)
                     NotificationCenter.default.post(name: Notification.Name("establishmentEdited"), object: nil)
                 case .failure(let error):
                     print(error)

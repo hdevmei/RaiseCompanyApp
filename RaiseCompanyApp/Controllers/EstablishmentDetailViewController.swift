@@ -36,7 +36,6 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     
     
     @IBAction func goToGraphicsView(_ sender: UIButton) {
-        print(employees?.count)
     }
     
     
@@ -78,9 +77,6 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         }
         
     
-    
-    
-    
     @objc func reloadDataEstablishmentDetail(){
         print("Actuliazndo empleados redondos")
         getEmployees()
@@ -99,16 +95,8 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "roundedEmployeeCell", for: indexPath) as! EmployeeCollectionViewCell
         let employee = employees![indexPath.row]
         cell.nameEmployee.text = (employee.name != nil && employee.lastnames != nil) ? "\(employee.name!) \(employee.lastnames!)" : ""
-
-        
-        
 //        cellEmployee.nameEmployee.text = employee.name != nil ? "\(employee.name!)" : "Sin nombre"
         return cell
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        go to detail employee view
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -118,7 +106,6 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     
     
     //    set the views
-    
     func setInfoEstablishment(){
         self.locationLabel.text = self.establishment?.location ?? ""
         self.benefitsLabel.text = "   \(self.establishment?.benefits != nil ? "\(self.establishment!.benefits!)" : "") $"
@@ -128,7 +115,7 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
             self.avgRating.image = UIImage(named: "\(self.establishment!.avg_rating!)rating")
         }
         self.scheduleLabel.text = self.establishment!.schedule
-        self.num_employeesLabel.text = "\(self.establishment!.num_employees) Employees"
+        self.num_employeesLabel.text = "\(self.establishment!.num_employees!) Employees"
     }
     
     

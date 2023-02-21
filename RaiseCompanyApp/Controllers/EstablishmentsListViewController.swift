@@ -12,7 +12,6 @@ import Kingfisher
 
 class EstablishmentListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    @IBOutlet weak var imgPrueba: UIImageView!
     public var establishments: [EstablishmentSQLView]?
     var filteredEstablishments: [EstablishmentSQLView] = []
     
@@ -90,11 +89,6 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
 //        }catch{
 //            cell.imgEstablishment.backgroundColor = .red
 //        }
-
-        
-        
-
-
         return cell
     }
 
@@ -116,9 +110,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     }
     
     
-    
-    //    URL METHODS
-    
+//    METHOD DELETE ESTABLISHMENT
     func deleteEstablishment(at index: Int) {
         print("getting estsblishments")
         guard let establishmentId = filteredEstablishments[index].id_establishment else {
@@ -152,8 +144,6 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         }
     }
 }
-
-
 
 
 extension EstablishmentListViewController: UISearchBarDelegate{
