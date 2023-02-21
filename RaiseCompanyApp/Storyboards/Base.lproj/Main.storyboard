@@ -446,7 +446,7 @@
                     <navigationItem key="navigationItem" title="Establishments" id="scH-Bs-aPT">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="PWE-H5-diS">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="OuR-Hb-LlG">
-                                <rect key="frame" x="16" y="5" width="92" height="34.333333333333336"/>
+                                <rect key="frame" x="16" y="4.6666666666666679" width="92" height="34.666666666666657"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -673,8 +673,8 @@
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oasiz" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-ym-wuH">
-                                                                            <rect key="frame" x="10" y="8" width="55" height="55"/>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-ym-wuH">
+                                                                            <rect key="frame" x="10" y="9" width="55" height="53.666666666666671"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="55" id="9KM-l3-Y5Z"/>
                                                                                 <constraint firstAttribute="width" secondItem="QX7-ym-wuH" secondAttribute="height" multiplier="1:1" id="JzS-Ky-GLU"/>
@@ -1435,7 +1435,7 @@
                                     <backgroundConfiguration key="background" image="camera"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="imgBtn:" destination="gaT-td-U0K" eventType="touchUpInside" id="aIO-eV-MUY"/>
+                                    <action selector="imgBtn:" destination="gaT-td-U0K" eventType="touchUpInside" id="FqB-aC-QWg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2043,6 +2043,7 @@
         <image name="location" width="70" height="105"/>
         <image name="oasiz" width="500" height="500"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="star" width="105" height="100"/>

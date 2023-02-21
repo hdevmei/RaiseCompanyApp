@@ -78,17 +78,22 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         cell.location.text = establishment.location
         cell.benefitsLabel.text = "   ▲ \(establishment.benefits!) $"
         cell.lossesLabel.text = "   ▼ \(establishment.losses!) $"
-        cell.numberEmployees.text = "\(establishment.num_employees) Employees"
+        cell.numberEmployees.text = "\(establishment.num_employees!) Employees"
         
         
-//        photo
-        if let strBase64 = establishment.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let image = UIImage(data: imageData) {
-            cell.imgEstablishment.image = image
-        } else {
-            // Set a default image with a brown background
-            cell.imgEstablishment.backgroundColor = UIColor.brown
-            cell.imgEstablishment.image = nil
-        }
+//        let stringBase64 = establishment.photo!
+//
+//        do{
+//            let dataDecoded : Data = Data(base64Encoded: stringBase64, options: .ignoreUnknownCharacters)!
+//            let decodedImage: UIImage = UIImage(data: dataDecoded as Data)!
+//            cell.imgEstablishment.image = decodedImage
+//        }catch{
+//            cell.imgEstablishment.backgroundColor = .red
+//        }
+
+        
+        
+
 
         return cell
     }
