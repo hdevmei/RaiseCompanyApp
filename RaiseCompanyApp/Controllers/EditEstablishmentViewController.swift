@@ -69,7 +69,6 @@ class EditEstablishmentViewController: UIViewController{
     
     
     func editEstablishment(){
-        
 //        Change values if user has put new value
         if let locationText = locationTF.text, !locationText.isEmpty {
             self.establishmentNewValues.location = locationText
@@ -99,42 +98,11 @@ class EditEstablishmentViewController: UIViewController{
                     print(response)
                 }
             }
-        
         NotificationCenter.default.post(name: Notification.Name("establishmentEdited"), object: nil)
-        
     }
     
 }
 
 
 
-//            if let location = locationTextField.text, !location.isEmpty {
-//                establishmentNewValues.location = location
-//            } else {
-//                establishmentNewValues.location = establishmentHecho!.location
-//            }
-//
-//            if let schedule = scheduleTextField.text, !schedule.isEmpty {
-//                establishmentNewValues.schedule = schedule
-//            } else {
-//                establishmentNewValues.schedule = establishmentHecho!.schedule
-//            }
-//
-//            if let benefits = benefitsTextField.text, !benefits.isEmpty {
-//                if let benefitsInt = Int(benefits) {
-//                    establishmentNewValues.benefits = benefitsInt
-//                }
-//            } else {
-//                establishmentNewValues.benefits = establishmentHecho!.benefits
-//            }
-//
-//            if let losses = lossesTextField.text, !losses.isEmpty {
-//                if let lossesInt = Int(losses) {
-//                    establishmentNewValues.losses = lossesInt
-//                }
-//            } else {
-//                establishmentNewValues.losses = establishmentHecho!.losses
-//            }
-
-//            establishmentNewValues.id_establishment = id_establishment_getted
 
