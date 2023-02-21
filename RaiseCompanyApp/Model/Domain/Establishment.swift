@@ -34,10 +34,10 @@ struct EstablishmentSQLView: Encodable, Decodable {
     var benefits: Int?
     var location: String
     var losses: Int?
-    var photo: String?
+    var photo: Data?
     var id_establishment: Int?
     var schedule: String?
-    var num_employees: Int
+    var num_employees: Int?
     var avg_rating: Float?
     
     var rating: Float! {
@@ -48,7 +48,7 @@ struct EstablishmentSQLView: Encodable, Decodable {
         }
     }
     
-    init(benefits: Int?, location: String, losses: Int?, photo: String?, id_establishment: Int?, schedule: String?, num_employees: Int, avg_rating: Float?) {
+    init(benefits: Int?, location: String, losses: Int?, photo: Data?, id_establishment: Int?, schedule: String?, num_employees: Int?, avg_rating: Float?) {
         self.benefits = benefits
         self.location = location
         self.losses = losses

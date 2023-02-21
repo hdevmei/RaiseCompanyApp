@@ -17,12 +17,6 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     var establishment : EstablishmentSQLView?
     var employees: [Employee]?
 
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         getEmployeesOfEstablishment()
@@ -54,7 +48,6 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     @IBAction func btnDeleteEmployees(_ sender: Any) {
-        
     }
     
     
@@ -91,10 +84,7 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     
-    
-    
-    
-    
+
 //     URL METHODS
     
     func getEmployeesOfEstablishment(){
@@ -108,12 +98,14 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if segue.identifier == "GoToAddEmployeeFromEstablishment" {
 //               pass the function to post establishment
                let addEmployeeVC = segue.destination as! AddEmployeeViewController
                addEmployeeVC.id_establishment_getted = id_establishment_selected
+           } else if segue.identifier == "GoToEmployeeDetailFromRounded"{
+               let employeeDetailVC = segue.destination as! EmployeeDetailViewController
+               employeeDetailVC.id_establishment_getted = id_establishment_selected
            }
        }
 

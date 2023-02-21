@@ -141,7 +141,6 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
                 case .success(let establishments):
                     if let firstEstablishment = establishments.first {
                         self.establishment = firstEstablishment
-                        print(self.establishment)
                         DispatchQueue.main.async {
                             self.setInfoEstablishment()
                         }

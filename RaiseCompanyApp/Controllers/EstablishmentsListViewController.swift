@@ -80,6 +80,8 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         cell.lossesLabel.text = "   ▼ \(establishment.losses!) $"
         cell.numberEmployees.text = "\(establishment.num_employees) Employees"
         
+        
+//        photo
         if let strBase64 = establishment.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let image = UIImage(data: imageData) {
             cell.imgEstablishment.image = image
         } else {
@@ -87,7 +89,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
             cell.imgEstablishment.backgroundColor = UIColor.brown
             cell.imgEstablishment.image = nil
         }
-        
+
         return cell
     }
 

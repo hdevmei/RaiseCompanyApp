@@ -18,7 +18,7 @@ class ApiManager {
         AF.request(url).responseDecodable(of: [EstablishmentSQLView].self) { response in
             switch response.result {
             case .success(let establishments):
-                print(establishments)
+//                print(establishments)
                 completion(establishments, nil)
                 
             case .failure(let error):
