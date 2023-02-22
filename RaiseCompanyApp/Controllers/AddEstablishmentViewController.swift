@@ -13,7 +13,9 @@ import SwiftUI
 
 class AddEstablishmentViewController : UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    var newEstablishment: EstablishmentSQLView = EstablishmentSQLView(benefits: 3000, location: "", losses: 0, photo: nil, id_establishment: nil, schedule: nil , num_employees: 0, avg_rating: nil)
+    @IBOutlet weak var imgEstablishment: UIImageView!
+    
+    var newEstablishment: EstablishmentSQLView = EstablishmentSQLView(benefits: 0, location: "", losses: 0, photo: nil, id_establishment: nil, schedule: nil , num_employees: 0, avg_rating: nil)
     
     
 //    Cancel add establihment view
@@ -49,7 +51,6 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
             newEstablishment.benefits = benefitsValue
             newEstablishment.losses = lossesValue
             
-            
 //   If user complete...
             if let schedule = scheduleTextfield.text{
                 newEstablishment.schedule = schedule
@@ -64,10 +65,10 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
         if canSave == true{
             ApiManager.shared.postEstablishment(establishmentToAdd: newEstablishment)
             self.dismiss(animated: true)
-//    If not can sae...
+//    If can't save...
         }else{
 //    Show alert missing fields.
-            let alert = UIAlertController(title: "Error", message: "fields are missing or incorrect", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: "Fields are missing or incorrect", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 present(alert, animated: true, completion: nil)
 //    Close alert after 3 seconds
@@ -94,11 +95,11 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             let imageData = selectedImage.jpegData(compressionQuality: 1.0)
             let imageBase64String = imageData?.base64EncodedString()
-                 
-            self.newEstablishment.photo = imageData
             
-            imgButton.setBackgroundImage(selectedImage, for: .normal)
-            
+//            Assign the base64string to the new establishment
+            self.newEstablishment.photo = imageBase64String
+//            change camera image to image selected
+            imgEstablishment.image = selectedImage
             picker.dismiss(animated: true)
         }
     }

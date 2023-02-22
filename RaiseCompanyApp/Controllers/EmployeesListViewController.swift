@@ -48,7 +48,8 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     @IBAction func btnDeleteEmployees(_ sender: Any) {
-    }
+        let cell = SquareEmloyeeCollectionViewCell()
+            cell.desactivateDeleteBtn()    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

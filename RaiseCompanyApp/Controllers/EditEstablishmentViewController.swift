@@ -32,6 +32,7 @@ class EditEstablishmentViewController: UIViewController{
     
     @IBAction func saveButton(_ sender: UIButton) {
         editEstablishment()
+        
         self.dismiss(animated: true)
     }
     
@@ -59,16 +60,19 @@ class EditEstablishmentViewController: UIViewController{
                             self.lossesTF.placeholder = "  Losses: \(self.establishmentGetted!.losses!)"
                             self.scheduleTF.placeholder = "  Schedule: \(self.establishmentGetted!.schedule! )"
                         }
-                        self.establishmentNewValues = Establishment(benefits: self.establishmentGetted?.benefits, id_establishment: self.establishmentGetted?.id_establishment, location: self.establishmentGetted?.location, losses: self.establishmentGetted?.losses, photo: self.establishmentGetted?.photo, schedule: self.establishmentGetted?.schedule)
+                        
+self.establishmentNewValues = Establishment(benefits: self.establishmentGetted!.benefits, id_establishment: self.establishmentGetted!.id_establishment, location: self.establishmentGetted!.location, losses: self.establishmentGetted!.losses, photo: self.establishmentGetted!.photo, schedule: self.establishmentGetted!.schedule)
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
             }
+        print(establishmentNewValues)
     }
     
     
     func editEstablishment(){
+        
 //        Change values if user has put new value
         if let locationText = locationTF.text, !locationText.isEmpty {
             self.establishmentNewValues.location = locationText

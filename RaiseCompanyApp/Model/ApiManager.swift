@@ -22,6 +22,7 @@ class ApiManager {
                 completion(establishments, nil)
                 
             case .failure(let error):
+                print("na de na")
                 completion(nil, error)
             }
         }
@@ -43,7 +44,6 @@ class ApiManager {
     }
     
     
-//    Establishment detail
 
     
 }

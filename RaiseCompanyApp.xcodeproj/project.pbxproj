@@ -22,6 +22,7 @@
 		AF405488298BD85800D0320F /* IncidentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405487298BD85800D0320F /* IncidentsViewController.swift */; };
 		AF40548A298BE2C100D0320F /* EstablishmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405489298BE2C100D0320F /* EstablishmentTableViewCell.swift */; };
 		AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */; };
+		AF45A1F629A6191400C8A71C /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF45A1F529A6191400C8A71C /* MyProfileViewController.swift */; };
 		AF891A9D29A17B2F00F87EE5 /* EditEstablishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF891A9C29A17B2F00F87EE5 /* EditEstablishmentViewController.swift */; };
 		AF8DBE9C29A3F768002D2F1B /* pruebaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DBE9B29A3F768002D2F1B /* pruebaVC.swift */; };
 		AF8DBE9E29A4BD2E002D2F1B /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DBE9D29A4BD2D002D2F1B /* EmployeeDetailViewController.swift */; };
@@ -54,6 +55,7 @@
 		AF405487298BD85800D0320F /* IncidentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentsViewController.swift; sourceTree = "<group>"; };
 		AF405489298BE2C100D0320F /* EstablishmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentTableViewCell.swift; sourceTree = "<group>"; };
 		AF4403D9298094EA008014E6 /* EstablishmentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentsListViewController.swift; sourceTree = "<group>"; };
+		AF45A1F529A6191400C8A71C /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		AF891A9C29A17B2F00F87EE5 /* EditEstablishmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEstablishmentViewController.swift; sourceTree = "<group>"; };
 		AF8DBE9B29A3F768002D2F1B /* pruebaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pruebaVC.swift; sourceTree = "<group>"; };
 		AF8DBE9D29A4BD2D002D2F1B /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		AFB6E7A729797E0700B06CB8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF45A1F529A6191400C8A71C /* MyProfileViewController.swift */,
 				AF12179929903D27007E4318 /* LogInViewController.swift */,
 				AF405487298BD85800D0320F /* IncidentsViewController.swift */,
 				AF1217972990061D007E4318 /* AddEmployeeViewController.swift */,
@@ -340,6 +343,7 @@
 				AF8DBE9C29A3F768002D2F1B /* pruebaVC.swift in Sources */,
 				AF40548A298BE2C100D0320F /* EstablishmentTableViewCell.swift in Sources */,
 				AFC74F51299ACA8600AE7805 /* Employee.swift in Sources */,
+				AF45A1F629A6191400C8A71C /* MyProfileViewController.swift in Sources */,
 				AF1217982990061D007E4318 /* AddEmployeeViewController.swift in Sources */,
 				AF891A9D29A17B2F00F87EE5 /* EditEstablishmentViewController.swift in Sources */,
 				AF91B18F298BB8DB00C87A21 /* Review.swift in Sources */,

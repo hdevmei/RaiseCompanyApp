@@ -11,6 +11,7 @@ import Alamofire
 
 class EstablishmentDetailedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
+    @IBOutlet weak var imgEstablishment: UIImageView!
     
     @IBOutlet weak var locationLabel: UILabel!
     
@@ -104,9 +105,16 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     }
     
     
-    
+//    todooooo
     //    set the views
     func setInfoEstablishment(){
+        
+        if let strBase64 = self.establishment?.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let image = UIImage(data: imageData) {
+            imgEstablishment.image = image
+//            If image doesn't exists
+               } else {
+                   imgEstablishment.backgroundColor = .red
+               }
         self.locationLabel.text = self.establishment?.location ?? ""
         self.benefitsLabel.text = "   \(self.establishment?.benefits != nil ? "\(self.establishment!.benefits!)" : "") $"
         self.lossesLabel.text = "   \(self.establishment?.losses != nil ? "\(self.establishment!.losses!)" : "") $"
