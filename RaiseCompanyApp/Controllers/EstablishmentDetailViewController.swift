@@ -94,7 +94,18 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "roundedEmployeeCell", for: indexPath) as! EmployeeCollectionViewCell
+        
         let employee = employees![indexPath.row]
+        
+        //        If image exists set image
+                if let strBase64 = employee.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let image = UIImage(data: imageData) {
+                    cell.employeeImage.image = image
+        //            If image doesn't exists
+                       } else {
+                           // Set a default image with a brown background
+                           cell.employeeImage.image = UIImage(named: "")
+                       }
+        
         cell.nameEmployee.text = (employee.name != nil && employee.lastnames != nil) ? "\(employee.name!) \(employee.lastnames!)" : ""
 //        cellEmployee.nameEmployee.text = employee.name != nil ? "\(employee.name!)" : "Sin nombre"
         return cell

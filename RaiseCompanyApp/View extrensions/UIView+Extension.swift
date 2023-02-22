@@ -82,7 +82,7 @@ extension UIView {
         }
     }
     
-    @IBInspectable var commonShadow: Bool{
+    @IBInspectable var blackShadow: Bool{
         
         get {
             return false
@@ -91,6 +91,20 @@ extension UIView {
             self.layer.shadowOpacity = 0.4
             self.layer.shadowColor = UIColor.black.cgColor
             self.layer.shadowOffset = CGSize(width: 2.0, height: 6.0)
+            self.layer.shadowRadius = 2
+        }
+    }
+    
+    
+    @IBInspectable var whiteShadow: Bool{
+        
+        get {
+            return false
+        }
+        set{
+            self.layer.shadowOpacity = 0.5
+            self.layer.shadowColor = UIColor.white.cgColor
+            self.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
             self.layer.shadowRadius = 2
         }
     }

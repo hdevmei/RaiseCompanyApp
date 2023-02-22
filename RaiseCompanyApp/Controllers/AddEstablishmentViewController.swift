@@ -13,11 +13,12 @@ import SwiftUI
 
 class AddEstablishmentViewController : UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    @IBOutlet weak var imgEstablishment: UIImageView!
     
     var newEstablishment: EstablishmentSQLView = EstablishmentSQLView(benefits: 0, location: "", losses: 0, photo: nil, id_establishment: nil, schedule: nil , num_employees: 0, avg_rating: nil)
     
+    @IBOutlet weak var imgEstablishment: UIImageView!
     
+
 //    Cancel add establihment view
     @IBAction func cancelBtn(_ sender: UIButton) {
         self.dismiss(animated: true)
@@ -40,7 +41,6 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
     @IBOutlet weak var scheduleTextfield: UITextField!
     
     @IBAction func saveBtn(_ sender: Any) {
-        
         
 //    Check compulsory values and Int benefits and losses
         if let location = locationTextField.text, !location.isEmpty,
@@ -78,6 +78,8 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
         }
         
     }
+    
+    
     
     @IBAction func imgBtn(_ sender: UIButton) {
         //        show galery picker

@@ -49,7 +49,9 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     
     @IBAction func btnDeleteEmployees(_ sender: Any) {
         let cell = SquareEmloyeeCollectionViewCell()
-            cell.desactivateDeleteBtn()    }
+            cell.desactivateDeleteBtn()
+        
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -57,9 +59,17 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellEmployee = collectionView.dequeueReusableCell(withReuseIdentifier: "squareEmployeeCell", for: indexPath) as! SquareEmloyeeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "squareEmployeeCell", for: indexPath) as! SquareEmloyeeCollectionViewCell
         let employee = employees![indexPath.row]
         
+        //        If image exists set image
+                if let strBase64 = employee.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let imageEmployee = UIImage(data: imageData) {
+                    cell.imgEmployee.image = imageEmployee
+        //            If image doesn't exists
+                       } else {
+                           // Set a default image with a brown background
+                           cell.imgEmployee.image = UIImage(systemName: "person.fill")
+                       }
         
 //        Assign values
         var name = ""
@@ -68,10 +78,10 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
         name = employee.name != nil ? employee.name! : "No name"
         lastname = employee.lastnames != nil ? employee.lastnames! : "No lastnames"
         let nameAndLastNames = name + " " + lastname
-        cellEmployee.nameEmployee.text = nameAndLastNames
-        cellEmployee.salaryEmployee.text = employee.salary != nil ? "\(employee.salary!)" : "Sin salario"
-        cellEmployee.workPositionEmployee.text = employee.work_position != nil ? "\(employee.work_position!)" : "Sin Puesto"
-          return cellEmployee
+        cell.nameEmployee.text = nameAndLastNames
+        cell.salaryEmployee.text = employee.salary != nil ? "\(employee.salary!)" : "Sin salario"
+        cell.workPositionEmployee.text = employee.work_position != nil ? "\(employee.work_position!)" : "Sin Puesto"
+          return cell
     }
     
     

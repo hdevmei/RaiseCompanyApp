@@ -20,9 +20,7 @@ class ApiManager {
             case .success(let establishments):
 //                print(establishments)
                 completion(establishments, nil)
-                
             case .failure(let error):
-                print("na de na")
                 completion(nil, error)
             }
         }
@@ -39,6 +37,23 @@ class ApiManager {
                     NotificationCenter.default.post(name: Notification.Name("establishmentAdded"), object: nil)
                 case .failure(let error):
                     print(error)
+                }
+            }
+    }
+    
+    
+    func addEmployee(id_establishment: Int, employeeToAdd: Employee){
+        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)/employees"
+        AF.request(url, method: .post, parameters: employeeToAdd, encoder: JSONParameterEncoder.default)
+            .validate(statusCode: 200..<300)
+            .response { response in
+                switch response.result {
+                case .success:
+                    print("POST request successful")
+                    NotificationCenter.default.post(name: Notification.Name("employeeAddedToEstablishment"), object: nil)
+                case .failure(let error):
+                    print(error)
+                    print(response)
                 }
             }
     }
