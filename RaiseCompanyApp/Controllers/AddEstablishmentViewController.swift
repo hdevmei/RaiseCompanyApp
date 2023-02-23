@@ -13,13 +13,10 @@ import SwiftUI
 
 class AddEstablishmentViewController : UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    
+    //    instantiate new establishment with default values
     var newEstablishment: EstablishmentSQLView = EstablishmentSQLView(benefits: 0, location: "", losses: 0, photo: nil, id_establishment: nil, schedule: nil , num_employees: 0, avg_rating: nil)
     
-    @IBOutlet weak var imgEstablishment: UIImageView!
-    
-
-//    Cancel add establihment view
+    //cancel add establishment view
     @IBAction func cancelBtn(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
@@ -40,41 +37,44 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
     
     @IBOutlet weak var scheduleTextfield: UITextField!
     
+    @IBOutlet weak var imgEstablishment: UIImageView!
+    
+    
     @IBAction func saveBtn(_ sender: Any) {
         
-//    Check compulsory values and Int benefits and losses
+        //check if the user has written the compulsory values and if benefits and losses are tyoe Int
         if let location = locationTextField.text, !location.isEmpty,
            let benefits = benefitsTextField.text, let benefitsValue = Int(benefits),
            let losses = lossesTextField.text, let lossesValue = Int(losses) {
-        
+            
+            //... If yes assign the values to the employee to add
             newEstablishment.location = locationTextField.text!
             newEstablishment.benefits = benefitsValue
             newEstablishment.losses = lossesValue
             
-//   If user complete...
+            //If user has completed the not compulsory fields as schedule
             if let schedule = scheduleTextfield.text{
+                //set the schedule value to the new establishment
                 newEstablishment.schedule = schedule
             }
             
+            //allow save
             canSave = true
         } else {
+            //don't allow save
             canSave = false
         }
         
-//    If can save...
+        //If can save...
         if canSave == true{
             ApiManager.shared.postEstablishment(establishmentToAdd: newEstablishment)
             self.dismiss(animated: true)
-//    If can't save...
+            //If can't save...
         }else{
-//    Show alert missing fields.
+            //If not can save show alert "Fields are missing or incorrect"
             let alert = UIAlertController(title: "Error", message: "Fields are missing or incorrect", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                present(alert, animated: true, completion: nil)
-//    Close alert after 3 seconds
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                    alert.dismiss(animated: true, completion: nil)
-                }
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
         }
         
     }
@@ -82,7 +82,7 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
     
     
     @IBAction func imgBtn(_ sender: UIButton) {
-        //        show galery picker
+        //show galery picker
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
@@ -97,16 +97,15 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             let imageData = selectedImage.jpegData(compressionQuality: 1.0)
             let imageBase64String = imageData?.base64EncodedString()
-            
-//            Assign the base64string to the new establishment
+            //Assign the base64string to the new establishment photo
             self.newEstablishment.photo = imageBase64String
-//            change camera image to image selected
+            //change default image to image selected
             imgEstablishment.image = selectedImage
             picker.dismiss(animated: true)
         }
     }
     
-//    Quit gallery picker
+    //    Quit gallery picker
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }

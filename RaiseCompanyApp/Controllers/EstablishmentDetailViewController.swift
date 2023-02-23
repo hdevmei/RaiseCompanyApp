@@ -103,7 +103,8 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         //            If image doesn't exists
                        } else {
                            // Set a default image with a brown background
-                           cell.employeeImage.image = UIImage(named: "")
+                           cell.employeeImage.image = UIImage(systemName: "person.fill")
+
                        }
         
         cell.nameEmployee.text = (employee.name != nil && employee.lastnames != nil) ? "\(employee.name!) \(employee.lastnames!)" : ""

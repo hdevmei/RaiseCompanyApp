@@ -42,6 +42,9 @@ class ApiManager {
     }
     
     
+    
+    
+//    EMPLOYEES
     func addEmployee(id_establishment: Int, employeeToAdd: Employee){
         let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)/employees"
         AF.request(url, method: .post, parameters: employeeToAdd, encoder: JSONParameterEncoder.default)

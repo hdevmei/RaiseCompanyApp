@@ -928,7 +928,7 @@
                                                         <constraint firstItem="bQD-2G-gcF" firstAttribute="top" secondItem="oEc-1J-7Xr" secondAttribute="top" constant="8" id="SCA-ga-1cE"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9z5-C9-HgU">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9z5-C9-HgU">
                                                     <rect key="frame" x="8" y="59" width="40" height="37"/>
                                                     <color key="tintColor" red="0.42794692519999999" green="0.87205308680000004" blue="0.84077161550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
@@ -2108,7 +2108,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yR8-8m-Ivr"/>
+        <segue reference="50w-lK-jIG"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="3,5rating" width="406" height="68"/>

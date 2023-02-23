@@ -101,8 +101,6 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     func getEmployeesOfEstablishment(){
         AF.request("http://127.0.0.1:5000/safari/establishments/\(id_establishment_selected!)/employees").responseDecodable(of: [Employee].self) { response in
             self.employees = try? response.result.get()
-            //            print(response.description)
-            print(response.description)
             self.EmployeesCollectionView.reloadData()
         }
    
