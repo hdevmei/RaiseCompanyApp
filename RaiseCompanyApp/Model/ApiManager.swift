@@ -13,7 +13,7 @@ class ApiManager {
     
     //  ESTABLISHMENTS METHODS /////////////////////////////////////////////////////////////////
     
-    
+    //Get ALL establishments
     func getEstablishments(completion: @escaping ([EstablishmentSQLView]?, Error?) -> Void) {
         let url = "http://127.0.0.1:5000/safari/establishments"
         AF.request(url).responseDecodable(of: [EstablishmentSQLView].self) { response in
@@ -25,6 +25,23 @@ class ApiManager {
             }
         }
     }
+    
+    
+    //Get ONE establishment
+    func getEstablishment(id_establishment: Int, completion: @escaping (EstablishmentSQLView?, Error?) -> Void) {
+        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)"
+        AF.request(url).responseDecodable(of: EstablishmentSQLView.self) { response in
+            switch response.result {
+            case .success(let establishment):
+                completion(establishment, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    
+    
     
     func postEstablishment(establishmentToAdd : EstablishmentSQLView?){
         let url = "http://127.0.0.1:5000/safari/establishments"
@@ -61,7 +78,23 @@ class ApiManager {
     
     
     
-//    EMPLOYEES ////////////////////////////////////////////////////////////////////////////////////
+    //    EMPLOYEES ////////////////////////////////////////////////////////////////////////////////////
+    
+    func getEmployees(id_establishment: Int, completion: @escaping ([Employee]?, Error?) -> Void) {
+        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)/employees"
+        AF.request(url).responseDecodable(of: [Employee].self) { response in
+            switch response.result {
+            case .success(let employees):
+                completion(employees, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+        
+    }
+    
+    
+
     func addEmployee(id_establishment: Int, employeeToAdd: Employee){
         let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)/employees"
         AF.request(url, method: .post, parameters: employeeToAdd, encoder: JSONParameterEncoder.default)
@@ -79,6 +112,9 @@ class ApiManager {
     }
     
     
-
+    
+    
+    
+    
     
 }

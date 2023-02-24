@@ -14,7 +14,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     public var establishments: [EstablishmentSQLView]?
     
-    //filtered establishments will be the data of establishmentsTableView and they will change depending of the text of the searchbar
+    //filtered establishments will be the data of establishmentsTableView and they will change depending of the searchbar text
     static var filteredEstablishments: [EstablishmentSQLView] = []
     
     //this will exists if an establishment is selected with funciton did selected row at
@@ -138,7 +138,6 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     }
     
     
-    
 }
 
 
@@ -147,15 +146,19 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
 extension EstablishmentListViewController: UISearchBarDelegate{
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         EstablishmentListViewController.filteredEstablishments = []
+        // if searchbar text is empty, filtered establishments are all establishments
         if searchText == ""{
             EstablishmentListViewController.filteredEstablishments = establishments!
+        // if is not empety
         } else {
+            //Add the establishments to filtered establishments
             for establishment in establishments!{
                 if establishment.location.lowercased().contains(searchText.lowercased()){
                     EstablishmentListViewController.filteredEstablishments.append(establishment)
                 }
             }
         }
+        // recharge data of my myEstablishmentListTableView
         self.myEstablishmentListTableView.reloadData()
     }
 }

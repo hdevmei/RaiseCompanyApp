@@ -47,7 +47,7 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
            let benefits = benefitsTextField.text, let benefitsValue = Int(benefits),
            let losses = lossesTextField.text, let lossesValue = Int(losses) {
             
-            //... If yes assign the values to the employee to add
+            //... If yes assign the values to the establisment to add
             newEstablishment.location = locationTextField.text!
             newEstablishment.benefits = benefitsValue
             newEstablishment.losses = lossesValue
@@ -67,9 +67,11 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
         
         //If can save...
         if canSave == true{
+            // call post establishment method
             ApiManager.shared.postEstablishment(establishmentToAdd: newEstablishment)
+            //quit view controller
             self.dismiss(animated: true)
-            //If can't save...
+        //If can't save...
         }else{
             //If not can save show alert "Fields are missing or incorrect"
             let alert = UIAlertController(title: "Error", message: "Fields are missing or incorrect", preferredStyle: .alert)
@@ -101,11 +103,12 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
             self.newEstablishment.photo = imageBase64String
             //change default image to image selected
             imgEstablishment.image = selectedImage
+            //quit gallery picker automatically
             picker.dismiss(animated: true)
         }
     }
     
-    //    Quit gallery picker
+    //Quit gallery picker
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }

@@ -29,12 +29,15 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     @IBOutlet weak var avgRating: UIImageView!
     
     
+    
+    //The id of the establishment, will always exists because is received from establishment list view controller
     var id_getted: Int?
     
     
     var establishment : EstablishmentSQLView?
     public var employees : [Employee]?
     
+
     
     @IBAction func goToGraphicsView(_ sender: UIButton) {
     }
@@ -44,89 +47,119 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         performSegue(withIdentifier: "GoEmployeesListViewController", sender: nil)
     }
     
-    
-    
+    //Segmented control to change between see reviews or incidents
     @IBAction func segmentedControlSelected(_ sender: UISegmentedControl) {
+        //see incidents active
         if sender.selectedSegmentIndex == 0 {
             ReviewsContainerVIew.isHidden = true
             incidentsContainerView.isHidden = false
         } else if sender.selectedSegmentIndex == 1 {
+            //see reviews active
             ReviewsContainerVIew.isHidden = false
             incidentsContainerView.isHidden = true
         }
     }
     
-  
-    
-    
     //    override
     override func viewDidLoad() {
         super.viewDidLoad()
-        getEstablishment()
-        getEmployees()
+        // get establishment from api manager, set to self.establishment  and set info
+        getEstablishmentAndSetInfo()
+        getEmployeesAndSetInfo()
         employeesCollectionView.dataSource = self
         employeesCollectionView.delegate = self
+   
         
-        //        set segmented control
+        // set segmented control
         ReviewsContainerVIew.isHidden = true
         incidentsContainerView.isHidden = false
-        // Do any additional setup after loading the view.
         
+        //Set observer notificacion after...
+        //employee added...
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishmentDetail), name: Notification.Name("employeeAddedToEstablishment"), object: nil)
-        
+        //establishment edited
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishmentDetail), name: Notification.Name("establishmentEdited"), object: nil)
-        }
-        
-    
-    @objc func reloadDataEstablishmentDetail(){
-        print("Actuliazndo empleados redondos")
-        getEmployees()
-        self.employeesCollectionView.reloadData()
-        getEstablishment()
     }
     
-
+//    get request of establishment and employee  and set the info
+    @objc func reloadDataEstablishmentDetail(){
+        getEstablishmentAndSetInfo()
+        getEmployeesAndSetInfo()
+    }
     
-    //    Collection view functions
+    func getEstablishmentAndSetInfo(){
+        ApiManager.shared.getEstablishment (id_establishment: id_getted!){  establishment, error in
+            if let establishment = establishment{
+                //convert the establishment getted in the request to local establishment
+                self.establishment = establishment
+                //set visual info
+                self.setInfoEstablishment()
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    
+    func getEmployeesAndSetInfo(){
+        ApiManager.shared.getEmployees (id_establishment: id_getted!){employees, error in
+            if let employees = employees{
+                //convert the employees getted in the request to local employees
+                self.employees = employees
+                //set visual changes
+                DispatchQueue.main.async {
+                    self.employeesCollectionView.reloadData()
+                    self.employeesCollectionView.dataSource = self
+                }
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+  
+    //Employee collecition view functions
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //if there is no employee, show 0 cells
         return employees?.count ?? 0
     }
     
+    //Give format to each employee cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "roundedEmployeeCell", for: indexPath) as! EmployeeCollectionViewCell
         
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "roundedEmployeeCell", for: indexPath) as! EmployeeCollectionViewCell
         let employee = employees![indexPath.row]
         
-        //        If image exists set image
-                if let strBase64 = employee.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let image = UIImage(data: imageData) {
-                    cell.employeeImage.image = image
-        //            If image doesn't exists
-                       } else {
-                           // Set a default image with a brown background
-                           cell.employeeImage.image = UIImage(systemName: "person.fill")
-
-                       }
+        //If image exists set image
+        if let strBase64 = employee.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let image = UIImage(data: imageData) {
+            cell.employeeImage.image = image
+        //If image doesn't exists
+        } else {
+            // Set a default image with a brown background
+            cell.employeeImage.image = UIImage(systemName: "person.fill")
+        }
         
         cell.nameEmployee.text = (employee.name != nil && employee.lastnames != nil) ? "\(employee.name!) \(employee.lastnames!)" : ""
-//        cellEmployee.nameEmployee.text = employee.name != nil ? "\(employee.name!)" : "Sin nombre"
         return cell
     }
     
+    
+    // Go to employee detail view
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "GoToEmployeeDetailFromRounded", sender: nil)
     }
     
     
-//    todooooo
-    //    set the views
+    //    set info establishment
     func setInfoEstablishment(){
-        
+        //if image of establishment exists
         if let strBase64 = self.establishment?.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let image = UIImage(data: imageData) {
             imgEstablishment.image = image
-//            If image doesn't exists
-               } else {
-                   imgEstablishment.backgroundColor = .red
-               }
+        //If image doesn't exists
+        } else {
+            imgEstablishment.image = UIImage(named: "defaultEstablishment")
+        }
         self.locationLabel.text = self.establishment?.location ?? ""
         self.benefitsLabel.text = "   \(self.establishment?.benefits != nil ? "\(self.establishment!.benefits!)" : "") $"
         self.lossesLabel.text = "   \(self.establishment?.losses != nil ? "\(self.establishment!.losses!)" : "") $"
@@ -139,59 +172,18 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     }
     
     
-    //    URL METHODS
-    
-    func getEstablishment() {
-        AF.request("http://127.0.0.1:5000/safari/establishments/\(id_getted!)")
-            .responseDecodable(of: [EstablishmentSQLView].self) { response in
-                switch response.result {
-                case .success(let establishments):
-                    if let firstEstablishment = establishments.first {
-                        self.establishment = firstEstablishment
-                        DispatchQueue.main.async {
-                            self.setInfoEstablishment()
-                        }
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }
-    }
-    
 
-    func getEmployees() {
-        let url = "http://127.0.0.1:5000/safari/establishments/\(id_getted!)/employees"
-               AF.request(url).responseDecodable(of: [Employee].self) { response in
-                   switch response.result {
-                   case .success(let data):
-                           self.employees = data
-                           self.employeesCollectionView.reloadData()
-                       
-                   case .failure(let error):
-                       print("Error al obtener los employees: \(error)")
-                   }
-               }
-        employeesCollectionView.reloadData()
-        employeesCollectionView.dataSource = self
-    }
-    
-    
-    
-    
     //Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "GoEmployeesListViewController" {
-//               pass the function to post establishment
-               let EmployeeListVC = segue.destination as! EmployeesListViewController
-               EmployeeListVC.id_establishment_selected = id_getted
-               EmployeeListVC.establishment = establishment
-           } else if segue.identifier == "GoEstablishmentDetailedViewController"{
-               let establishmentDetailVC = segue.destination as! EstablishmentDetailedViewController
-//               establishmentDetailVC.id_getted = id_establishmentSelected
-           } else if segue.identifier == "goToEditEstablishment"{
-               let editEstablishmentVC = segue.destination as! EditEstablishmentViewController
-               editEstablishmentVC.id_establishment_getted = id_getted
-           }
-       }
+        if segue.identifier == "GoEmployeesListViewController" {
+            let EmployeeListVC = segue.destination as! EmployeesListViewController
+            EmployeeListVC.id_establishment_selected = id_getted
+            //Pass the establishment to put the location and not need to do another get establihsment request
+            EmployeeListVC.establishment = establishment
+        } else if segue.identifier == "goToEditEstablishment"{
+            let editEstablishmentVC = segue.destination as! EditEstablishmentViewController
+            editEstablishmentVC.id_establishment_getted = id_getted
+        }
+    }
     
 }
