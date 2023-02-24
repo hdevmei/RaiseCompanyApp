@@ -11,14 +11,14 @@ import Alamofire
 class ApiManager {
     static let shared = ApiManager()
     
-    //   ESTABLISHMENT LIST
+    //  ESTABLISHMENTS METHODS /////////////////////////////////////////////////////////////////
+    
     
     func getEstablishments(completion: @escaping ([EstablishmentSQLView]?, Error?) -> Void) {
         let url = "http://127.0.0.1:5000/safari/establishments"
         AF.request(url).responseDecodable(of: [EstablishmentSQLView].self) { response in
             switch response.result {
             case .success(let establishments):
-//                print(establishments)
                 completion(establishments, nil)
             case .failure(let error):
                 completion(nil, error)
@@ -42,9 +42,26 @@ class ApiManager {
     }
     
     
+    func deleteEstablishment(indexEstablishmentToDelete: Int){
+        //take the id of establishment to delete from the indexEstablioshmentToDelete
+        let id_establishment_to_delete = EstablishmentListViewController.filteredEstablishments[indexEstablishmentToDelete].id_establishment!
+        
+        //Send the delete request
+        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment_to_delete)"
+        AF.request(url, method: .delete).response { response in
+            switch response.result {
+            case .success:
+                print("Establishment deleted")
+            case .failure(let error):
+                print("Failed to delete establishment: \(error)")
+            }
+        }
+    }
     
     
-//    EMPLOYEES
+    
+    
+//    EMPLOYEES ////////////////////////////////////////////////////////////////////////////////////
     func addEmployee(id_establishment: Int, employeeToAdd: Employee){
         let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)/employees"
         AF.request(url, method: .post, parameters: employeeToAdd, encoder: JSONParameterEncoder.default)

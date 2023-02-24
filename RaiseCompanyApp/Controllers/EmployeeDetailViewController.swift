@@ -12,7 +12,7 @@ import Alamofire
 class EmployeeDetailViewController: UIViewController{
     
     
-    var id_establishment_getted: Int?
+    var id_employee_getted: Int?
     
     
     @IBOutlet weak var image: UIImageView!
@@ -23,8 +23,7 @@ class EmployeeDetailViewController: UIViewController{
     @IBOutlet weak var workPosition: UILabel!
     
     @IBAction func editBtn(_ sender: UIButton) {
-        
-        print(self.id_establishment_getted)
+        print(id_employee_getted!)
     }
     
     @IBOutlet weak var age: UILabel!

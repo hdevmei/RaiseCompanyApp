@@ -13,51 +13,57 @@ import Kingfisher
 class EstablishmentListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     public var establishments: [EstablishmentSQLView]?
-    var filteredEstablishments: [EstablishmentSQLView] = []
     
+    //filtered establishments will be the data of establishmentsTableView and they will change depending of the text of the searchbar
+    static var filteredEstablishments: [EstablishmentSQLView] = []
+    
+    //this will exists if an establishment is selected with funciton did selected row at
     var id_establishmentSelected: Int?
     
     
     @IBOutlet weak var mySearchBar: UISearchBar!
     @IBOutlet weak var myEstablishmentListTableView: UITableView!
     
-    
+    //Go to add new establishment
     @IBAction func goToAddEstablishmentBtn(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "goToAddEstablishment", sender: nil)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //set table view and search bar
         myEstablishmentListTableView.delegate = self
         myEstablishmentListTableView.dataSource = self
         myEstablishmentListTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         mySearchBar.delegate = self
         
-        
+        //Get establishments when this view is open and set the info to the establishment tableview
         ApiManager.shared.getEstablishments { establishments, error in
             if let establishments = establishments {
                 self.establishments = establishments
-                self.filteredEstablishments = establishments
+                EstablishmentListViewController.filteredEstablishments = establishments
                 self.myEstablishmentListTableView.reloadData()
             } else if let error = error {
                 print(error.localizedDescription)
             }
         }
         
+        //quit constrains error from console
         UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
-        //        Update establishments from changes of other view controllers
+        //if changes of establishments is received... call funciton to update estalbishments table view
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("establishmentAdded"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("employeeAddedToEstablishment"), object: nil)
         
     }
     
-    //    Update table view after added an establishment
+    //Update establishments table view function
     @objc func reloadDataEstablishment(){
         ApiManager.shared.getEstablishments { establishments, error in
             if let establishments = establishments {
                 self.establishments = establishments
-                self.filteredEstablishments = establishments
+                EstablishmentListViewController.filteredEstablishments = establishments
                 self.myEstablishmentListTableView.reloadData()
             } else if let error = error {
                 print(error.localizedDescription)
@@ -66,73 +72,61 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         self.myEstablishmentListTableView.reloadData()
     }
     
-    
+    //return the the filteres establishments
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredEstablishments.count
+        return EstablishmentListViewController.filteredEstablishments.count
     }
     
+    //Return each cell with the fields filled in
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EstablishmentTableViewCell
-        let establishment = filteredEstablishments[indexPath.row]
+        let establishment = EstablishmentListViewController.filteredEstablishments[indexPath.row]
         cell.location.text = establishment.location
         cell.benefitsLabel.text = "   ▲ \(establishment.benefits!) $"
         cell.lossesLabel.text = "   ▼ \(establishment.losses!) $"
         cell.numberEmployees.text = "\(establishment.num_employees!) Employees"
         
-//        If image exists set image
+        //if the establishment has image
         if let strBase64 = establishment.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let image = UIImage(data: imageData) {
-                   cell.imgEstablishment.image = image
-//            If image doesn't exists
-               } else {
-                   // Set a default image with a brown background
-                   cell.imgEstablishment.backgroundColor = UIColor.brown
-                   cell.imgEstablishment.image = nil
-               }
+            cell.imgEstablishment.image = image
+            //if not set deafult establishment image
+        } else {
+            cell.imgEstablishment.image = UIImage(named: "defaultEstablishment")
+        }
         return cell
     }
-
-
+    
+    // if an establishment has been selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        id_establishmentSelected = filteredEstablishments[indexPath.row].id_establishment!
-        let location_establishment_selected = filteredEstablishments[indexPath.row].location
+        //set id_establishmentSelected getting the index path
+        id_establishmentSelected = EstablishmentListViewController.filteredEstablishments[indexPath.row].id_establishment!
         performSegue(withIdentifier: "GoEstablishmentDetailedViewController", sender: id_establishmentSelected)
-        
-        print("id establishent selected \(id_establishmentSelected!)")
-        print(location_establishment_selected)
     }
     
+    //If cells detects...
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        //...delete
         guard editingStyle == .delete else {
             return
         }
-        deleteEstablishment(at: indexPath.row)
+        
+        //take indexEstablishmentToDelete
+        let indexEstablishmentToDelete = indexPath.row
+        
+        // call delete establishment function with indexEstablishmentToDelete
+        ApiManager.shared.deleteEstablishment(indexEstablishmentToDelete: indexEstablishmentToDelete)
+        
+        // After delete method...
+        // Delete from local establishments
+        EstablishmentListViewController.filteredEstablishments.remove(at: indexEstablishmentToDelete)
+        // Delete the visual row of myEstablishmentListTableView
+        self.myEstablishmentListTableView.deleteRows(at: [IndexPath(row: indexEstablishmentToDelete, section: 0)], with: .automatic)
     }
     
     
-//    METHOD DELETE ESTABLISHMENT
-    func deleteEstablishment(at index: Int) {
-        print("getting estsblishments")
-        guard let establishmentId = filteredEstablishments[index].id_establishment else {
-            return
-        }
-        
-        let url = "http://127.0.0.1:5000/safari/establishments/\(establishmentId)"
-        AF.request(url, method: .delete).response { [weak self] response in
-            guard let self = self else {
-                return
-            }
-            
-            switch response.result {
-            case .success:
-                self.filteredEstablishments.remove(at: index)
-                self.myEstablishmentListTableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
-            case .failure(let error):
-                print("Failed to delete employee: \(error)")
-            }
-        }
-        
-    }
+
     
+    //Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToAddEstablishment" {
             //               pass the function to post establishment
@@ -142,18 +136,23 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
             establishmentDetailVC.id_getted = id_establishmentSelected
         }
     }
+    
+    
+    
 }
 
 
+
+//search bar function. This will filter the establishments
 extension EstablishmentListViewController: UISearchBarDelegate{
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredEstablishments = []
+        EstablishmentListViewController.filteredEstablishments = []
         if searchText == ""{
-            filteredEstablishments = establishments!
+            EstablishmentListViewController.filteredEstablishments = establishments!
         } else {
             for establishment in establishments!{
                 if establishment.location.lowercased().contains(searchText.lowercased()){
-                    filteredEstablishments.append(establishment)
+                    EstablishmentListViewController.filteredEstablishments.append(establishment)
                 }
             }
         }

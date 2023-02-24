@@ -82,7 +82,7 @@ extension UIView {
         }
     }
     
-    @IBInspectable var blackShadow: Bool{
+    @IBInspectable var commonShadow: Bool{
         
         get {
             return false

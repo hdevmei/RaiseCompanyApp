@@ -177,6 +177,8 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     
     
     
+    
+    //Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if segue.identifier == "GoEmployeesListViewController" {
 //               pass the function to post establishment

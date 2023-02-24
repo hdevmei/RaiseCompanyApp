@@ -16,6 +16,8 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     var id_establishment_selected: Int?
     var establishment : EstablishmentSQLView?
     var employees: [Employee]?
+    
+    var id_employeeSelected: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,17 +42,13 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
         self.EmployeesCollectionView.reloadData()
     }
     
-  
-    
     @IBAction func AddEmployeeBtn(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "GoToAddEmployeeFromEstablishment", sender: nil)
-
     }
     
     @IBAction func btnDeleteEmployees(_ sender: Any) {
         let cell = SquareEmloyeeCollectionViewCell()
             cell.desactivateDeleteBtn()
-        
     }
     
     
@@ -87,7 +85,8 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "GoToEmployeeDetailViewController", sender: nil)
+        id_employeeSelected = employees![indexPath.row].id_employee
+        performSegue(withIdentifier: "GoToEmployeeDetailFromSquareList", sender: id_employeeSelected)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -106,15 +105,19 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
    
     }
     
-    
+    //Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Add new employee
            if segue.identifier == "GoToAddEmployeeFromEstablishment" {
 //               pass the function to post establishment
                let addEmployeeVC = segue.destination as! AddEmployeeViewController
                addEmployeeVC.id_establishment_getted = id_establishment_selected
+        //Go to employee detail view
            } else if segue.identifier == "GoToEmployeeDetailFromRounded"{
                let employeeDetailVC = segue.destination as! EmployeeDetailViewController
-               employeeDetailVC.id_establishment_getted = id_establishment_selected
+               employeeDetailVC.id_employee_getted = id_employeeSelected
+           }else if segue.identifier == "GoToEmployeeDetailFromSquareList"{
+               let employeeDetailVC = segue.destination as! EmployeeDetailViewController
            }
        }
 
