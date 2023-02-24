@@ -11,7 +11,7 @@ import Alamofire
 class AddEmployeeViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
     //instantiate new employee with default values
-    var employeeToAdd = Employee(name: "como duele", age: 0, mail: "" , salary: 0, schedule: "", work_position: "", id_establishment: nil, lastnames: "", photo: nil, id_employee: nil)
+    var employeeToAdd = Employee(name: "como duele", age: 0, mail: "" , salary: 0, schedule: "", work_position: "", id_establishment: nil, lastnames: "", photo: nil, id_employee: nil, number: 0)
     
     
     //cancel add employee view

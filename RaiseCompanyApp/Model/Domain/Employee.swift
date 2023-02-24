@@ -18,8 +18,9 @@ struct Employee :   Decodable, Encodable{
     var lastnames: String?
     var photo: String?
     var id_employee: Int?
+    var number: Int?
     
-    init(name: String? = nil, age: Int? = nil, mail: String? = nil, salary: Int? = nil, schedule: String? = nil, work_position: String? = nil, id_establishment: Int? = nil, lastnames: String? = nil, photo: String? = nil, id_employee: Int? = nil) {
+    init(name: String? = nil, age: Int? = nil, mail: String? = nil, salary: Int? = nil, schedule: String? = nil, work_position: String? = nil, id_establishment: Int? = nil, lastnames: String? = nil, photo: String? = nil, id_employee: Int? = nil, number: Int) {
         self.name = name
         self.age = age
         self.mail = mail
@@ -30,7 +31,8 @@ struct Employee :   Decodable, Encodable{
         self.lastnames = lastnames
         self.photo = photo
         self.id_employee = id_employee
+        self.number = number
     }
-    
+
     
 }

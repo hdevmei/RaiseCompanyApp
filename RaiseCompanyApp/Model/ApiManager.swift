@@ -90,8 +90,21 @@ class ApiManager {
                 completion(nil, error)
             }
         }
-        
     }
+    
+    
+    func getEmployee(id_employee: Int, completion: @escaping (Employee?, Error?) -> Void) {
+        let url = "http://127.0.0.1:5000/safari/establishments/0/employees/\(id_employee)"
+        AF.request(url, method: .get).responseDecodable(of: Employee.self) { response in
+            switch response.result {
+            case .success(let employee):
+                completion(employee, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
     
     
 

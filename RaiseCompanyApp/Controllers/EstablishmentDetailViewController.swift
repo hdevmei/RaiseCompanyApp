@@ -63,7 +63,7 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     //    override
     override func viewDidLoad() {
         super.viewDidLoad()
-        // get establishment from api manager, set to self.establishment  and set info
+        // get establishment from api manager, set to local establishment  and set info
         getEstablishmentAndSetInfo()
         getEmployeesAndSetInfo()
         employeesCollectionView.dataSource = self
@@ -121,7 +121,7 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     //Employee collecition view functions
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //if there is no employee, show 0 cells
+        //if there are no employees, show 0 cells
         return employees?.count ?? 0
     }
     
