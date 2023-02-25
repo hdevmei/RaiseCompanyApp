@@ -81,8 +81,7 @@ class AddEstablishmentViewController : UIViewController, UINavigationControllerD
         
     }
     
-    
-    
+    //select photo button
     @IBAction func imgBtn(_ sender: UIButton) {
         //show galery picker
         let imagePicker = UIImagePickerController()

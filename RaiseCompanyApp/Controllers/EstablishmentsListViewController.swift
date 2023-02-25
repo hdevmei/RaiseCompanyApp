@@ -128,7 +128,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     //Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToAddEstablishment" {
-            //               pass the function to post establishment
+            //pass the function to post establishment
             let addEstablishmnetVC = segue.destination as! AddEstablishmentViewController
         } else if segue.identifier == "GoEstablishmentDetailedViewController"{
             let establishmentDetailVC = segue.destination as! EstablishmentDetailedViewController

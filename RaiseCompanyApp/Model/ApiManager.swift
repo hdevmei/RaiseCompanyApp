@@ -134,7 +134,7 @@ class ApiManager {
             .response { response in
                 switch response.result {
                 case .success:
-                    print("POST request successful")
+                    print("Employee Added")
                     NotificationCenter.default.post(name: Notification.Name("employeeAddedToEstablishment"), object: nil)
                 case .failure(let error):
                     print(error)

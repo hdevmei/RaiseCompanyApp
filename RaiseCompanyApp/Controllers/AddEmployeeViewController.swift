@@ -23,6 +23,8 @@ class AddEmployeeViewController: UIViewController, UINavigationControllerDelegat
     var id_establishment_getted: Int?
     var canSave: Bool = true
     
+    @IBOutlet weak var numberTF: UITextField!
+    
     @IBOutlet weak var nameEmployeeTF: UITextField!
     
     @IBOutlet weak var lastNamesTF: UITextField!
@@ -56,6 +58,7 @@ class AddEmployeeViewController: UIViewController, UINavigationControllerDelegat
            let mail = mailTF.text, !mail.isEmpty,
            let ageString = ageTF.text, let age = Int(ageString),
            let salaryString = salaryTF.text, let salary = Int(salaryString),
+           let numberString = numberTF.text, let number = Int(numberString),
            let workPosition = workPositionTF.text, !workPosition.isEmpty{
             
             //... If yes assign the values to the employee to add
@@ -65,6 +68,7 @@ class AddEmployeeViewController: UIViewController, UINavigationControllerDelegat
             employeeToAdd.age = age
             employeeToAdd.salary = salary
             employeeToAdd.work_position = workPosition
+            employeeToAdd.number = number
             
             //If user has completed the not compulsory fields as schedule
             if let schedule = scheduleTF.text{
