@@ -52,9 +52,10 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         //quit constrains error from console
         UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
-        //if changes of establishments is received... call funciton to update estalbishments table view
+        //if changes of establishments is received... call function to update estalbishments table view
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("establishmentAdded"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("employeeAddedToEstablishment"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("establishmentEdited"), object: nil)
         
     }
     
@@ -123,8 +124,6 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         self.myEstablishmentListTableView.deleteRows(at: [IndexPath(row: indexEstablishmentToDelete, section: 0)], with: .automatic)
     }
     
-    
-
     
     //Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

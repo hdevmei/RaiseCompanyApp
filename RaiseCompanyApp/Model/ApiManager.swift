@@ -42,7 +42,7 @@ class ApiManager {
     
     
     
-    
+    //add new establishment
     func postEstablishment(establishmentToAdd : EstablishmentSQLView?){
         let url = "http://127.0.0.1:5000/safari/establishments"
         AF.request(url, method: .post, parameters: establishmentToAdd, encoder: JSONParameterEncoder.default)
@@ -58,7 +58,7 @@ class ApiManager {
             }
     }
     
-    
+    //delete establishment
     func deleteEstablishment(indexEstablishmentToDelete: Int){
         //take the id of establishment to delete from the indexEstablioshmentToDelete
         let id_establishment_to_delete = EstablishmentListViewController.filteredEstablishments[indexEstablishmentToDelete].id_establishment!
@@ -74,6 +74,25 @@ class ApiManager {
             }
         }
     }
+    
+    //update establishment
+    func updateEstabloshment(newEstablishmentValues: Establishment, id_establishment: Int){
+        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)"
+        AF.request(url, method: .put, parameters: newEstablishmentValues, encoder: JSONParameterEncoder.default)
+            .validate(statusCode: 200..<300)
+            .response { response in
+                switch response.result {
+                case .success:
+                    print("Establishment Updated")
+                    NotificationCenter.default.post(name: Notification.Name("establishmentEdited"), object: nil)
+                case .failure(let error):
+                    print(error)
+                    print(response)
+                }
+            }
+    }
+    
+    
     
     
     
