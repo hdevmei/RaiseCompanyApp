@@ -32,10 +32,11 @@ class EmployeeDetailViewController: UIViewController{
         super.viewDidLoad()
         getEmployeeAndSetInfo()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(getEmployeeAndSetInfo), name: Notification.Name("employeeUpdated"), object: nil)
     }
     
     
-    func getEmployeeAndSetInfo(){
+    @objc func getEmployeeAndSetInfo(){
         //get employee
         ApiManager.shared.getEmployee(id_employee: id_employee_getted!) { employee, error in
             if let employee = employee{
@@ -79,15 +80,16 @@ class EmployeeDetailViewController: UIViewController{
             if let scheduleValue = employee?.schedule{
                 schedule.text = scheduleValue
             }
-            
-            
-            
-            
         }
         
         
-        
-        
+    //Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     if segue.identifier == "GoToEditEmployee"{
+            let editEmployeeVC = segue.destination as! EditEmployeeViewController
+            editEmployeeVC.id_employee_to_update = id_employee_getted
+        }
+    }
         
     
     

@@ -17,7 +17,6 @@ struct Establishment: Codable {
     var photo: String?
     var schedule: String?
     
-    
     init(benefits: Int?, id_establishment: Int?, location: String?, losses: Int?, photo: String?, schedule: String?) {
         self.benefits = benefits
         self.id_establishment = id_establishment

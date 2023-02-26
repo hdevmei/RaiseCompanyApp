@@ -83,7 +83,7 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EstablishmentTableViewCell
         let establishment = EstablishmentListViewController.filteredEstablishments[indexPath.row]
         cell.location.text = establishment.location
-        cell.benefitsLabel.text = "   ▲ \(establishment.benefits!) $"
+        cell.benefitsLabel.text = "   ▲ \(establishment.benefits!) $" 
         cell.lossesLabel.text = "   ▼ \(establishment.losses!) $"
         cell.numberEmployees.text = "\(establishment.num_employees!) Employees"
         

@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Employee :   Decodable, Encodable{
+struct Employee : Decodable, Encodable{
     var name: String?
     var age: Int?
     var mail: String?
@@ -20,7 +20,7 @@ struct Employee :   Decodable, Encodable{
     var id_employee: Int?
     var number: Int?
     
-    init(name: String? = nil, age: Int? = nil, mail: String? = nil, salary: Int? = nil, schedule: String? = nil, work_position: String? = nil, id_establishment: Int? = nil, lastnames: String? = nil, photo: String? = nil, id_employee: Int? = nil, number: Int) {
+    init(name: String?, age: Int?, mail: String?, salary: Int?, schedule: String?, work_position: String?, id_establishment: Int?, lastnames: String?, photo: String?, id_employee: Int?, number: Int?) {
         self.name = name
         self.age = age
         self.mail = mail

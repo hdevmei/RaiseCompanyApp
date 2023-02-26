@@ -11,14 +11,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var navigationBarAppearace = UINavigationBar.appearance()
-
-
     
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //recordar que he elimando info plist configuration
         return true
     }
+
 
     // MARK: UISceneSession Lifecycle
 

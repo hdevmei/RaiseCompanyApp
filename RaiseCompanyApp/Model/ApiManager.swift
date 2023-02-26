@@ -76,7 +76,7 @@ class ApiManager {
     }
     
     //update establishment
-    func updateEstabloshment(newEstablishmentValues: Establishment, id_establishment: Int){
+    func updateEstablishment(newEstablishmentValues: Establishment, id_establishment: Int){
         let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)"
         AF.request(url, method: .put, parameters: newEstablishmentValues, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
@@ -144,7 +144,22 @@ class ApiManager {
     }
     
     
-    
+    func updateEmployee(newEmployeeValues: Employee, id_employee: Int){
+        let url = "http://127.0.0.1:5000/safari/establishments/0/employees/\(id_employee)"
+        AF.request(url, method: .put, parameters: newEmployeeValues, encoder: JSONParameterEncoder.default)
+            .validate(statusCode: 200..<300)
+            .response { response in
+                switch response.result {
+                case .success:
+                    print("Employee Updated")
+                    NotificationCenter.default.post(name: Notification.Name("employeeUpdated"), object: nil)
+                case .failure(let error):
+                    print(error)
+                    print(response)
+                }
+            }
+        
+    }
     
     
     

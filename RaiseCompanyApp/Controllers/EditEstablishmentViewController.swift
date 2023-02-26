@@ -11,7 +11,7 @@ import Alamofire
 
 class EditEstablishmentViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
-    //The id of the establishment, will always exists because is received from establishment detail view
+    //The id of the establishment will always exists because is received from establishment detail view
     var id_establishment_getted : Int?
     var currentEstablihsment: EstablishmentSQLView?
     
@@ -58,8 +58,8 @@ class EditEstablishmentViewController: UIViewController, UINavigationControllerD
     
     
     @IBAction func saveButton(_ sender: UIButton) {
-        //        editEstablishment()
-        setNewValuesEstablishments()
+        //editEstablishment()
+        setNewValuesEstablishmentFromTextFields()
         updateEstablishment()
         self.dismiss(animated: true)
     }
@@ -93,24 +93,22 @@ class EditEstablishmentViewController: UIViewController, UINavigationControllerD
         
         //if the current establishment has image
         if let strBase64 = self.currentEstablihsment!.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let image = UIImage(data: imageData) {
-            imgEstablishment.image = image            //if not set deafult establishment image
+            imgEstablishment.image = image
+            //if not set deafult establishment image
         } else {
             imgEstablishment.image = UIImage(named: "defaultEstablishment")
         }
         
-        self.locationTF.text = "\(self.currentEstablihsment!.location)"
-        self.benefitsTF.text = " \(self.currentEstablihsment!.benefits!)"
-        self.lossesTF.text = "\(self.currentEstablihsment!.losses!)"
-        self.scheduleTf.text = "\(self.currentEstablihsment!.schedule! )"
+        self.locationTF.text = self.currentEstablihsment?.location != nil ? "\(self.currentEstablihsment!.location)" : ""
+        self.benefitsTF.text = self.currentEstablihsment?.benefits != nil ? " \(self.currentEstablihsment!.benefits!)" : ""
+        self.lossesTF.text = self.currentEstablihsment?.losses != nil ? "\(self.currentEstablihsment!.losses!)" : ""
+        self.scheduleTf.text = self.currentEstablihsment?.schedule != nil ? "\(self.currentEstablihsment!.schedule!)" : ""
+
     }
     
     
-    
-    func setNewValuesEstablishments(){
-        //Change values if user has put new value
-        
-        
-        
+    //set the values of the new establishment from textfields
+    func setNewValuesEstablishmentFromTextFields(){
         if let locationText = locationTF.text, !locationText.isEmpty {
             self.establishmentNewValues.location = locationText
         }
@@ -126,9 +124,9 @@ class EditEstablishmentViewController: UIViewController, UINavigationControllerD
     }
     
     func updateEstablishment(){
-        ApiManager.shared.updateEstabloshment(newEstablishmentValues: establishmentNewValues, id_establishment: id_establishment_getted!)
-        
+        ApiManager.shared.updateEstablishment(newEstablishmentValues: establishmentNewValues, id_establishment: id_establishment_getted!)
     }
+    
 }
 
 

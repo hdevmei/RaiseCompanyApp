@@ -31,8 +31,11 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
         //Set notification recevier to call the  update collection view function after...
         //...after employee added
         NotificationCenter.default.addObserver(self, selector: #selector(reloadSquareEmployeesCollectionView), name: Notification.Name("employeeAddedToEstablishment"), object: nil)
+        //...after employee updated
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadSquareEmployeesCollectionView), name: Notification.Name("employeeUpdated"), object: nil)
         // TODO: ...employee deleted
 
+        
     }
     
     //update employees list
