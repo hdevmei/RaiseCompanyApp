@@ -9,6 +9,9 @@ import UIKit
 
 class ReviewsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var reviewsTable: UITableView!
+
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -25,6 +28,7 @@ class ReviewsListViewController: UIViewController, UITableViewDelegate, UITableV
     
 
     override func viewDidLoad() {
+        print("Incidando reviews")
         super.viewDidLoad()
         reviewsTable.delegate = self
         reviewsTable.dataSource = self
@@ -32,14 +36,7 @@ class ReviewsListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+   
+    
 }

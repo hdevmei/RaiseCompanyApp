@@ -9,8 +9,13 @@ import UIKit
 
 class IncidentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var incidentsTable: UITableView!
+    var id_getted : Int?
+    var incidents: [Incident]?
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return 4
         
     }
     
@@ -23,20 +28,28 @@ class IncidentsViewController: UIViewController, UITableViewDelegate, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Iniciado incidencias")
         incidentsTable.dataSource = self
         incidentsTable.delegate = self
         // Do any additional setup after loading the view.
+//        getIncidents()
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func getIncidents(){
+        ApiManager.shared.getIncidentsOfEstablishment (id_establishment: EstablishmentDetailedViewController().id_getted!){incidents, error in
+            if let incidents = incidents{
+                //convert the employees getted in the request to local employees
+                self.incidents = incidents
+                self.incidentsTable.reloadData()
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
-    */
+    
+    
 
+   
 }

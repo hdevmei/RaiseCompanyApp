@@ -17,6 +17,7 @@
 		AF121796298FDCF6007E4318 /* SquareEmloyeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF121795298FDCF6007E4318 /* SquareEmloyeeCollectionViewCell.swift */; };
 		AF1217982990061D007E4318 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1217972990061D007E4318 /* AddEmployeeViewController.swift */; };
 		AF12179A29903D27007E4318 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF12179929903D27007E4318 /* LogInViewController.swift */; };
+		AF2AC54029AC36010079E7D9 /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AC53F29AC36010079E7D9 /* Incident.swift */; };
 		AF3323EB298AF4AC00C7065F /* EmployeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3323EA298AF4AC00C7065F /* EmployeeCollectionViewCell.swift */; };
 		AF405484298BBFF800D0320F /* ReviewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405483298BBFF800D0320F /* ReviewsListViewController.swift */; };
 		AF405488298BD85800D0320F /* IncidentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF405487298BD85800D0320F /* IncidentsViewController.swift */; };
@@ -51,6 +52,7 @@
 		AF121795298FDCF6007E4318 /* SquareEmloyeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareEmloyeeCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF1217972990061D007E4318 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
 		AF12179929903D27007E4318 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		AF2AC53F29AC36010079E7D9 /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
 		AF3323EA298AF4AC00C7065F /* EmployeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF405483298BBFF800D0320F /* ReviewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListViewController.swift; sourceTree = "<group>"; };
 		AF405487298BD85800D0320F /* IncidentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentsViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				AF91B18E298BB8DB00C87A21 /* Review.swift */,
 				AFC74F50299ACA8600AE7805 /* Employee.swift */,
 				AFFCD1E9299C203000017629 /* ApiManager.swift */,
+				AF2AC53F29AC36010079E7D9 /* Incident.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				AF12179A29903D27007E4318 /* LogInViewController.swift in Sources */,
 				AF4403DA298094EA008014E6 /* EstablishmentsListViewController.swift in Sources */,
 				AF06C1652974D9B20063D55A /* UIView+Extension.swift in Sources */,
+				AF2AC54029AC36010079E7D9 /* Incident.swift in Sources */,
 				AF121796298FDCF6007E4318 /* SquareEmloyeeCollectionViewCell.swift in Sources */,
 				AF405484298BBFF800D0320F /* ReviewsListViewController.swift in Sources */,
 				AF04C0EA2981E5D00007FF2C /* AddEstablishmentViewController.swift in Sources */,

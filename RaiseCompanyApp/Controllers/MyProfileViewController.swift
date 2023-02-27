@@ -10,4 +10,11 @@ import UIKit
 
 class MyProfileViewController: UIViewController{
     
+    @IBOutlet weak var managerImage: UIImageView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
 }

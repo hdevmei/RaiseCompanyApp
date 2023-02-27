@@ -99,18 +99,7 @@ class ApiManager {
     
     //    EMPLOYEES ////////////////////////////////////////////////////////////////////////////////////
     
-    func getEmployees(id_establishment: Int, completion: @escaping ([Employee]?, Error?) -> Void) {
-        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)/employees"
-        AF.request(url).responseDecodable(of: [Employee].self) { response in
-            switch response.result {
-            case .success(let employees):
-                completion(employees, nil)
-            case .failure(let error):
-                completion(nil, error)
-            }
-        }
-    }
-    
+   
     
     func getEmployee(id_employee: Int, completion: @escaping (Employee?, Error?) -> Void) {
         let url = "http://127.0.0.1:5000/safari/establishments/0/employees/\(id_employee)"
@@ -126,7 +115,7 @@ class ApiManager {
     
     
     
-
+    
     func addEmployee(id_establishment: Int, employeeToAdd: Employee){
         let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)/employees"
         AF.request(url, method: .post, parameters: employeeToAdd, encoder: JSONParameterEncoder.default)
@@ -162,6 +151,38 @@ class ApiManager {
     }
     
     
+    //INCIDENTS //////////////////////////////////////////////////////////////////
+    
+    func getIncidentsOfEstablishment(id_establishment: Int, completion: @escaping ([Incident]?, Error?) -> Void){
+        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)/incidents"
+        AF.request(url).responseDecodable(of: [Incident].self) { response in
+            switch response.result {
+            case .success(let incidents):
+                completion(incidents, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+ func getEmployees(id_establishment: Int, completion: @escaping ([Employee]?, Error?) -> Void) {
+    let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)/employees"
+    AF.request(url).responseDecodable(of: [Employee].self) { response in
+        switch response.result {
+        case .success(let employees):
+            completion(employees, nil)
+        case .failure(let error):
+            completion(nil, error)
+        }
+    }
+}
+
     
     
+    
+    //USER MANAGER //////////////////////////////////////////////////////////////////
+
+    func gerUserManager(){
+        
+    }
 }

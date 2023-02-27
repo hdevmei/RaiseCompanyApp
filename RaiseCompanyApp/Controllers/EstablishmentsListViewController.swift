@@ -32,6 +32,8 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         //set table view and search bar
         myEstablishmentListTableView.delegate = self
         myEstablishmentListTableView.dataSource = self
@@ -133,6 +135,9 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         } else if segue.identifier == "GoEstablishmentDetailedViewController"{
             let establishmentDetailVC = segue.destination as! EstablishmentDetailedViewController
             establishmentDetailVC.id_getted = id_establishmentSelected
+        } else if segue.identifier == "IncidentsContainerViewSegue"{
+            let IncidentsListContainerView = segue.destination as! IncidentsViewController
+            IncidentsListContainerView.id_getted = id_establishmentSelected
         }
     }
     

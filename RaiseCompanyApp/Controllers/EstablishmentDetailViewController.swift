@@ -37,7 +37,10 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     var establishment : EstablishmentSQLView?
     public var employees : [Employee]?
     
-
+    
+    var incidencias: [Incident]?
+    
+    
     
     @IBAction func goToGraphicsView(_ sender: UIButton) {
     }
@@ -68,7 +71,6 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         getEmployeesAndSetInfo()
         employeesCollectionView.dataSource = self
         employeesCollectionView.delegate = self
-   
         
         // set segmented control
         ReviewsContainerVIew.isHidden = true
@@ -81,7 +83,7 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishmentDetail), name: Notification.Name("establishmentEdited"), object: nil)
     }
     
-//    get request of establishment and employee  and set the info
+    //    get request of establishment and employee  and set the info
     @objc func reloadDataEstablishmentDetail(){
         getEstablishmentAndSetInfo()
         getEmployeesAndSetInfo()
@@ -117,7 +119,7 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         }
     }
     
-  
+    
     //Employee collecition view functions
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -134,7 +136,7 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         //If image exists set image
         if let strBase64 = employee.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let image = UIImage(data: imageData) {
             cell.employeeImage.image = image
-        //If image doesn't exists
+            //If image doesn't exists
         } else {
             // Set a default image with a brown background
             cell.employeeImage.image = UIImage(systemName: "person.fill")
@@ -156,9 +158,9 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         //if image of establishment exists
         if let strBase64 = self.establishment?.photo, let imageData = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters), let image = UIImage(data: imageData) {
             imgEstablishment.image = image
-        //If image doesn't exists
+            //If image doesn't exists
         } else {
-            imgEstablishment.image = UIImage(named: "defaultEstablishment")
+            imgEstablishment.image = UIImage(named: "defaultEstablishment2")
         }
         self.locationLabel.text = self.establishment?.location ?? ""
         self.benefitsLabel.text = "   \(self.establishment?.benefits != nil ? "\(self.establishment!.benefits!)" : "") $"
@@ -172,7 +174,12 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     }
     
     
-
+    
+    
+    
+    
+    
+    
     //Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoEmployeesListViewController" {
@@ -183,6 +190,9 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
         } else if segue.identifier == "goToEditEstablishment"{
             let editEstablishmentVC = segue.destination as! EditEstablishmentViewController
             editEstablishmentVC.id_establishment_getted = id_getted
+        } else if segue.identifier == "IncidentsContainerViewSegue"{
+            let incidentsContainerView = segue.destination as! IncidentsViewController
+            incidentsContainerView.id_getted = id_getted
         }
     }
     

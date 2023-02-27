@@ -127,7 +127,18 @@ extension UIView {
             layer.masksToBounds = newValue > 0
         }
     }
-    
+    @IBInspectable var imageRounded: Bool{
+        get{
+            return false
+        }
+        
+        set{
+            layer.masksToBounds = false
+            layer.cornerRadius = self.frame.height / 2.25
+            clipsToBounds = true
+        }
+        
+    }
     
 }
 

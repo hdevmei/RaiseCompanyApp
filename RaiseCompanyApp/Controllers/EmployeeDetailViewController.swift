@@ -31,8 +31,6 @@ class EmployeeDetailViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         getEmployeeAndSetInfo()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(getEmployeeAndSetInfo), name: Notification.Name("employeeUpdated"), object: nil)
     }
     
     
@@ -61,10 +59,18 @@ class EmployeeDetailViewController: UIViewController{
 //                image.image = UIImage(systemName: "person.fill")
             }
             
+            //Use ternary operator to set values
+            //...name
+            let nameValue = employee!.name != nil ? employee?.name! : "No name"
+            //...lastnames
+            let lastnameValue = employee!.lastnames != nil ? employee?.lastnames! : "No lastnames"
             
-            if let nameValue = employee!.name{
-                name.text = nameValue
-            }
+            //Join name and lastnames
+            let nameAndLastNames = nameValue! + " " + lastnameValue!
+            self.name.text = nameAndLastNames
+            
+            
+            
             if let workPositionValue = employee!.work_position{
                 workPosition.text = workPositionValue
             }
