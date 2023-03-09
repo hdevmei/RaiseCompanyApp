@@ -6,4 +6,4 @@
 - Consult the graphics to make decisions
 
 
-![Image text](https://github.com/hdevmei/RaiseCompanyApp/blob/main/Splash.png | width=100)
+![Image text](https://github.com/hdevmei/RaiseCompanyApp/blob/main/Splash.png)
