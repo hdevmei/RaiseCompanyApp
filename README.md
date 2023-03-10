@@ -7,3 +7,5 @@
 
 
 <img src=https://github.com/hdevmei/RaiseCompanyApp/blob/main/Splash.png width="200"/>
+<img src=https://github.com/hdevmei/RaiseCompanyApp/blob/main/Splash.png width="200"/>
+
