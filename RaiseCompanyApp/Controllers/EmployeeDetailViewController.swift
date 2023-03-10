@@ -14,6 +14,7 @@ class EmployeeDetailViewController: UIViewController{
     //The id of the employee, will always exists because is received from employees list view controller
     var id_employee_getted: Int?
     var employee: Employee?
+    var id_establishment_of_employee: Int?
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -25,18 +26,24 @@ class EmployeeDetailViewController: UIViewController{
     
     
     @IBAction func editBtn(_ sender: UIButton) {
-        print(id_employee_getted!)
+    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getEmployeeAndSetInfo()
+        
+        //...after employee updated
+        NotificationCenter.default.addObserver(self, selector: #selector(getEmployeeAndSetInfo), name: Notification.Name("employeeUpdated"), object: nil)
     }
+    
+    
+    
     
     
     @objc func getEmployeeAndSetInfo(){
         //get employee
-        ApiManager.shared.getEmployee(id_employee: id_employee_getted!) { employee, error in
+        ApiManager.shared.getEmployee(id_employee: id_employee_getted!, id_establishment: id_establishment_of_employee!) { employee, error in
             if let employee = employee{
                 //convert the employees getted in the request to local employees
                 self.employee = employee
@@ -94,6 +101,7 @@ class EmployeeDetailViewController: UIViewController{
      if segue.identifier == "GoToEditEmployee"{
             let editEmployeeVC = segue.destination as! EditEmployeeViewController
             editEmployeeVC.id_employee_to_update = id_employee_getted
+         editEmployeeVC.id_establishment_of_employee = id_establishment_of_employee
         }
     }
         

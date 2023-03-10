@@ -36,18 +36,18 @@ class IncidentsViewController: UIViewController, UITableViewDelegate, UITableVie
 
     }
     
-    
-    func getIncidents(){
-        ApiManager.shared.getIncidentsOfEstablishment (id_establishment: EstablishmentDetailedViewController().id_getted!){incidents, error in
-            if let incidents = incidents{
-                //convert the employees getted in the request to local employees
-                self.incidents = incidents
-                self.incidentsTable.reloadData()
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-    }
+//    
+//    func getIncidents(){
+//        ApiManager.shared.getIncidentsOfEstablishment (id_establishment: EstablishmentDetailedViewController().id_getted!){incidents, error in
+//            if let incidents = incidents{
+//                //convert the employees getted in the request to local employees
+//                self.incidents = incidents
+//                self.incidentsTable.reloadData()
+//            } else if let error = error {
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
     
     
 

@@ -10,12 +10,15 @@ import Alamofire
 
 class ApiManager {
     static let shared = ApiManager()
+    let urlbase = "http://127.0.0.1:5000/"
+    
+    
     
     //  ESTABLISHMENTS METHODS /////////////////////////////////////////////////////////////////
     
     //Get ALL establishments
     func getEstablishments(completion: @escaping ([EstablishmentSQLView]?, Error?) -> Void) {
-        let url = "http://127.0.0.1:5000/safari/establishments"
+        let url = "\(urlbase)safari/establishments"
         AF.request(url).responseDecodable(of: [EstablishmentSQLView].self) { response in
             switch response.result {
             case .success(let establishments):
@@ -29,7 +32,7 @@ class ApiManager {
     
     //Get ONE establishment
     func getEstablishment(id_establishment: Int, completion: @escaping (EstablishmentSQLView?, Error?) -> Void) {
-        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)"
+        let url = "\(urlbase)safari/establishments/\(id_establishment)"
         AF.request(url).responseDecodable(of: EstablishmentSQLView.self) { response in
             switch response.result {
             case .success(let establishment):
@@ -44,7 +47,7 @@ class ApiManager {
     
     //add new establishment
     func postEstablishment(establishmentToAdd : EstablishmentSQLView?){
-        let url = "http://127.0.0.1:5000/safari/establishments"
+        let url = "\(urlbase)safari/establishments"
         AF.request(url, method: .post, parameters: establishmentToAdd, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
             .response { response in
@@ -64,7 +67,7 @@ class ApiManager {
         let id_establishment_to_delete = EstablishmentListViewController.filteredEstablishments[indexEstablishmentToDelete].id_establishment!
         
         //Send the delete request
-        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment_to_delete)"
+        let url = "\(urlbase)safari/establishments/\(id_establishment_to_delete)"
         AF.request(url, method: .delete).response { response in
             switch response.result {
             case .success:
@@ -77,7 +80,7 @@ class ApiManager {
     
     //update establishment
     func updateEstablishment(newEstablishmentValues: Establishment, id_establishment: Int){
-        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)"
+        let url = "\(urlbase)establishments/\(id_establishment)"
         AF.request(url, method: .put, parameters: newEstablishmentValues, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
             .response { response in
@@ -98,11 +101,8 @@ class ApiManager {
     
     
     //    EMPLOYEES ////////////////////////////////////////////////////////////////////////////////////
-    
-   
-    
-    func getEmployee(id_employee: Int, completion: @escaping (Employee?, Error?) -> Void) {
-        let url = "http://127.0.0.1:5000/safari/establishments/0/employees/\(id_employee)"
+    func getEmployee(id_employee: Int, id_establishment: Int, completion: @escaping (Employee?, Error?) -> Void) {
+        let url = "\(urlbase)safari/establishments/\(id_establishment)/employees/\(id_employee)"
         AF.request(url, method: .get).responseDecodable(of: Employee.self) { response in
             switch response.result {
             case .success(let employee):
@@ -114,10 +114,8 @@ class ApiManager {
     }
     
     
-    
-    
     func addEmployee(id_establishment: Int, employeeToAdd: Employee){
-        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)/employees"
+        let url = "\(urlbase)safari/establishments/\(id_establishment)/employees"
         AF.request(url, method: .post, parameters: employeeToAdd, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
             .response { response in
@@ -133,8 +131,8 @@ class ApiManager {
     }
     
     
-    func updateEmployee(newEmployeeValues: Employee, id_employee: Int){
-        let url = "http://127.0.0.1:5000/safari/establishments/0/employees/\(id_employee)"
+    func updateEmployee(newEmployeeValues: Employee, id_employee: Int, id_establishment: Int){
+        let url = "\(urlbase)safari/establishments/\(id_establishment)/employees/\(id_employee)"
         AF.request(url, method: .put, parameters: newEmployeeValues, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
             .response { response in
@@ -147,42 +145,70 @@ class ApiManager {
                     print(response)
                 }
             }
+    }
+    
+    func getEmployees(id_establishment: Int, completion: @escaping ([Employee]?, Error?) -> Void) {
+        let url = "\(urlbase)safari/establishments/\(id_establishment)/employees"
+        AF.request(url).responseDecodable(of: [Employee].self) { response in
+            switch response.result {
+            case .success(let employees):
+                completion(employees, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+        
+        
+        //INCIDENTS //////////////////////////////////////////////////////////////////
+        
+        func getIncidentsOfEstablishment(id_establishment: Int, completion: @escaping ([Incident]?, Error?) -> Void){
+            let url = "\(urlbase)safari/establishments/\(id_establishment)/incidents"
+            AF.request(url).responseDecodable(of: [Incident].self) { response in
+                switch response.result {
+                case .success(let incidents):
+                    completion(incidents, nil)
+                case .failure(let error):
+                    completion(nil, error)
+                }
+            }
+        }
+        
         
     }
     
     
-    //INCIDENTS //////////////////////////////////////////////////////////////////
     
-    func getIncidentsOfEstablishment(id_establishment: Int, completion: @escaping ([Incident]?, Error?) -> Void){
-        let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)/incidents"
-        AF.request(url).responseDecodable(of: [Incident].self) { response in
+    
+    //USER MANAGER //////////////////////////////////////////////////////////////////
+    
+    func getManager(completion: @escaping (Manager?, Error?) -> Void) {
+        let url = "\(urlbase)safari/manager"
+        AF.request(url).responseDecodable(of: Manager.self) { response in
             switch response.result {
-            case .success(let incidents):
-                completion(incidents, nil)
+            case .success(let manager):
+                completion(manager, nil)
             case .failure(let error):
                 completion(nil, error)
             }
         }
     }
     
- func getEmployees(id_establishment: Int, completion: @escaping ([Employee]?, Error?) -> Void) {
-    let url = "http://127.0.0.1:5000/safari/establishments/\(id_establishment)/employees"
-    AF.request(url).responseDecodable(of: [Employee].self) { response in
-        switch response.result {
-        case .success(let employees):
-            completion(employees, nil)
-        case .failure(let error):
-            completion(nil, error)
-        }
-    }
-}
-
     
-    
-    
-    //USER MANAGER //////////////////////////////////////////////////////////////////
-
-    func gerUserManager(){
+    func updateManager(newManagerValues: Manager) {
+        let url = "\(urlbase)safari/manager"
+        AF.request(url, method: .put, parameters: newManagerValues, encoder: JSONParameterEncoder.default)
+            .validate(statusCode: 200..<300)
+            .response { response in
+                switch response.result {
+                case .success:
+                    NotificationCenter.default.post(name: Notification.Name("ManagerUpdated"), object: nil)
+                case .failure(let error):
+                    print(error)
+                    print(response)
+                }
+            }
         
+        
+   
     }
 }

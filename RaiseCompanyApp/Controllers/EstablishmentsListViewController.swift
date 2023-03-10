@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 import Foundation
-import Kingfisher
+
 
 class EstablishmentListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -58,8 +58,8 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("establishmentAdded"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("employeeAddedToEstablishment"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadDataEstablishment), name: Notification.Name("establishmentEdited"), object: nil)
-        
     }
+    
     
     //Update establishments table view function
     @objc func reloadDataEstablishment(){
@@ -95,6 +95,14 @@ class EstablishmentListViewController : UIViewController, UITableViewDelegate, U
             //if not set deafult establishment image
         } else {
             cell.imgEstablishment.image = UIImage(named: "defaultEstablishment")
+        }
+        
+//     º
+        
+        if let rating = establishment.rating{
+            cell.rating.image = UIImage(named: "\(establishment.rating!)rating")
+        } else {
+            cell.rating.image = UIImage(named: "blackStars")
         }
         return cell
     }

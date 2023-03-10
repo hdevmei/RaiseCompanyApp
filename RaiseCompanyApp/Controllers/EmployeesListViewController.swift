@@ -24,7 +24,6 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         getEmployeesAndSetInfo()
-        
         //set location label
         location.text = establishment?.location
         
@@ -98,7 +97,7 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
     
     //Go to employee detail view
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        id_establishment_selected = employees![indexPath.row].id_employee
+        id_employee_selected = employees![indexPath.row].id_employee
         performSegue(withIdentifier: "GoToEmployeeDetailFromSquareList", sender: nil)
         
     }
@@ -139,7 +138,8 @@ class EmployeesListViewController: UIViewController, UICollectionViewDelegate, U
             employeeDetailVC.id_employee_getted = id_employee_selected
         }else if segue.identifier == "GoToEmployeeDetailFromSquareList"{
             let employeeDetailVC = segue.destination as! EmployeeDetailViewController
-            employeeDetailVC.id_employee_getted = id_establishment_selected
+            employeeDetailVC.id_employee_getted = id_employee_selected
+            employeeDetailVC.id_establishment_of_employee = id_establishment_selected
         }
     }
     

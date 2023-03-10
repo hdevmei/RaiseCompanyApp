@@ -13,7 +13,7 @@ class EditEmployeeViewController: UIViewController, UINavigationControllerDelega
     //The id of the employee to edit will always exists because is received from employees list view
     var id_employee_to_update: Int?
     var currentEmployee: Employee?
-    
+    var id_establishment_of_employee: Int?
     
         //Instantiate a employee without values, the it will be filled with the current establishment values
     var employeeNewValues: Employee = Employee(name: nil, age: nil, mail: nil, salary: nil, schedule: nil, work_position: nil, id_establishment: nil, lastnames: nil, photo: nil, id_employee: nil, number: nil)
@@ -74,7 +74,7 @@ class EditEmployeeViewController: UIViewController, UINavigationControllerDelega
     
     //Get current employee data to put in placeholder
     func getCurrentEmplyeeAndSetInfo(){
-        ApiManager.shared.getEmployee (id_employee: id_employee_to_update ?? 0){  employee, error in
+        ApiManager.shared.getEmployee (id_employee: id_employee_to_update ?? 0, id_establishment: id_establishment_of_employee!){  employee, error in
             if let employee = employee{
                 //convert the establishment getted in the request to lozzºcal establishment
                 self.currentEmployee = employee
@@ -104,7 +104,6 @@ class EditEmployeeViewController: UIViewController, UINavigationControllerDelega
         workPositionTF.text = self.currentEmployee!.work_position != nil ? self.currentEmployee!.work_position : ""
         scheduleTF.text = self.currentEmployee!.schedule != nil ? self.currentEmployee!.schedule : ""
     }
-    
     
     
     func setNewValuesEmployeeFromTextFields(){
@@ -138,13 +137,10 @@ class EditEmployeeViewController: UIViewController, UINavigationControllerDelega
     }
     
     func updateEmployee(){
-        ApiManager.shared.updateEmployee(newEmployeeValues: employeeNewValues, id_employee: id_employee_to_update!)
-    }
-    
+        ApiManager.shared.updateEmployee(newEmployeeValues: employeeNewValues, id_employee: id_employee_to_update!, id_establishment: id_establishment_of_employee!)
+        NotificationCenter.default.post(name: Notification.Name("employeeUpdated"), object: nil)
 
-    
-    
-    
+    }
     
 
 }
