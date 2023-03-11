@@ -6,4 +6,7 @@
 - Consult the graphics to make decisions
 
 
-![Image text](https://github.com/hdevmei/RaiseCompanyApp/blob/main/Splash.png | width=100)
+<img src=https://github.com/hdevmei/RaiseCompanyApp/blob/main/Splash.png width="200"/>
+<img src=https://github.com/hdevmei/RaiseCompanyApp/blob/main/Establishments.png width="200"/>
+<img src=https://github.com/hdevmei/RaiseCompanyApp/blob/main/Establishment%20detail.png width="200"/>
+
