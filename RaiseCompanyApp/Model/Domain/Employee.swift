@@ -33,6 +33,4 @@ struct Employee : Decodable, Encodable{
         self.id_employee = id_employee
         self.number = number
     }
-
-    
 }
