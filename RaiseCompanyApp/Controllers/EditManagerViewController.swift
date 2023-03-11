@@ -55,7 +55,6 @@ class EditManagerViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func saveBtn(_ sender: UIButton) {
         setNewValuesEstablishmentFromTextFields()
-        print(ManagerNewValues)
         updateManager()
         self.dismiss(animated: true)
     }

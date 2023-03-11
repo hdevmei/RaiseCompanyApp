@@ -148,10 +148,10 @@ class EstablishmentDetailedViewController: UIViewController, UICollectionViewDel
     
     
     // Go to employee detail view
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "GoToEmployeeDetailFromRounded", sender: nil)
-    }
-    
+//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "GoToEmployeeDetailFromRounded", sender: nil)
+//    }
+//
     
     //    set info establishment
     func setInfoEstablishment(){

@@ -80,7 +80,7 @@ class ApiManager {
     
     //update establishment
     func updateEstablishment(newEstablishmentValues: Establishment, id_establishment: Int){
-        let url = "\(urlbase)establishments/\(id_establishment)"
+        let url = "\(urlbase)safari/establishments/\(id_establishment)"
         AF.request(url, method: .put, parameters: newEstablishmentValues, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
             .response { response in
