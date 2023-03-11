@@ -1676,22 +1676,6 @@
             </objects>
             <point key="canvasLocation" x="3374" y="4377"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="5QX-nb-Ali">
-            <objects>
-                <viewController id="4pY-ff-Eap" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WOj-CM-Q4F">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="NFE-os-1Z0"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="rqw-tx-fku"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a99-rc-No2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4650" y="4120"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7Cd-91-ptU">
             <objects>
@@ -2962,9 +2946,6 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
